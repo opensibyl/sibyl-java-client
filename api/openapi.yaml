@@ -1,0 +1,499 @@
+openapi: 3.0.1
+info:
+  contact:
+    name: williamfzc
+    url: https://github.com/williamfzc
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: openapi for sibyl2 server
+  version: "1.0"
+servers:
+- url: /
+paths:
+  /api/v1/file:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: file query
+      x-accepts: application/json
+  /api/v1/func:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: file
+        in: query
+        name: file
+        required: true
+        schema:
+          type: string
+      - description: specific lines
+        in: query
+        name: lines
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/object.FunctionWithSignature'
+                type: array
+          description: OK
+      summary: func query
+      x-accepts: application/json
+  /api/v1/funcctx:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: file
+        in: query
+        name: file
+        required: true
+        schema:
+          type: string
+      - description: specific lines
+        in: query
+        name: lines
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionContext'
+                type: array
+          description: OK
+      summary: func ctx query
+      x-accepts: application/json
+  /api/v1/monitor/upload:
+    get:
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: upload status query
+      x-accepts: application/json
+  /api/v1/repo:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: repo query
+      x-accepts: application/json
+  /api/v1/rev:
+    get:
+      parameters:
+      - description: rev search by repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: rev query
+      x-accepts: application/json
+  /ping:
+    get:
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: ping example
+      x-accepts: application/json
+components:
+  schemas:
+    core.Point:
+      example:
+        column: 0
+        row: 6
+      properties:
+        column:
+          type: integer
+        row:
+          description: "NOTICE: INDEX, NOT REAL LINE NUMBER"
+          type: integer
+      type: object
+    core.Span:
+      example:
+        start:
+          column: 0
+          row: 6
+        end:
+          column: 0
+          row: 6
+      properties:
+        end:
+          $ref: '#/components/schemas/core.Point'
+        start:
+          $ref: '#/components/schemas/core.Point'
+      type: object
+    extractor.ValueUnit:
+      example:
+        name: name
+        type: type
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+      type: object
+    object.FunctionWithSignature:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        signature: signature
+        name: name
+        extras: "{}"
+        language: language
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        extras:
+          description: which contains language-specific contents
+          type: object
+        language:
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        signature:
+          type: string
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+    sibyl2.FunctionContext:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        calls:
+        - bodySpan:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+          path: path
+          receiver: receiver
+          name: name
+          extras: "{}"
+          language: language
+          returns:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          parameters:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          span:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+        - bodySpan:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+          path: path
+          receiver: receiver
+          name: name
+          extras: "{}"
+          language: language
+          returns:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          parameters:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          span:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+        name: name
+        extras: "{}"
+        reverseCalls:
+        - bodySpan:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+          path: path
+          receiver: receiver
+          name: name
+          extras: "{}"
+          language: language
+          returns:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          parameters:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          span:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+        - bodySpan:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+          path: path
+          receiver: receiver
+          name: name
+          extras: "{}"
+          language: language
+          returns:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          parameters:
+          - name: name
+            type: type
+          - name: name
+            type: type
+          span:
+            start:
+              column: 0
+              row: 6
+            end:
+              column: 0
+              row: 6
+        language: language
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        calls:
+          items:
+            $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+          type: array
+        extras:
+          description: which contains language-specific contents
+          type: object
+        language:
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        reverseCalls:
+          items:
+            $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+          type: array
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+    sibyl2.FunctionWithPath:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        name: name
+        extras: "{}"
+        language: language
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        extras:
+          description: which contains language-specific contents
+          type: object
+        language:
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/extractor.ValueUnit'
+          type: array
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+x-original-swagger-version: "2.0"
+
