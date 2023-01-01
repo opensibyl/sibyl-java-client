@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CorePoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-17T17:20:39.272+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-01T20:20:28.065+08:00[Asia/Shanghai]")
 public class CorePoint {
   public static final String SERIALIZED_NAME_COLUMN = "column";
   @SerializedName(SERIALIZED_NAME_COLUMN)

@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.CoreSpan;
-import org.openapitools.client.model.ExtractorValueUnit;
+import org.openapitools.client.model.ObjectValueUnit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ObjectFunctionWithSignature
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-17T17:20:39.272+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-01T20:20:28.065+08:00[Asia/Shanghai]")
 public class ObjectFunctionWithSignature {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -72,7 +72,7 @@ public class ObjectFunctionWithSignature {
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  private List<ExtractorValueUnit> parameters = null;
+  private List<ObjectValueUnit> parameters = null;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
@@ -84,7 +84,7 @@ public class ObjectFunctionWithSignature {
 
   public static final String SERIALIZED_NAME_RETURNS = "returns";
   @SerializedName(SERIALIZED_NAME_RETURNS)
-  private List<ExtractorValueUnit> returns = null;
+  private List<ObjectValueUnit> returns = null;
 
   public static final String SERIALIZED_NAME_SIGNATURE = "signature";
   @SerializedName(SERIALIZED_NAME_SIGNATURE)
@@ -189,13 +189,13 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature parameters(List<ExtractorValueUnit> parameters) {
+  public ObjectFunctionWithSignature parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public ObjectFunctionWithSignature addParametersItem(ExtractorValueUnit parametersItem) {
+  public ObjectFunctionWithSignature addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -210,12 +210,12 @@ public class ObjectFunctionWithSignature {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ExtractorValueUnit> getParameters() {
+  public List<ObjectValueUnit> getParameters() {
     return parameters;
   }
 
 
-  public void setParameters(List<ExtractorValueUnit> parameters) {
+  public void setParameters(List<ObjectValueUnit> parameters) {
     this.parameters = parameters;
   }
 
@@ -266,13 +266,13 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature returns(List<ExtractorValueUnit> returns) {
+  public ObjectFunctionWithSignature returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public ObjectFunctionWithSignature addReturnsItem(ExtractorValueUnit returnsItem) {
+  public ObjectFunctionWithSignature addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -287,12 +287,12 @@ public class ObjectFunctionWithSignature {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ExtractorValueUnit> getReturns() {
+  public List<ObjectValueUnit> getReturns() {
     return returns;
   }
 
 
-  public void setReturns(List<ExtractorValueUnit> returns) {
+  public void setReturns(List<ObjectValueUnit> returns) {
     this.returns = returns;
   }
 
@@ -461,7 +461,7 @@ public class ObjectFunctionWithSignature {
 
           // validate the optional field `parameters` (array)
           for (int i = 0; i < jsonArrayparameters.size(); i++) {
-            ExtractorValueUnit.validateJsonObject(jsonArrayparameters.get(i).getAsJsonObject());
+            ObjectValueUnit.validateJsonObject(jsonArrayparameters.get(i).getAsJsonObject());
           };
         }
       }
@@ -481,7 +481,7 @@ public class ObjectFunctionWithSignature {
 
           // validate the optional field `returns` (array)
           for (int i = 0; i < jsonArrayreturns.size(); i++) {
-            ExtractorValueUnit.validateJsonObject(jsonArrayreturns.get(i).getAsJsonObject());
+            ObjectValueUnit.validateJsonObject(jsonArrayreturns.get(i).getAsJsonObject());
           };
         }
       }

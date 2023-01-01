@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.CoreSpan;
-import org.openapitools.client.model.ExtractorValueUnit;
+import org.openapitools.client.model.ObjectValueUnit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Sibyl2FunctionWithPath
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-17T17:20:39.272+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-01T20:20:28.065+08:00[Asia/Shanghai]")
 public class Sibyl2FunctionWithPath {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -72,7 +72,7 @@ public class Sibyl2FunctionWithPath {
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  private List<ExtractorValueUnit> parameters = null;
+  private List<ObjectValueUnit> parameters = null;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
@@ -84,7 +84,7 @@ public class Sibyl2FunctionWithPath {
 
   public static final String SERIALIZED_NAME_RETURNS = "returns";
   @SerializedName(SERIALIZED_NAME_RETURNS)
-  private List<ExtractorValueUnit> returns = null;
+  private List<ObjectValueUnit> returns = null;
 
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
@@ -185,13 +185,13 @@ public class Sibyl2FunctionWithPath {
   }
 
 
-  public Sibyl2FunctionWithPath parameters(List<ExtractorValueUnit> parameters) {
+  public Sibyl2FunctionWithPath parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public Sibyl2FunctionWithPath addParametersItem(ExtractorValueUnit parametersItem) {
+  public Sibyl2FunctionWithPath addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -206,12 +206,12 @@ public class Sibyl2FunctionWithPath {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ExtractorValueUnit> getParameters() {
+  public List<ObjectValueUnit> getParameters() {
     return parameters;
   }
 
 
-  public void setParameters(List<ExtractorValueUnit> parameters) {
+  public void setParameters(List<ObjectValueUnit> parameters) {
     this.parameters = parameters;
   }
 
@@ -262,13 +262,13 @@ public class Sibyl2FunctionWithPath {
   }
 
 
-  public Sibyl2FunctionWithPath returns(List<ExtractorValueUnit> returns) {
+  public Sibyl2FunctionWithPath returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public Sibyl2FunctionWithPath addReturnsItem(ExtractorValueUnit returnsItem) {
+  public Sibyl2FunctionWithPath addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -283,12 +283,12 @@ public class Sibyl2FunctionWithPath {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ExtractorValueUnit> getReturns() {
+  public List<ObjectValueUnit> getReturns() {
     return returns;
   }
 
 
-  public void setReturns(List<ExtractorValueUnit> returns) {
+  public void setReturns(List<ObjectValueUnit> returns) {
     this.returns = returns;
   }
 
@@ -431,7 +431,7 @@ public class Sibyl2FunctionWithPath {
 
           // validate the optional field `parameters` (array)
           for (int i = 0; i < jsonArrayparameters.size(); i++) {
-            ExtractorValueUnit.validateJsonObject(jsonArrayparameters.get(i).getAsJsonObject());
+            ObjectValueUnit.validateJsonObject(jsonArrayparameters.get(i).getAsJsonObject());
           };
         }
       }
@@ -451,7 +451,7 @@ public class Sibyl2FunctionWithPath {
 
           // validate the optional field `returns` (array)
           for (int i = 0; i < jsonArrayreturns.size(); i++) {
-            ExtractorValueUnit.validateJsonObject(jsonArrayreturns.get(i).getAsJsonObject());
+            ObjectValueUnit.validateJsonObject(jsonArrayreturns.get(i).getAsJsonObject());
           };
         }
       }

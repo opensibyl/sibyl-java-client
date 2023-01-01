@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.CorePoint;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,64 +46,64 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * CoreSpan
+ * ObjectValueUnit
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-01T20:20:28.065+08:00[Asia/Shanghai]")
-public class CoreSpan {
-  public static final String SERIALIZED_NAME_END = "end";
-  @SerializedName(SERIALIZED_NAME_END)
-  private CorePoint end;
+public class ObjectValueUnit {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public static final String SERIALIZED_NAME_START = "start";
-  @SerializedName(SERIALIZED_NAME_START)
-  private CorePoint start;
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type;
 
-  public CoreSpan() {
+  public ObjectValueUnit() {
   }
 
-  public CoreSpan end(CorePoint end) {
+  public ObjectValueUnit name(String name) {
     
-    this.end = end;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get end
-   * @return end
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public CorePoint getEnd() {
-    return end;
+  public String getName() {
+    return name;
   }
 
 
-  public void setEnd(CorePoint end) {
-    this.end = end;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public CoreSpan start(CorePoint start) {
+  public ObjectValueUnit type(String type) {
     
-    this.start = start;
+    this.type = type;
     return this;
   }
 
    /**
-   * Get start
-   * @return start
+   * Get type
+   * @return type
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public CorePoint getStart() {
-    return start;
+  public String getType() {
+    return type;
   }
 
 
-  public void setStart(CorePoint start) {
-    this.start = start;
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -117,22 +116,22 @@ public class CoreSpan {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CoreSpan coreSpan = (CoreSpan) o;
-    return Objects.equals(this.end, coreSpan.end) &&
-        Objects.equals(this.start, coreSpan.start);
+    ObjectValueUnit objectValueUnit = (ObjectValueUnit) o;
+    return Objects.equals(this.name, objectValueUnit.name) &&
+        Objects.equals(this.type, objectValueUnit.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(end, start);
+    return Objects.hash(name, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CoreSpan {\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
+    sb.append("class ObjectValueUnit {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,8 +154,8 @@ public class CoreSpan {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("end");
-    openapiFields.add("start");
+    openapiFields.add("name");
+    openapiFields.add("type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -166,29 +165,27 @@ public class CoreSpan {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CoreSpan
+  * @throws IOException if the JSON Object is invalid with respect to ObjectValueUnit
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!CoreSpan.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CoreSpan is not found in the empty JSON string", CoreSpan.openapiRequiredFields.toString()));
+        if (!ObjectValueUnit.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectValueUnit is not found in the empty JSON string", ObjectValueUnit.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!CoreSpan.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CoreSpan` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ObjectValueUnit.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectValueUnit` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `end`
-      if (jsonObj.get("end") != null && !jsonObj.get("end").isJsonNull()) {
-        CorePoint.validateJsonObject(jsonObj.getAsJsonObject("end"));
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // validate the optional field `start`
-      if (jsonObj.get("start") != null && !jsonObj.get("start").isJsonNull()) {
-        CorePoint.validateJsonObject(jsonObj.getAsJsonObject("start"));
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 
@@ -196,22 +193,22 @@ public class CoreSpan {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CoreSpan.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CoreSpan' and its subtypes
+       if (!ObjectValueUnit.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ObjectValueUnit' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CoreSpan> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CoreSpan.class));
+       final TypeAdapter<ObjectValueUnit> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectValueUnit.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<CoreSpan>() {
+       return (TypeAdapter<T>) new TypeAdapter<ObjectValueUnit>() {
            @Override
-           public void write(JsonWriter out, CoreSpan value) throws IOException {
+           public void write(JsonWriter out, ObjectValueUnit value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public CoreSpan read(JsonReader in) throws IOException {
+           public ObjectValueUnit read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -222,18 +219,18 @@ public class CoreSpan {
   }
 
  /**
-  * Create an instance of CoreSpan given an JSON string
+  * Create an instance of ObjectValueUnit given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of CoreSpan
-  * @throws IOException if the JSON string is invalid with respect to CoreSpan
+  * @return An instance of ObjectValueUnit
+  * @throws IOException if the JSON string is invalid with respect to ObjectValueUnit
   */
-  public static CoreSpan fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CoreSpan.class);
+  public static ObjectValueUnit fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ObjectValueUnit.class);
   }
 
  /**
-  * Convert an instance of CoreSpan to an JSON string
+  * Convert an instance of ObjectValueUnit to an JSON string
   *
   * @return JSON string
   */

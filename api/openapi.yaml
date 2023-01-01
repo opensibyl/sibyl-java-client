@@ -12,6 +12,40 @@ info:
 servers:
 - url: /
 paths:
+  /api/v1/clazz:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: file
+        in: query
+        name: file
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.ClazzWithPath'
+                type: array
+          description: OK
+      summary: class query
+      tags:
+      - MAIN
+      x-accepts: application/json
   /api/v1/file:
     get:
       parameters:
@@ -37,6 +71,8 @@ paths:
                 type: array
           description: OK
       summary: file query
+      tags:
+      - MAIN
       x-accepts: application/json
   /api/v1/func:
     get:
@@ -74,6 +110,8 @@ paths:
                 type: array
           description: OK
       summary: func query
+      tags:
+      - MAIN
       x-accepts: application/json
   /api/v1/funcctx:
     get:
@@ -111,14 +149,8 @@ paths:
                 type: array
           description: OK
       summary: func ctx query
-      x-accepts: application/json
-  /api/v1/monitor/upload:
-    get:
-      responses:
-        "200":
-          content: {}
-          description: OK
-      summary: upload status query
+      tags:
+      - MAIN
       x-accepts: application/json
   /api/v1/repo:
     get:
@@ -132,6 +164,8 @@ paths:
                 type: array
           description: OK
       summary: repo query
+      tags:
+      - MAIN
       x-accepts: application/json
   /api/v1/rev:
     get:
@@ -152,14 +186,28 @@ paths:
                 type: array
           description: OK
       summary: rev query
+      tags:
+      - MAIN
       x-accepts: application/json
-  /ping:
+  /ops/monitor/upload:
+    get:
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: upload status query
+      tags:
+      - OPS
+      x-accepts: application/json
+  /ops/ping:
     get:
       responses:
         "200":
           content: {}
           description: OK
       summary: ping example
+      tags:
+      - OPS
       x-accepts: application/json
 components:
   schemas:
@@ -187,16 +235,6 @@ components:
           $ref: '#/components/schemas/core.Point'
         start:
           $ref: '#/components/schemas/core.Point'
-      type: object
-    extractor.ValueUnit:
-      example:
-        name: name
-        type: type
-      properties:
-        name:
-          type: string
-        type:
-          type: string
       type: object
     object.FunctionWithSignature:
       example:
@@ -242,7 +280,7 @@ components:
           type: string
         parameters:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         path:
           type: string
@@ -250,9 +288,48 @@ components:
           type: string
         returns:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         signature:
+          type: string
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+    object.ValueUnit:
+      example:
+        name: name
+        type: type
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+      type: object
+    sibyl2.ClazzWithPath:
+      example:
+        path: path
+        module: module
+        name: name
+        extras: "{}"
+        language: language
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        extras:
+          description: which contains language-specific contents
+          type: object
+        language:
+          type: string
+        module:
+          type: string
+        name:
+          type: string
+        path:
           type: string
         span:
           $ref: '#/components/schemas/core.Span'
@@ -422,7 +499,7 @@ components:
           type: string
         parameters:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         path:
           type: string
@@ -430,7 +507,7 @@ components:
           type: string
         returns:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         reverseCalls:
           items:
@@ -482,7 +559,7 @@ components:
           type: string
         parameters:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         path:
           type: string
@@ -490,7 +567,7 @@ components:
           type: string
         returns:
           items:
-            $ref: '#/components/schemas/extractor.ValueUnit'
+            $ref: '#/components/schemas/object.ValueUnit'
           type: array
         span:
           $ref: '#/components/schemas/core.Span'

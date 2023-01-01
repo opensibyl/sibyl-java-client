@@ -1,20 +1,17 @@
 
 
-# Sibyl2FunctionWithPath
+# Sibyl2ClazzWithPath
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bodySpan** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
 |**extras** | **Object** | which contains language-specific contents |  [optional] |
 |**language** | **String** |  |  [optional] |
+|**module** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**parameters** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
 |**path** | **String** |  |  [optional] |
-|**receiver** | **String** |  |  [optional] |
-|**returns** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
 |**span** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
 
 
