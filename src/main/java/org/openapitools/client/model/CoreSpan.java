@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CoreSpan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-01T20:20:28.065+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-02T17:26:37.785+08:00[Asia/Shanghai]")
 public class CoreSpan {
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)

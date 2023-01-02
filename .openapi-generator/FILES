@@ -6,6 +6,7 @@ build.gradle
 build.sbt
 docs/CorePoint.md
 docs/CoreSpan.md
+docs/ExtrasApi.md
 docs/MainApi.md
 docs/ObjectFunctionWithSignature.md
 docs/ObjectValueUnit.md
@@ -35,6 +36,7 @@ src/main/java/org/openapitools/client/ProgressResponseBody.java
 src/main/java/org/openapitools/client/ServerConfiguration.java
 src/main/java/org/openapitools/client/ServerVariable.java
 src/main/java/org/openapitools/client/StringUtil.java
+src/main/java/org/openapitools/client/api/ExtrasApi.java
 src/main/java/org/openapitools/client/api/MainApi.java
 src/main/java/org/openapitools/client/api/OpsApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
@@ -49,7 +51,4 @@ src/main/java/org/openapitools/client/model/ObjectValueUnit.java
 src/main/java/org/openapitools/client/model/Sibyl2ClazzWithPath.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionContext.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionWithPath.java
-src/test/java/org/openapitools/client/api/MainApiTest.java
-src/test/java/org/openapitools/client/api/OpsApiTest.java
-src/test/java/org/openapitools/client/model/ObjectValueUnitTest.java
-src/test/java/org/openapitools/client/model/Sibyl2ClazzWithPathTest.java
+src/test/java/org/openapitools/client/api/ExtrasApiTest.java
