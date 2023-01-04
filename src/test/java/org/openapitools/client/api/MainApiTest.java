@@ -48,19 +48,6 @@ public class MainApiTest {
     }
 
     /**
-     * file query
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void apiV1FileGetTest() throws ApiException {
-        String repo = null;
-        String rev = null;
-        List<String> response = api.apiV1FileGet(repo, rev);
-        // TODO: test validations
-    }
-
-    /**
      * func query
      *
      * @throws ApiException if the Api call fails
@@ -87,29 +74,6 @@ public class MainApiTest {
         String _file = null;
         String lines = null;
         List<Sibyl2FunctionContext> response = api.apiV1FuncctxGet(repo, rev, _file, lines);
-        // TODO: test validations
-    }
-
-    /**
-     * repo query
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void apiV1RepoGetTest() throws ApiException {
-        List<String> response = api.apiV1RepoGet();
-        // TODO: test validations
-    }
-
-    /**
-     * rev query
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void apiV1RevGetTest() throws ApiException {
-        String repo = null;
-        List<String> response = api.apiV1RevGet(repo);
         // TODO: test validations
     }
 
