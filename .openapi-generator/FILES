@@ -11,6 +11,7 @@ docs/MainApi.md
 docs/ObjectFunctionWithSignature.md
 docs/ObjectValueUnit.md
 docs/OpsApi.md
+docs/ScopeApi.md
 docs/Sibyl2ClazzWithPath.md
 docs/Sibyl2FunctionContext.md
 docs/Sibyl2FunctionWithPath.md
@@ -39,6 +40,7 @@ src/main/java/org/openapitools/client/StringUtil.java
 src/main/java/org/openapitools/client/api/ExtrasApi.java
 src/main/java/org/openapitools/client/api/MainApi.java
 src/main/java/org/openapitools/client/api/OpsApi.java
+src/main/java/org/openapitools/client/api/ScopeApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
@@ -51,4 +53,4 @@ src/main/java/org/openapitools/client/model/ObjectValueUnit.java
 src/main/java/org/openapitools/client/model/Sibyl2ClazzWithPath.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionContext.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionWithPath.java
-src/test/java/org/openapitools/client/api/ExtrasApiTest.java
+src/test/java/org/openapitools/client/api/ScopeApiTest.java

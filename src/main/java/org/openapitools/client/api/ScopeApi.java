@@ -27,9 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.ObjectFunctionWithSignature;
-import org.openapitools.client.model.Sibyl2ClazzWithPath;
-import org.openapitools.client.model.Sibyl2FunctionContext;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -38,16 +35,16 @@ import java.util.List;
 import java.util.Map;
 import javax.ws.rs.core.GenericType;
 
-public class MainApi {
+public class ScopeApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public MainApi() {
+    public ScopeApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public MainApi(ApiClient apiClient) {
+    public ScopeApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -76,10 +73,10 @@ public class MainApi {
     }
 
     /**
-     * Build call for apiV1ClazzGet
+     * Build call for apiV1FileGet
      * @param repo repo (required)
      * @param rev rev (required)
-     * @param _file file (required)
+     * @param includeRegex includeRegex (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -89,7 +86,7 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzGetCall(String repo, String rev, String _file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1FileGetCall(String repo, String rev, String includeRegex, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,7 +103,7 @@ public class MainApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/clazz";
+        String localVarPath = "/api/v1/file";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -122,8 +119,8 @@ public class MainApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
         }
 
-        if (_file != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("file", _file));
+        if (includeRegex != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("includeRegex", includeRegex));
         }
 
         final String[] localVarAccepts = {
@@ -146,33 +143,28 @@ public class MainApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1ClazzGetValidateBeforeCall(String repo, String rev, String _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1FileGetValidateBeforeCall(String repo, String rev, String includeRegex, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1ClazzGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FileGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1ClazzGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FileGet(Async)");
         }
 
-        // verify the required parameter '_file' is set
-        if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling apiV1ClazzGet(Async)");
-        }
-
-        return apiV1ClazzGetCall(repo, rev, _file, _callback);
+        return apiV1FileGetCall(repo, rev, includeRegex, _callback);
 
     }
 
     /**
-     * class query
+     * file query
      * 
      * @param repo repo (required)
      * @param rev rev (required)
-     * @param _file file (required)
-     * @return List&lt;Sibyl2ClazzWithPath&gt;
+     * @param includeRegex includeRegex (optional)
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -180,18 +172,18 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2ClazzWithPath> apiV1ClazzGet(String repo, String rev, String _file) throws ApiException {
-        ApiResponse<List<Sibyl2ClazzWithPath>> localVarResp = apiV1ClazzGetWithHttpInfo(repo, rev, _file);
+    public List<String> apiV1FileGet(String repo, String rev, String includeRegex) throws ApiException {
+        ApiResponse<List<String>> localVarResp = apiV1FileGetWithHttpInfo(repo, rev, includeRegex);
         return localVarResp.getData();
     }
 
     /**
-     * class query
+     * file query
      * 
      * @param repo repo (required)
      * @param rev rev (required)
-     * @param _file file (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2ClazzWithPath&gt;&gt;
+     * @param includeRegex includeRegex (optional)
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -199,18 +191,18 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2ClazzWithPath>> apiV1ClazzGetWithHttpInfo(String repo, String rev, String _file) throws ApiException {
-        okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+    public ApiResponse<List<String>> apiV1FileGetWithHttpInfo(String repo, String rev, String includeRegex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1FileGetValidateBeforeCall(repo, rev, includeRegex, null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * class query (asynchronously)
+     * file query (asynchronously)
      * 
      * @param repo repo (required)
      * @param rev rev (required)
-     * @param _file file (required)
+     * @param includeRegex includeRegex (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -220,19 +212,15 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzGetAsync(String repo, String rev, String _file, final ApiCallback<List<Sibyl2ClazzWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1FileGetAsync(String repo, String rev, String includeRegex, final ApiCallback<List<String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+        okhttp3.Call localVarCall = apiV1FileGetValidateBeforeCall(repo, rev, includeRegex, _callback);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for apiV1FuncGet
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
+     * Build call for apiV1RepoGet
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -242,7 +230,7 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncGetCall(String repo, String rev, String _file, String lines, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1RepoGetCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,29 +247,13 @@ public class MainApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/func";
+        String localVarPath = "/api/v1/repo";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (repo != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
-        }
-
-        if (rev != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
-        }
-
-        if (_file != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("file", _file));
-        }
-
-        if (lines != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("lines", lines));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -303,34 +275,15 @@ public class MainApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncGetValidateBeforeCall(String repo, String rev, String _file, String lines, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'repo' is set
-        if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncGet(Async)");
-        }
-
-        // verify the required parameter 'rev' is set
-        if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncGet(Async)");
-        }
-
-        // verify the required parameter '_file' is set
-        if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling apiV1FuncGet(Async)");
-        }
-
-        return apiV1FuncGetCall(repo, rev, _file, lines, _callback);
+    private okhttp3.Call apiV1RepoGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return apiV1RepoGetCall(_callback);
 
     }
 
     /**
-     * func query
+     * repo query
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
-     * @return List&lt;ObjectFunctionWithSignature&gt;
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -338,19 +291,15 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<ObjectFunctionWithSignature> apiV1FuncGet(String repo, String rev, String _file, String lines) throws ApiException {
-        ApiResponse<List<ObjectFunctionWithSignature>> localVarResp = apiV1FuncGetWithHttpInfo(repo, rev, _file, lines);
+    public List<String> apiV1RepoGet() throws ApiException {
+        ApiResponse<List<String>> localVarResp = apiV1RepoGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * func query
+     * repo query
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
-     * @return ApiResponse&lt;List&lt;ObjectFunctionWithSignature&gt;&gt;
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -358,19 +307,15 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ObjectFunctionWithSignature>> apiV1FuncGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncGetValidateBeforeCall(repo, rev, _file, lines, null);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+    public ApiResponse<List<String>> apiV1RepoGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = apiV1RepoGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * func query (asynchronously)
+     * repo query (asynchronously)
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -380,19 +325,16 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFunctionWithSignature>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RepoGetAsync(final ApiCallback<List<String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncGetValidateBeforeCall(repo, rev, _file, lines, _callback);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+        okhttp3.Call localVarCall = apiV1RepoGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for apiV1FuncctxGet
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
+     * Build call for apiV1RevGet
+     * @param repo rev search by repo (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -402,7 +344,7 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxGetCall(String repo, String rev, String _file, String lines, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1RevGetCall(String repo, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -419,7 +361,7 @@ public class MainApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/funcctx";
+        String localVarPath = "/api/v1/rev";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -429,18 +371,6 @@ public class MainApi {
 
         if (repo != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
-        }
-
-        if (rev != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
-        }
-
-        if (_file != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("file", _file));
-        }
-
-        if (lines != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("lines", lines));
         }
 
         final String[] localVarAccepts = {
@@ -463,34 +393,21 @@ public class MainApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncctxGetValidateBeforeCall(String repo, String rev, String _file, String lines, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1RevGetValidateBeforeCall(String repo, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncctxGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1RevGet(Async)");
         }
 
-        // verify the required parameter 'rev' is set
-        if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncctxGet(Async)");
-        }
-
-        // verify the required parameter '_file' is set
-        if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling apiV1FuncctxGet(Async)");
-        }
-
-        return apiV1FuncctxGetCall(repo, rev, _file, lines, _callback);
+        return apiV1RevGetCall(repo, _callback);
 
     }
 
     /**
-     * func ctx query
+     * rev query
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
-     * @return List&lt;Sibyl2FunctionContext&gt;
+     * @param repo rev search by repo (required)
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -498,19 +415,16 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContext> apiV1FuncctxGet(String repo, String rev, String _file, String lines) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContext>> localVarResp = apiV1FuncctxGetWithHttpInfo(repo, rev, _file, lines);
+    public List<String> apiV1RevGet(String repo) throws ApiException {
+        ApiResponse<List<String>> localVarResp = apiV1RevGetWithHttpInfo(repo);
         return localVarResp.getData();
     }
 
     /**
-     * func ctx query
+     * rev query
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
-     * @return ApiResponse&lt;List&lt;Sibyl2FunctionContext&gt;&gt;
+     * @param repo rev search by repo (required)
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -518,19 +432,16 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContext>> apiV1FuncctxGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContext>>(){}.getType();
+    public ApiResponse<List<String>> apiV1RevGetWithHttpInfo(String repo) throws ApiException {
+        okhttp3.Call localVarCall = apiV1RevGetValidateBeforeCall(repo, null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * func ctx query (asynchronously)
+     * rev query (asynchronously)
      * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param _file file (required)
-     * @param lines specific lines (optional)
+     * @param repo rev search by repo (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -540,10 +451,10 @@ public class MainApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<Sibyl2FunctionContext>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RevGetAsync(String repo, final ApiCallback<List<String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContext>>(){}.getType();
+        okhttp3.Call localVarCall = apiV1RevGetValidateBeforeCall(repo, _callback);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

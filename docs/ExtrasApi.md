@@ -1,19 +1,19 @@
-# MainApi
+# ExtrasApi
 
 All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiV1ClazzGet**](MainApi.md#apiV1ClazzGet) | **GET** /api/v1/clazz | class query |
-| [**apiV1FuncGet**](MainApi.md#apiV1FuncGet) | **GET** /api/v1/func | func query |
-| [**apiV1FuncctxGet**](MainApi.md#apiV1FuncctxGet) | **GET** /api/v1/funcctx | func ctx query |
+| [**apiV1ClazzDiffGet**](ExtrasApi.md#apiV1ClazzDiffGet) | **GET** /api/v1/clazz/diff | clazz diff query |
+| [**apiV1FuncDiffGet**](ExtrasApi.md#apiV1FuncDiffGet) | **GET** /api/v1/func/diff | func diff query |
+| [**apiV1FuncctxDiffGet**](ExtrasApi.md#apiV1FuncctxDiffGet) | **GET** /api/v1/funcctx/diff | func ctx diff query |
 
 
-<a name="apiV1ClazzGet"></a>
-# **apiV1ClazzGet**
-> List&lt;Sibyl2ClazzWithPath&gt; apiV1ClazzGet(repo, rev, _file)
+<a name="apiV1ClazzDiffGet"></a>
+# **apiV1ClazzDiffGet**
+> Map&lt;String, List&lt;Sibyl2ClazzWithPath&gt;&gt; apiV1ClazzDiffGet(repo, rev, diff)
 
-class query
+clazz diff query
 
 ### Example
 ```java
@@ -22,22 +22,22 @@ import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.MainApi;
+import org.openapitools.client.api.ExtrasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
 
-    MainApi apiInstance = new MainApi(defaultClient);
+    ExtrasApi apiInstance = new ExtrasApi(defaultClient);
     String repo = "repo_example"; // String | repo
     String rev = "rev_example"; // String | rev
-    String _file = "_file_example"; // String | file
+    String diff = "diff_example"; // String | unified diff
     try {
-      List<Sibyl2ClazzWithPath> result = apiInstance.apiV1ClazzGet(repo, rev, _file);
+      Map<String, List<Sibyl2ClazzWithPath>> result = apiInstance.apiV1ClazzDiffGet(repo, rev, diff);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MainApi#apiV1ClazzGet");
+      System.err.println("Exception when calling ExtrasApi#apiV1ClazzDiffGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -53,11 +53,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **repo** | **String**| repo | |
 | **rev** | **String**| rev | |
-| **_file** | **String**| file | |
+| **diff** | **String**| unified diff | |
 
 ### Return type
 
-[**List&lt;Sibyl2ClazzWithPath&gt;**](Sibyl2ClazzWithPath.md)
+[**Map&lt;String, List&lt;Sibyl2ClazzWithPath&gt;&gt;**](List.md)
 
 ### Authorization
 
@@ -73,11 +73,11 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="apiV1FuncGet"></a>
-# **apiV1FuncGet**
-> List&lt;ObjectFunctionWithSignature&gt; apiV1FuncGet(repo, rev, _file, lines)
+<a name="apiV1FuncDiffGet"></a>
+# **apiV1FuncDiffGet**
+> Map&lt;String, List&lt;Sibyl2FunctionWithPath&gt;&gt; apiV1FuncDiffGet(repo, rev, diff)
 
-func query
+func diff query
 
 ### Example
 ```java
@@ -86,23 +86,22 @@ import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.MainApi;
+import org.openapitools.client.api.ExtrasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
 
-    MainApi apiInstance = new MainApi(defaultClient);
+    ExtrasApi apiInstance = new ExtrasApi(defaultClient);
     String repo = "repo_example"; // String | repo
     String rev = "rev_example"; // String | rev
-    String _file = "_file_example"; // String | file
-    String lines = "lines_example"; // String | specific lines
+    String diff = "diff_example"; // String | unified diff
     try {
-      List<ObjectFunctionWithSignature> result = apiInstance.apiV1FuncGet(repo, rev, _file, lines);
+      Map<String, List<Sibyl2FunctionWithPath>> result = apiInstance.apiV1FuncDiffGet(repo, rev, diff);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MainApi#apiV1FuncGet");
+      System.err.println("Exception when calling ExtrasApi#apiV1FuncDiffGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -118,12 +117,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **repo** | **String**| repo | |
 | **rev** | **String**| rev | |
-| **_file** | **String**| file | |
-| **lines** | **String**| specific lines | [optional] |
+| **diff** | **String**| unified diff | |
 
 ### Return type
 
-[**List&lt;ObjectFunctionWithSignature&gt;**](ObjectFunctionWithSignature.md)
+[**Map&lt;String, List&lt;Sibyl2FunctionWithPath&gt;&gt;**](List.md)
 
 ### Authorization
 
@@ -139,11 +137,11 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="apiV1FuncctxGet"></a>
-# **apiV1FuncctxGet**
-> List&lt;Sibyl2FunctionContext&gt; apiV1FuncctxGet(repo, rev, _file, lines)
+<a name="apiV1FuncctxDiffGet"></a>
+# **apiV1FuncctxDiffGet**
+> Map&lt;String, List&lt;Sibyl2FunctionContext&gt;&gt; apiV1FuncctxDiffGet(repo, rev, diff)
 
-func ctx query
+func ctx diff query
 
 ### Example
 ```java
@@ -152,23 +150,22 @@ import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.MainApi;
+import org.openapitools.client.api.ExtrasApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost");
 
-    MainApi apiInstance = new MainApi(defaultClient);
+    ExtrasApi apiInstance = new ExtrasApi(defaultClient);
     String repo = "repo_example"; // String | repo
     String rev = "rev_example"; // String | rev
-    String _file = "_file_example"; // String | file
-    String lines = "lines_example"; // String | specific lines
+    String diff = "diff_example"; // String | unified diff
     try {
-      List<Sibyl2FunctionContext> result = apiInstance.apiV1FuncctxGet(repo, rev, _file, lines);
+      Map<String, List<Sibyl2FunctionContext>> result = apiInstance.apiV1FuncctxDiffGet(repo, rev, diff);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MainApi#apiV1FuncctxGet");
+      System.err.println("Exception when calling ExtrasApi#apiV1FuncctxDiffGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -184,12 +181,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **repo** | **String**| repo | |
 | **rev** | **String**| rev | |
-| **_file** | **String**| file | |
-| **lines** | **String**| specific lines | [optional] |
+| **diff** | **String**| unified diff | |
 
 ### Return type
 
-[**List&lt;Sibyl2FunctionContext&gt;**](Sibyl2FunctionContext.md)
+[**Map&lt;String, List&lt;Sibyl2FunctionContext&gt;&gt;**](List.md)
 
 ### Authorization
 

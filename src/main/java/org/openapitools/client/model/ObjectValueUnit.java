@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ObjectValueUnit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-02T17:26:37.785+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-05T00:13:00.948+08:00[Asia/Shanghai]")
 public class ObjectValueUnit {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
