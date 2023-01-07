@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.Sibyl2FunctionWithPath;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,16 +36,16 @@ import java.util.List;
 import java.util.Map;
 import javax.ws.rs.core.GenericType;
 
-public class OpsApi {
+public class ExperimentalApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public OpsApi() {
+    public ExperimentalApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public OpsApi(ApiClient apiClient) {
+    public ExperimentalApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -73,7 +74,10 @@ public class OpsApi {
     }
 
     /**
-     * Build call for opsMonitorUploadGet
+     * Build call for apiV1FuncSignatureGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -83,7 +87,7 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsMonitorUploadGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncSignatureGetCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -100,7 +104,7 @@ public class OpsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/ops/monitor/upload";
+        String localVarPath = "/api/v1/func/signature";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -108,7 +112,20 @@ public class OpsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (regex != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("regex", regex));
+        }
+
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -127,14 +144,33 @@ public class OpsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call opsMonitorUploadGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return opsMonitorUploadGetCall(_callback);
+    private okhttp3.Call apiV1FuncSignatureGetValidateBeforeCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncSignatureGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncSignatureGet(Async)");
+        }
+
+        // verify the required parameter 'regex' is set
+        if (regex == null) {
+            throw new ApiException("Missing the required parameter 'regex' when calling apiV1FuncSignatureGet(Async)");
+        }
+
+        return apiV1FuncSignatureGetCall(repo, rev, regex, _callback);
 
     }
 
     /**
-     * upload status query
+     * func query
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -142,14 +178,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void opsMonitorUploadGet() throws ApiException {
-        opsMonitorUploadGetWithHttpInfo();
+    public List<String> apiV1FuncSignatureGet(String repo, String rev, String regex) throws ApiException {
+        ApiResponse<List<String>> localVarResp = apiV1FuncSignatureGetWithHttpInfo(repo, rev, regex);
+        return localVarResp.getData();
     }
 
     /**
-     * upload status query
+     * func query
      * 
-     * @return ApiResponse&lt;Void&gt;
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -157,14 +197,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> opsMonitorUploadGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = opsMonitorUploadGetValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<List<String>> apiV1FuncSignatureGetWithHttpInfo(String repo, String rev, String regex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1FuncSignatureGetValidateBeforeCall(repo, rev, regex, null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * upload status query (asynchronously)
+     * func query (asynchronously)
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -174,14 +218,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsMonitorUploadGetAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncSignatureGetAsync(String repo, String rev, String regex, final ApiCallback<List<String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = opsMonitorUploadGetValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = apiV1FuncSignatureGetValidateBeforeCall(repo, rev, regex, _callback);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for opsPingGet
+     * Build call for apiV1FuncWithRuleGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param rule rule (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -191,7 +239,7 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsPingGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncWithRuleGetCall(String repo, String rev, String rule, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -208,7 +256,7 @@ public class OpsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/ops/ping";
+        String localVarPath = "/api/v1/func/with/rule";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -216,7 +264,20 @@ public class OpsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (rule != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rule", rule));
+        }
+
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -235,14 +296,33 @@ public class OpsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call opsPingGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return opsPingGetCall(_callback);
+    private okhttp3.Call apiV1FuncWithRuleGetValidateBeforeCall(String repo, String rev, String rule, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncWithRuleGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncWithRuleGet(Async)");
+        }
+
+        // verify the required parameter 'rule' is set
+        if (rule == null) {
+            throw new ApiException("Missing the required parameter 'rule' when calling apiV1FuncWithRuleGet(Async)");
+        }
+
+        return apiV1FuncWithRuleGetCall(repo, rev, rule, _callback);
 
     }
 
     /**
-     * ping example
+     * func query
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param rule rule (required)
+     * @return List&lt;Sibyl2FunctionWithPath&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -250,14 +330,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void opsPingGet() throws ApiException {
-        opsPingGetWithHttpInfo();
+    public List<Sibyl2FunctionWithPath> apiV1FuncWithRuleGet(String repo, String rev, String rule) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionWithPath>> localVarResp = apiV1FuncWithRuleGetWithHttpInfo(repo, rev, rule);
+        return localVarResp.getData();
     }
 
     /**
-     * ping example
+     * func query
      * 
-     * @return ApiResponse&lt;Void&gt;
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param rule rule (required)
+     * @return ApiResponse&lt;List&lt;Sibyl2FunctionWithPath&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -265,14 +349,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> opsPingGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = opsPingGetValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<List<Sibyl2FunctionWithPath>> apiV1FuncWithRuleGetWithHttpInfo(String repo, String rev, String rule) throws ApiException {
+        okhttp3.Call localVarCall = apiV1FuncWithRuleGetValidateBeforeCall(repo, rev, rule, null);
+        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * ping example (asynchronously)
+     * func query (asynchronously)
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param rule rule (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -282,14 +370,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsPingGetAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncWithRuleGetAsync(String repo, String rev, String rule, final ApiCallback<List<Sibyl2FunctionWithPath>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = opsPingGetValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = apiV1FuncWithRuleGetValidateBeforeCall(repo, rev, rule, _callback);
+        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for opsVersionGet
+     * Build call for apiV1FuncWithSignatureGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -299,7 +391,7 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsVersionGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncWithSignatureGetCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -316,7 +408,7 @@ public class OpsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/ops/version";
+        String localVarPath = "/api/v1/func/with/signature";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -324,7 +416,20 @@ public class OpsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -343,14 +448,33 @@ public class OpsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call opsVersionGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return opsVersionGetCall(_callback);
+    private okhttp3.Call apiV1FuncWithSignatureGetValidateBeforeCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncWithSignatureGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncWithSignatureGet(Async)");
+        }
+
+        // verify the required parameter 'signature' is set
+        if (signature == null) {
+            throw new ApiException("Missing the required parameter 'signature' when calling apiV1FuncWithSignatureGet(Async)");
+        }
+
+        return apiV1FuncWithSignatureGetCall(repo, rev, signature, _callback);
 
     }
 
     /**
-     * sibyl version
+     * func query
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @return List&lt;Sibyl2FunctionWithPath&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -358,14 +482,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public void opsVersionGet() throws ApiException {
-        opsVersionGetWithHttpInfo();
+    public List<Sibyl2FunctionWithPath> apiV1FuncWithSignatureGet(String repo, String rev, String signature) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionWithPath>> localVarResp = apiV1FuncWithSignatureGetWithHttpInfo(repo, rev, signature);
+        return localVarResp.getData();
     }
 
     /**
-     * sibyl version
+     * func query
      * 
-     * @return ApiResponse&lt;Void&gt;
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @return ApiResponse&lt;List&lt;Sibyl2FunctionWithPath&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -373,14 +501,18 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> opsVersionGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = opsVersionGetValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<List<Sibyl2FunctionWithPath>> apiV1FuncWithSignatureGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
+        okhttp3.Call localVarCall = apiV1FuncWithSignatureGetValidateBeforeCall(repo, rev, signature, null);
+        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * sibyl version (asynchronously)
+     * func query (asynchronously)
      * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -390,10 +522,11 @@ public class OpsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call opsVersionGetAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncWithSignatureGetAsync(String repo, String rev, String signature, final ApiCallback<List<Sibyl2FunctionWithPath>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = opsVersionGetValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = apiV1FuncWithSignatureGetValidateBeforeCall(repo, rev, signature, _callback);
+        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 }

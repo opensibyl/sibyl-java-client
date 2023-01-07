@@ -46,38 +46,6 @@ paths:
       tags:
       - MAIN
       x-accepts: application/json
-  /api/v1/clazz/diff:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: unified diff
-        in: query
-        name: diff
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/service.ClazzDiffRet'
-          description: OK
-      summary: clazz diff query
-      tags:
-      - EXTRAS
-      x-accepts: application/json
   /api/v1/file:
     get:
       parameters:
@@ -150,7 +118,7 @@ paths:
       tags:
       - MAIN
       x-accepts: application/json
-  /api/v1/func/diff:
+  /api/v1/func/signature:
     get:
       parameters:
       - description: repo
@@ -165,9 +133,9 @@ paths:
         required: true
         schema:
           type: string
-      - description: unified diff
+      - description: regex
         in: query
-        name: diff
+        name: regex
         required: true
         schema:
           type: string
@@ -176,11 +144,81 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.FuncDiffRet'
+                items:
+                  type: string
+                type: array
           description: OK
-      summary: func diff query
+      summary: func query
       tags:
-      - EXTRAS
+      - EXPERIMENTAL
+      x-accepts: application/json
+  /api/v1/func/with/rule:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: rule
+        in: query
+        name: rule
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+                type: array
+          description: OK
+      summary: func query
+      tags:
+      - EXPERIMENTAL
+      x-accepts: application/json
+  /api/v1/func/with/signature:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+                type: array
+          description: OK
+      summary: func query
+      tags:
+      - EXPERIMENTAL
       x-accepts: application/json
   /api/v1/funcctx:
     get:
@@ -220,38 +258,6 @@ paths:
       summary: func ctx query
       tags:
       - MAIN
-      x-accepts: application/json
-  /api/v1/funcctx/diff:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: unified diff
-        in: query
-        name: diff
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/service.FuncCtxDiffRet'
-          description: OK
-      summary: func ctx diff query
-      tags:
-      - EXTRAS
       x-accepts: application/json
   /api/v1/repo:
     get:
@@ -310,6 +316,16 @@ paths:
       tags:
       - OPS
       x-accepts: application/json
+  /ops/version:
+    get:
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: sibyl version
+      tags:
+      - OPS
+      x-accepts: application/json
 components:
   schemas:
     core.Point:
@@ -351,12 +367,12 @@ components:
         signature: signature
         name: name
         extras: "{}"
-        language: language
         returns:
         - name: name
           type: type
         - name: name
           type: type
+        lang: lang
         parameters:
         - name: name
           type: type
@@ -375,7 +391,8 @@ components:
         extras:
           description: which contains language-specific contents
           type: object
-        language:
+        lang:
+          description: language
           type: string
         name:
           type: string
@@ -406,24 +423,6 @@ components:
         type:
           type: string
       type: object
-    service.ClazzDiffRet:
-      additionalProperties:
-        items:
-          $ref: '#/components/schemas/sibyl2.ClazzWithPath'
-        type: array
-      type: object
-    service.FuncCtxDiffRet:
-      additionalProperties:
-        items:
-          $ref: '#/components/schemas/sibyl2.FunctionContext'
-        type: array
-      type: object
-    service.FuncDiffRet:
-      additionalProperties:
-        items:
-          $ref: '#/components/schemas/sibyl2.FunctionWithPath'
-        type: array
-      type: object
     sibyl2.ClazzWithPath:
       example:
         path: path
@@ -431,6 +430,7 @@ components:
         name: name
         extras: "{}"
         language: language
+        lang: lang
         span:
           start:
             column: 0
@@ -442,7 +442,11 @@ components:
         extras:
           description: which contains language-specific contents
           type: object
+        lang:
+          description: language
+          type: string
         language:
+          description: language
           type: string
         module:
           type: string
@@ -476,12 +480,12 @@ components:
           receiver: receiver
           name: name
           extras: "{}"
-          language: language
           returns:
           - name: name
             type: type
           - name: name
             type: type
+          lang: lang
           parameters:
           - name: name
             type: type
@@ -505,12 +509,12 @@ components:
           receiver: receiver
           name: name
           extras: "{}"
-          language: language
           returns:
           - name: name
             type: type
           - name: name
             type: type
+          lang: lang
           parameters:
           - name: name
             type: type
@@ -537,12 +541,12 @@ components:
           receiver: receiver
           name: name
           extras: "{}"
-          language: language
           returns:
           - name: name
             type: type
           - name: name
             type: type
+          lang: lang
           parameters:
           - name: name
             type: type
@@ -566,12 +570,12 @@ components:
           receiver: receiver
           name: name
           extras: "{}"
-          language: language
           returns:
           - name: name
             type: type
           - name: name
             type: type
+          lang: lang
           parameters:
           - name: name
             type: type
@@ -584,12 +588,12 @@ components:
             end:
               column: 0
               row: 6
-        language: language
         returns:
         - name: name
           type: type
         - name: name
           type: type
+        lang: lang
         parameters:
         - name: name
           type: type
@@ -612,7 +616,8 @@ components:
         extras:
           description: which contains language-specific contents
           type: object
-        language:
+        lang:
+          description: language
           type: string
         name:
           type: string
@@ -648,12 +653,12 @@ components:
         receiver: receiver
         name: name
         extras: "{}"
-        language: language
         returns:
         - name: name
           type: type
         - name: name
           type: type
+        lang: lang
         parameters:
         - name: name
           type: type
@@ -672,7 +677,8 @@ components:
         extras:
           description: which contains language-specific contents
           type: object
-        language:
+        lang:
+          description: language
           type: string
         name:
           type: string

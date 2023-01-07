@@ -8,7 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**extras** | **Object** | which contains language-specific contents |  [optional] |
-|**language** | **String** |  |  [optional] |
+|**lang** | **String** | language |  [optional] |
+|**language** | **String** | language |  [optional] |
 |**module** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**path** | **String** |  |  [optional] |

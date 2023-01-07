@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost*
 |------------- | ------------- | -------------|
 | [**opsMonitorUploadGet**](OpsApi.md#opsMonitorUploadGet) | **GET** /ops/monitor/upload | upload status query |
 | [**opsPingGet**](OpsApi.md#opsPingGet) | **GET** /ops/ping | ping example |
+| [**opsVersionGet**](OpsApi.md#opsVersionGet) | **GET** /ops/version | sibyl version |
 
 
 <a name="opsMonitorUploadGet"></a>
@@ -88,6 +89,61 @@ public class Example {
       apiInstance.opsPingGet();
     } catch (ApiException e) {
       System.err.println("Exception when calling OpsApi#opsPingGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+<a name="opsVersionGet"></a>
+# **opsVersionGet**
+> opsVersionGet()
+
+sibyl version
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OpsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+
+    OpsApi apiInstance = new OpsApi(defaultClient);
+    try {
+      apiInstance.opsVersionGet();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OpsApi#opsVersionGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

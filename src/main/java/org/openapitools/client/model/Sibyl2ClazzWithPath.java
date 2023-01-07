@@ -49,11 +49,15 @@ import org.openapitools.client.JSON;
 /**
  * Sibyl2ClazzWithPath
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-05T00:13:00.948+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-07T17:38:14.290+08:00[Asia/Shanghai]")
 public class Sibyl2ClazzWithPath {
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
   private Object extras;
+
+  public static final String SERIALIZED_NAME_LANG = "lang";
+  @SerializedName(SERIALIZED_NAME_LANG)
+  private String lang;
 
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
@@ -101,6 +105,29 @@ public class Sibyl2ClazzWithPath {
   }
 
 
+  public Sibyl2ClazzWithPath lang(String lang) {
+    
+    this.lang = lang;
+    return this;
+  }
+
+   /**
+   * language
+   * @return lang
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "language")
+
+  public String getLang() {
+    return lang;
+  }
+
+
+  public void setLang(String lang) {
+    this.lang = lang;
+  }
+
+
   public Sibyl2ClazzWithPath language(String language) {
     
     this.language = language;
@@ -108,11 +135,11 @@ public class Sibyl2ClazzWithPath {
   }
 
    /**
-   * Get language
+   * language
    * @return language
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "language")
 
   public String getLanguage() {
     return language;
@@ -227,6 +254,7 @@ public class Sibyl2ClazzWithPath {
     }
     Sibyl2ClazzWithPath sibyl2ClazzWithPath = (Sibyl2ClazzWithPath) o;
     return Objects.equals(this.extras, sibyl2ClazzWithPath.extras) &&
+        Objects.equals(this.lang, sibyl2ClazzWithPath.lang) &&
         Objects.equals(this.language, sibyl2ClazzWithPath.language) &&
         Objects.equals(this.module, sibyl2ClazzWithPath.module) &&
         Objects.equals(this.name, sibyl2ClazzWithPath.name) &&
@@ -236,7 +264,7 @@ public class Sibyl2ClazzWithPath {
 
   @Override
   public int hashCode() {
-    return Objects.hash(extras, language, module, name, path, span);
+    return Objects.hash(extras, lang, language, module, name, path, span);
   }
 
   @Override
@@ -244,6 +272,7 @@ public class Sibyl2ClazzWithPath {
     StringBuilder sb = new StringBuilder();
     sb.append("class Sibyl2ClazzWithPath {\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
+    sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -272,6 +301,7 @@ public class Sibyl2ClazzWithPath {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("extras");
+    openapiFields.add("lang");
     openapiFields.add("language");
     openapiFields.add("module");
     openapiFields.add("name");
@@ -301,6 +331,9 @@ public class Sibyl2ClazzWithPath {
         if (!Sibyl2ClazzWithPath.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Sibyl2ClazzWithPath` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
       }
       if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));

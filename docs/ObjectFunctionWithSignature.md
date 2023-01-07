@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**bodySpan** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
 |**extras** | **Object** | which contains language-specific contents |  [optional] |
-|**language** | **String** |  |  [optional] |
+|**lang** | **String** | language |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**parameters** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
 |**path** | **String** |  |  [optional] |

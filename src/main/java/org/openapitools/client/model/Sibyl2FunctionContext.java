@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Sibyl2FunctionContext
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-05T00:13:00.948+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-07T17:38:14.290+08:00[Asia/Shanghai]")
 public class Sibyl2FunctionContext {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -67,9 +67,9 @@ public class Sibyl2FunctionContext {
   @SerializedName(SERIALIZED_NAME_EXTRAS)
   private Object extras;
 
-  public static final String SERIALIZED_NAME_LANGUAGE = "language";
-  @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  private String language;
+  public static final String SERIALIZED_NAME_LANG = "lang";
+  @SerializedName(SERIALIZED_NAME_LANG)
+  private String lang;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -179,26 +179,26 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext language(String language) {
+  public Sibyl2FunctionContext lang(String lang) {
     
-    this.language = language;
+    this.lang = lang;
     return this;
   }
 
    /**
-   * Get language
-   * @return language
+   * language
+   * @return lang
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "language")
 
-  public String getLanguage() {
-    return language;
+  public String getLang() {
+    return lang;
   }
 
 
-  public void setLanguage(String language) {
-    this.language = language;
+  public void setLang(String lang) {
+    this.lang = lang;
   }
 
 
@@ -400,7 +400,7 @@ public class Sibyl2FunctionContext {
     return Objects.equals(this.bodySpan, sibyl2FunctionContext.bodySpan) &&
         Objects.equals(this.calls, sibyl2FunctionContext.calls) &&
         Objects.equals(this.extras, sibyl2FunctionContext.extras) &&
-        Objects.equals(this.language, sibyl2FunctionContext.language) &&
+        Objects.equals(this.lang, sibyl2FunctionContext.lang) &&
         Objects.equals(this.name, sibyl2FunctionContext.name) &&
         Objects.equals(this.parameters, sibyl2FunctionContext.parameters) &&
         Objects.equals(this.path, sibyl2FunctionContext.path) &&
@@ -412,7 +412,7 @@ public class Sibyl2FunctionContext {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, calls, extras, language, name, parameters, path, receiver, returns, reverseCalls, span);
+    return Objects.hash(bodySpan, calls, extras, lang, name, parameters, path, receiver, returns, reverseCalls, span);
   }
 
   @Override
@@ -422,7 +422,7 @@ public class Sibyl2FunctionContext {
     sb.append("    bodySpan: ").append(toIndentedString(bodySpan)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
@@ -455,7 +455,7 @@ public class Sibyl2FunctionContext {
     openapiFields.add("bodySpan");
     openapiFields.add("calls");
     openapiFields.add("extras");
-    openapiFields.add("language");
+    openapiFields.add("lang");
     openapiFields.add("name");
     openapiFields.add("parameters");
     openapiFields.add("path");
@@ -506,8 +506,8 @@ public class Sibyl2FunctionContext {
           };
         }
       }
-      if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));
+      if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
