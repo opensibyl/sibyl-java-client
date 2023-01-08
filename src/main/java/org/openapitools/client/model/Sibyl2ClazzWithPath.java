@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Sibyl2ClazzWithPath
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-08T16:48:02.614+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-08T21:47:09.319+08:00[Asia/Shanghai]")
 public class Sibyl2ClazzWithPath {
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
@@ -58,10 +58,6 @@ public class Sibyl2ClazzWithPath {
   public static final String SERIALIZED_NAME_LANG = "lang";
   @SerializedName(SERIALIZED_NAME_LANG)
   private String lang;
-
-  public static final String SERIALIZED_NAME_LANGUAGE = "language";
-  @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  private String language;
 
   public static final String SERIALIZED_NAME_MODULE = "module";
   @SerializedName(SERIALIZED_NAME_MODULE)
@@ -125,29 +121,6 @@ public class Sibyl2ClazzWithPath {
 
   public void setLang(String lang) {
     this.lang = lang;
-  }
-
-
-  public Sibyl2ClazzWithPath language(String language) {
-    
-    this.language = language;
-    return this;
-  }
-
-   /**
-   * language
-   * @return language
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "language")
-
-  public String getLanguage() {
-    return language;
-  }
-
-
-  public void setLanguage(String language) {
-    this.language = language;
   }
 
 
@@ -255,7 +228,6 @@ public class Sibyl2ClazzWithPath {
     Sibyl2ClazzWithPath sibyl2ClazzWithPath = (Sibyl2ClazzWithPath) o;
     return Objects.equals(this.extras, sibyl2ClazzWithPath.extras) &&
         Objects.equals(this.lang, sibyl2ClazzWithPath.lang) &&
-        Objects.equals(this.language, sibyl2ClazzWithPath.language) &&
         Objects.equals(this.module, sibyl2ClazzWithPath.module) &&
         Objects.equals(this.name, sibyl2ClazzWithPath.name) &&
         Objects.equals(this.path, sibyl2ClazzWithPath.path) &&
@@ -264,7 +236,7 @@ public class Sibyl2ClazzWithPath {
 
   @Override
   public int hashCode() {
-    return Objects.hash(extras, lang, language, module, name, path, span);
+    return Objects.hash(extras, lang, module, name, path, span);
   }
 
   @Override
@@ -273,7 +245,6 @@ public class Sibyl2ClazzWithPath {
     sb.append("class Sibyl2ClazzWithPath {\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
@@ -302,7 +273,6 @@ public class Sibyl2ClazzWithPath {
     openapiFields = new HashSet<String>();
     openapiFields.add("extras");
     openapiFields.add("lang");
-    openapiFields.add("language");
     openapiFields.add("module");
     openapiFields.add("name");
     openapiFields.add("path");
@@ -334,9 +304,6 @@ public class Sibyl2ClazzWithPath {
       }
       if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
-      }
-      if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));
       }
       if ((jsonObj.get("module") != null && !jsonObj.get("module").isJsonNull()) && !jsonObj.get("module").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `module` to be a primitive type in the JSON string but got `%s`", jsonObj.get("module").toString()));

@@ -495,7 +495,6 @@ components:
         module: module
         name: name
         extras: "{}"
-        language: language
         lang: lang
         span:
           start:
@@ -509,9 +508,6 @@ components:
           description: which contains language-specific contents
           type: object
         lang:
-          description: language
-          type: string
-        language:
           description: language
           type: string
         module:
