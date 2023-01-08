@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Sibyl2FunctionContext
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-07T17:38:14.290+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-08T16:48:02.614+08:00[Asia/Shanghai]")
 public class Sibyl2FunctionContext {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)

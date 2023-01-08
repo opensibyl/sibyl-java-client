@@ -53,4 +53,3 @@ src/main/java/org/openapitools/client/model/ObjectValueUnit.java
 src/main/java/org/openapitools/client/model/Sibyl2ClazzWithPath.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionContext.java
 src/main/java/org/openapitools/client/model/Sibyl2FunctionWithPath.java
-src/test/java/org/openapitools/client/api/ExperimentalApiTest.java
