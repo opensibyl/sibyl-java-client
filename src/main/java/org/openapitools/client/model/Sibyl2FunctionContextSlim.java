@@ -50,13 +50,17 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ObjectFunctionWithSignature
+ * Sibyl2FunctionContextSlim
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-14T00:15:55.222+08:00[Asia/Shanghai]")
-public class ObjectFunctionWithSignature {
+public class Sibyl2FunctionContextSlim {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
   private CoreSpan bodySpan;
+
+  public static final String SERIALIZED_NAME_CALLS = "calls";
+  @SerializedName(SERIALIZED_NAME_CALLS)
+  private List<String> calls = null;
 
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
@@ -86,18 +90,18 @@ public class ObjectFunctionWithSignature {
   @SerializedName(SERIALIZED_NAME_RETURNS)
   private List<ObjectValueUnit> returns = null;
 
-  public static final String SERIALIZED_NAME_SIGNATURE = "signature";
-  @SerializedName(SERIALIZED_NAME_SIGNATURE)
-  private String signature;
+  public static final String SERIALIZED_NAME_REVERSE_CALLS = "reverseCalls";
+  @SerializedName(SERIALIZED_NAME_REVERSE_CALLS)
+  private List<String> reverseCalls = null;
 
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
 
-  public ObjectFunctionWithSignature() {
+  public Sibyl2FunctionContextSlim() {
   }
 
-  public ObjectFunctionWithSignature bodySpan(CoreSpan bodySpan) {
+  public Sibyl2FunctionContextSlim bodySpan(CoreSpan bodySpan) {
     
     this.bodySpan = bodySpan;
     return this;
@@ -120,7 +124,38 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature extras(Object extras) {
+  public Sibyl2FunctionContextSlim calls(List<String> calls) {
+    
+    this.calls = calls;
+    return this;
+  }
+
+  public Sibyl2FunctionContextSlim addCallsItem(String callsItem) {
+    if (this.calls == null) {
+      this.calls = new ArrayList<>();
+    }
+    this.calls.add(callsItem);
+    return this;
+  }
+
+   /**
+   * Get calls
+   * @return calls
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getCalls() {
+    return calls;
+  }
+
+
+  public void setCalls(List<String> calls) {
+    this.calls = calls;
+  }
+
+
+  public Sibyl2FunctionContextSlim extras(Object extras) {
     
     this.extras = extras;
     return this;
@@ -143,7 +178,7 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature lang(String lang) {
+  public Sibyl2FunctionContextSlim lang(String lang) {
     
     this.lang = lang;
     return this;
@@ -166,7 +201,7 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature name(String name) {
+  public Sibyl2FunctionContextSlim name(String name) {
     
     this.name = name;
     return this;
@@ -189,13 +224,13 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature parameters(List<ObjectValueUnit> parameters) {
+  public Sibyl2FunctionContextSlim parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public ObjectFunctionWithSignature addParametersItem(ObjectValueUnit parametersItem) {
+  public Sibyl2FunctionContextSlim addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -220,7 +255,7 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature path(String path) {
+  public Sibyl2FunctionContextSlim path(String path) {
     
     this.path = path;
     return this;
@@ -243,7 +278,7 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature receiver(String receiver) {
+  public Sibyl2FunctionContextSlim receiver(String receiver) {
     
     this.receiver = receiver;
     return this;
@@ -266,13 +301,13 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature returns(List<ObjectValueUnit> returns) {
+  public Sibyl2FunctionContextSlim returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public ObjectFunctionWithSignature addReturnsItem(ObjectValueUnit returnsItem) {
+  public Sibyl2FunctionContextSlim addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -297,30 +332,38 @@ public class ObjectFunctionWithSignature {
   }
 
 
-  public ObjectFunctionWithSignature signature(String signature) {
+  public Sibyl2FunctionContextSlim reverseCalls(List<String> reverseCalls) {
     
-    this.signature = signature;
+    this.reverseCalls = reverseCalls;
+    return this;
+  }
+
+  public Sibyl2FunctionContextSlim addReverseCallsItem(String reverseCallsItem) {
+    if (this.reverseCalls == null) {
+      this.reverseCalls = new ArrayList<>();
+    }
+    this.reverseCalls.add(reverseCallsItem);
     return this;
   }
 
    /**
-   * Get signature
-   * @return signature
+   * Get reverseCalls
+   * @return reverseCalls
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getSignature() {
-    return signature;
+  public List<String> getReverseCalls() {
+    return reverseCalls;
   }
 
 
-  public void setSignature(String signature) {
-    this.signature = signature;
+  public void setReverseCalls(List<String> reverseCalls) {
+    this.reverseCalls = reverseCalls;
   }
 
 
-  public ObjectFunctionWithSignature span(CoreSpan span) {
+  public Sibyl2FunctionContextSlim span(CoreSpan span) {
     
     this.span = span;
     return this;
@@ -352,29 +395,31 @@ public class ObjectFunctionWithSignature {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ObjectFunctionWithSignature objectFunctionWithSignature = (ObjectFunctionWithSignature) o;
-    return Objects.equals(this.bodySpan, objectFunctionWithSignature.bodySpan) &&
-        Objects.equals(this.extras, objectFunctionWithSignature.extras) &&
-        Objects.equals(this.lang, objectFunctionWithSignature.lang) &&
-        Objects.equals(this.name, objectFunctionWithSignature.name) &&
-        Objects.equals(this.parameters, objectFunctionWithSignature.parameters) &&
-        Objects.equals(this.path, objectFunctionWithSignature.path) &&
-        Objects.equals(this.receiver, objectFunctionWithSignature.receiver) &&
-        Objects.equals(this.returns, objectFunctionWithSignature.returns) &&
-        Objects.equals(this.signature, objectFunctionWithSignature.signature) &&
-        Objects.equals(this.span, objectFunctionWithSignature.span);
+    Sibyl2FunctionContextSlim sibyl2FunctionContextSlim = (Sibyl2FunctionContextSlim) o;
+    return Objects.equals(this.bodySpan, sibyl2FunctionContextSlim.bodySpan) &&
+        Objects.equals(this.calls, sibyl2FunctionContextSlim.calls) &&
+        Objects.equals(this.extras, sibyl2FunctionContextSlim.extras) &&
+        Objects.equals(this.lang, sibyl2FunctionContextSlim.lang) &&
+        Objects.equals(this.name, sibyl2FunctionContextSlim.name) &&
+        Objects.equals(this.parameters, sibyl2FunctionContextSlim.parameters) &&
+        Objects.equals(this.path, sibyl2FunctionContextSlim.path) &&
+        Objects.equals(this.receiver, sibyl2FunctionContextSlim.receiver) &&
+        Objects.equals(this.returns, sibyl2FunctionContextSlim.returns) &&
+        Objects.equals(this.reverseCalls, sibyl2FunctionContextSlim.reverseCalls) &&
+        Objects.equals(this.span, sibyl2FunctionContextSlim.span);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, extras, lang, name, parameters, path, receiver, returns, signature, span);
+    return Objects.hash(bodySpan, calls, extras, lang, name, parameters, path, receiver, returns, reverseCalls, span);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ObjectFunctionWithSignature {\n");
+    sb.append("class Sibyl2FunctionContextSlim {\n");
     sb.append("    bodySpan: ").append(toIndentedString(bodySpan)).append("\n");
+    sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -382,7 +427,7 @@ public class ObjectFunctionWithSignature {
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
-    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    reverseCalls: ").append(toIndentedString(reverseCalls)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -407,6 +452,7 @@ public class ObjectFunctionWithSignature {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("bodySpan");
+    openapiFields.add("calls");
     openapiFields.add("extras");
     openapiFields.add("lang");
     openapiFields.add("name");
@@ -414,7 +460,7 @@ public class ObjectFunctionWithSignature {
     openapiFields.add("path");
     openapiFields.add("receiver");
     openapiFields.add("returns");
-    openapiFields.add("signature");
+    openapiFields.add("reverseCalls");
     openapiFields.add("span");
 
     // a set of required properties/fields (JSON key names)
@@ -425,25 +471,29 @@ public class ObjectFunctionWithSignature {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ObjectFunctionWithSignature
+  * @throws IOException if the JSON Object is invalid with respect to Sibyl2FunctionContextSlim
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ObjectFunctionWithSignature.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectFunctionWithSignature is not found in the empty JSON string", ObjectFunctionWithSignature.openapiRequiredFields.toString()));
+        if (!Sibyl2FunctionContextSlim.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Sibyl2FunctionContextSlim is not found in the empty JSON string", Sibyl2FunctionContextSlim.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ObjectFunctionWithSignature.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectFunctionWithSignature` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!Sibyl2FunctionContextSlim.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Sibyl2FunctionContextSlim` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       // validate the optional field `bodySpan`
       if (jsonObj.get("bodySpan") != null && !jsonObj.get("bodySpan").isJsonNull()) {
         CoreSpan.validateJsonObject(jsonObj.getAsJsonObject("bodySpan"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("calls") != null && !jsonObj.get("calls").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `calls` to be an array in the JSON string but got `%s`", jsonObj.get("calls").toString()));
       }
       if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
@@ -485,8 +535,9 @@ public class ObjectFunctionWithSignature {
           };
         }
       }
-      if ((jsonObj.get("signature") != null && !jsonObj.get("signature").isJsonNull()) && !jsonObj.get("signature").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `signature` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signature").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("reverseCalls") != null && !jsonObj.get("reverseCalls").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reverseCalls` to be an array in the JSON string but got `%s`", jsonObj.get("reverseCalls").toString()));
       }
       // validate the optional field `span`
       if (jsonObj.get("span") != null && !jsonObj.get("span").isJsonNull()) {
@@ -498,22 +549,22 @@ public class ObjectFunctionWithSignature {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ObjectFunctionWithSignature.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ObjectFunctionWithSignature' and its subtypes
+       if (!Sibyl2FunctionContextSlim.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Sibyl2FunctionContextSlim' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ObjectFunctionWithSignature> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectFunctionWithSignature.class));
+       final TypeAdapter<Sibyl2FunctionContextSlim> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Sibyl2FunctionContextSlim.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ObjectFunctionWithSignature>() {
+       return (TypeAdapter<T>) new TypeAdapter<Sibyl2FunctionContextSlim>() {
            @Override
-           public void write(JsonWriter out, ObjectFunctionWithSignature value) throws IOException {
+           public void write(JsonWriter out, Sibyl2FunctionContextSlim value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ObjectFunctionWithSignature read(JsonReader in) throws IOException {
+           public Sibyl2FunctionContextSlim read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -524,18 +575,18 @@ public class ObjectFunctionWithSignature {
   }
 
  /**
-  * Create an instance of ObjectFunctionWithSignature given an JSON string
+  * Create an instance of Sibyl2FunctionContextSlim given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ObjectFunctionWithSignature
-  * @throws IOException if the JSON string is invalid with respect to ObjectFunctionWithSignature
+  * @return An instance of Sibyl2FunctionContextSlim
+  * @throws IOException if the JSON string is invalid with respect to Sibyl2FunctionContextSlim
   */
-  public static ObjectFunctionWithSignature fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ObjectFunctionWithSignature.class);
+  public static Sibyl2FunctionContextSlim fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Sibyl2FunctionContextSlim.class);
   }
 
  /**
-  * Convert an instance of ObjectFunctionWithSignature to an JSON string
+  * Convert an instance of Sibyl2FunctionContextSlim to an JSON string
   *
   * @return JSON string
   */

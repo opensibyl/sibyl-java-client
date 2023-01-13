@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.ObjectRevInfo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,64 +47,91 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ObjectValueUnit
+ * ServiceRevStat
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-14T00:15:55.222+08:00[Asia/Shanghai]")
-public class ObjectValueUnit {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class ServiceRevStat {
+  public static final String SERIALIZED_NAME_FILE_COUNT = "fileCount";
+  @SerializedName(SERIALIZED_NAME_FILE_COUNT)
+  private Integer fileCount;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
+  public static final String SERIALIZED_NAME_FUNCTION_COUNT = "functionCount";
+  @SerializedName(SERIALIZED_NAME_FUNCTION_COUNT)
+  private Integer functionCount;
 
-  public ObjectValueUnit() {
+  public static final String SERIALIZED_NAME_INFO = "info";
+  @SerializedName(SERIALIZED_NAME_INFO)
+  private ObjectRevInfo info;
+
+  public ServiceRevStat() {
   }
 
-  public ObjectValueUnit name(String name) {
+  public ServiceRevStat fileCount(Integer fileCount) {
     
-    this.name = name;
+    this.fileCount = fileCount;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get fileCount
+   * @return fileCount
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getName() {
-    return name;
+  public Integer getFileCount() {
+    return fileCount;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setFileCount(Integer fileCount) {
+    this.fileCount = fileCount;
   }
 
 
-  public ObjectValueUnit type(String type) {
+  public ServiceRevStat functionCount(Integer functionCount) {
     
-    this.type = type;
+    this.functionCount = functionCount;
     return this;
   }
 
    /**
-   * Get type
-   * @return type
+   * Get functionCount
+   * @return functionCount
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getType() {
-    return type;
+  public Integer getFunctionCount() {
+    return functionCount;
   }
 
 
-  public void setType(String type) {
-    this.type = type;
+  public void setFunctionCount(Integer functionCount) {
+    this.functionCount = functionCount;
+  }
+
+
+  public ServiceRevStat info(ObjectRevInfo info) {
+    
+    this.info = info;
+    return this;
+  }
+
+   /**
+   * Get info
+   * @return info
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ObjectRevInfo getInfo() {
+    return info;
+  }
+
+
+  public void setInfo(ObjectRevInfo info) {
+    this.info = info;
   }
 
 
@@ -116,22 +144,24 @@ public class ObjectValueUnit {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ObjectValueUnit objectValueUnit = (ObjectValueUnit) o;
-    return Objects.equals(this.name, objectValueUnit.name) &&
-        Objects.equals(this.type, objectValueUnit.type);
+    ServiceRevStat serviceRevStat = (ServiceRevStat) o;
+    return Objects.equals(this.fileCount, serviceRevStat.fileCount) &&
+        Objects.equals(this.functionCount, serviceRevStat.functionCount) &&
+        Objects.equals(this.info, serviceRevStat.info);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type);
+    return Objects.hash(fileCount, functionCount, info);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ObjectValueUnit {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("class ServiceRevStat {\n");
+    sb.append("    fileCount: ").append(toIndentedString(fileCount)).append("\n");
+    sb.append("    functionCount: ").append(toIndentedString(functionCount)).append("\n");
+    sb.append("    info: ").append(toIndentedString(info)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,8 +184,9 @@ public class ObjectValueUnit {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("type");
+    openapiFields.add("fileCount");
+    openapiFields.add("functionCount");
+    openapiFields.add("info");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -165,27 +196,25 @@ public class ObjectValueUnit {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ObjectValueUnit
+  * @throws IOException if the JSON Object is invalid with respect to ServiceRevStat
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ObjectValueUnit.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectValueUnit is not found in the empty JSON string", ObjectValueUnit.openapiRequiredFields.toString()));
+        if (!ServiceRevStat.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceRevStat is not found in the empty JSON string", ServiceRevStat.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ObjectValueUnit.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectValueUnit` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ServiceRevStat.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ServiceRevStat` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      // validate the optional field `info`
+      if (jsonObj.get("info") != null && !jsonObj.get("info").isJsonNull()) {
+        ObjectRevInfo.validateJsonObject(jsonObj.getAsJsonObject("info"));
       }
   }
 
@@ -193,22 +222,22 @@ public class ObjectValueUnit {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ObjectValueUnit.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ObjectValueUnit' and its subtypes
+       if (!ServiceRevStat.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ServiceRevStat' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ObjectValueUnit> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectValueUnit.class));
+       final TypeAdapter<ServiceRevStat> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ServiceRevStat.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ObjectValueUnit>() {
+       return (TypeAdapter<T>) new TypeAdapter<ServiceRevStat>() {
            @Override
-           public void write(JsonWriter out, ObjectValueUnit value) throws IOException {
+           public void write(JsonWriter out, ServiceRevStat value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ObjectValueUnit read(JsonReader in) throws IOException {
+           public ServiceRevStat read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -219,18 +248,18 @@ public class ObjectValueUnit {
   }
 
  /**
-  * Create an instance of ObjectValueUnit given an JSON string
+  * Create an instance of ServiceRevStat given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ObjectValueUnit
-  * @throws IOException if the JSON string is invalid with respect to ObjectValueUnit
+  * @return An instance of ServiceRevStat
+  * @throws IOException if the JSON string is invalid with respect to ServiceRevStat
   */
-  public static ObjectValueUnit fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ObjectValueUnit.class);
+  public static ServiceRevStat fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ServiceRevStat.class);
   }
 
  /**
-  * Convert an instance of ObjectValueUnit to an JSON string
+  * Convert an instance of ServiceRevStat to an JSON string
   *
   * @return JSON string
   */

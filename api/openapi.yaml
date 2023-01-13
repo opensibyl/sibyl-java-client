@@ -44,9 +44,9 @@ paths:
           description: OK
       summary: class query
       tags:
-      - MAIN
+      - BasicQuery
       x-accepts: application/json
-  /api/v1/clazz/with/rule:
+  /api/v1/clazz/with/regex:
     get:
       parameters:
       - description: repo
@@ -61,9 +61,15 @@ paths:
         required: true
         schema:
           type: string
-      - description: rule
+      - description: field
         in: query
-        name: rule
+        name: field
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
         required: true
         schema:
           type: string
@@ -78,7 +84,7 @@ paths:
           description: OK
       summary: clazz query
       tags:
-      - EXPERIMENTAL
+      - RegexQuery
       x-accepts: application/json
   /api/v1/file:
     get:
@@ -111,7 +117,7 @@ paths:
           description: OK
       summary: file query
       tags:
-      - SCOPE
+      - Scope
       x-accepts: application/json
   /api/v1/func:
     get:
@@ -150,7 +156,7 @@ paths:
           description: OK
       summary: func query
       tags:
-      - MAIN
+      - BasicQuery
       x-accepts: application/json
   /api/v1/func/signature:
     get:
@@ -184,9 +190,9 @@ paths:
           description: OK
       summary: func query
       tags:
-      - EXPERIMENTAL
+      - SignatureQuery
       x-accepts: application/json
-  /api/v1/func/with/rule:
+  /api/v1/func/with/regex:
     get:
       parameters:
       - description: repo
@@ -201,9 +207,15 @@ paths:
         required: true
         schema:
           type: string
-      - description: rule
+      - description: field
         in: query
-        name: rule
+        name: field
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
         required: true
         schema:
           type: string
@@ -218,7 +230,7 @@ paths:
           description: OK
       summary: func query
       tags:
-      - EXPERIMENTAL
+      - RegexQuery
       x-accepts: application/json
   /api/v1/func/with/signature:
     get:
@@ -250,7 +262,7 @@ paths:
           description: OK
       summary: func query
       tags:
-      - EXPERIMENTAL
+      - SignatureQuery
       x-accepts: application/json
   /api/v1/funcctx:
     get:
@@ -284,14 +296,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/sibyl2.FunctionContext'
+                  $ref: '#/components/schemas/sibyl2.FunctionContextSlim'
                 type: array
           description: OK
       summary: func ctx query
       tags:
-      - MAIN
+      - BasicQuery
       x-accepts: application/json
-  /api/v1/funcctx/with/rule:
+  /api/v1/funcctx/with/reference/count:
     get:
       parameters:
       - description: repo
@@ -306,9 +318,95 @@ paths:
         required: true
         schema:
           type: string
-      - description: rule
+      - description: moreThan
         in: query
-        name: rule
+        name: moreThan
+        required: true
+        schema:
+          type: integer
+      - description: lessThan
+        in: query
+        name: lessThan
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionContextSlim'
+                type: array
+          description: OK
+      summary: funcctx query by ref
+      tags:
+      - ReferenceQuery
+      x-accepts: application/json
+  /api/v1/funcctx/with/referenced/count:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: moreThan
+        in: query
+        name: moreThan
+        required: true
+        schema:
+          type: integer
+      - description: lessThan
+        in: query
+        name: lessThan
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionContextSlim'
+                type: array
+          description: OK
+      summary: funcctx query by referenced
+      tags:
+      - ReferenceQuery
+      x-accepts: application/json
+  /api/v1/funcctx/with/regex:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: field
+        in: query
+        name: field
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
         required: true
         schema:
           type: string
@@ -323,9 +421,25 @@ paths:
           description: OK
       summary: func ctx query
       tags:
-      - EXPERIMENTAL
+      - RegexQuery
       x-accepts: application/json
   /api/v1/repo:
+    delete:
+      parameters:
+      - description: rev delete by repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: repo delete
+      tags:
+      - Scope
+      x-accepts: application/json
     get:
       responses:
         "200":
@@ -338,9 +452,31 @@ paths:
           description: OK
       summary: repo query
       tags:
-      - SCOPE
+      - Scope
       x-accepts: application/json
   /api/v1/rev:
+    delete:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content: {}
+          description: OK
+      summary: rev delte
+      tags:
+      - Scope
+      x-accepts: application/json
     get:
       parameters:
       - description: rev search by repo
@@ -360,7 +496,33 @@ paths:
           description: OK
       summary: rev query
       tags:
-      - SCOPE
+      - Scope
+      x-accepts: application/json
+  /api/v1/rev/stat:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service.RevStat'
+          description: OK
+      summary: rev stat
+      tags:
+      - StatQuery
       x-accepts: application/json
   /ops/monitor/upload:
     get:
@@ -370,7 +532,7 @@ paths:
           description: OK
       summary: upload status query
       tags:
-      - OPS
+      - Ops
       x-accepts: application/json
   /ops/ping:
     get:
@@ -380,7 +542,7 @@ paths:
           description: OK
       summary: ping example
       tags:
-      - OPS
+      - Ops
       x-accepts: application/json
   /ops/version:
     get:
@@ -390,7 +552,7 @@ paths:
           description: OK
       summary: sibyl version
       tags:
-      - OPS
+      - Ops
       x-accepts: application/json
 components:
   schemas:
@@ -479,6 +641,20 @@ components:
         span:
           $ref: '#/components/schemas/core.Span'
       type: object
+    object.RevInfo:
+      example:
+        createTime: 1
+        extras: "{}"
+        hash: hash
+      properties:
+        createTime:
+          type: integer
+        extras:
+          properties: {}
+          type: object
+        hash:
+          type: string
+      type: object
     object.ValueUnit:
       example:
         name: name
@@ -488,6 +664,22 @@ components:
           type: string
         type:
           type: string
+      type: object
+    service.RevStat:
+      example:
+        functionCount: 6
+        fileCount: 0
+        info:
+          createTime: 1
+          extras: "{}"
+          hash: hash
+      properties:
+        fileCount:
+          type: integer
+        functionCount:
+          type: integer
+        info:
+          $ref: '#/components/schemas/object.RevInfo'
       type: object
     sibyl2.ClazzWithPath:
       example:
@@ -698,6 +890,77 @@ components:
         reverseCalls:
           items:
             $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+          type: array
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+    sibyl2.FunctionContextSlim:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        calls:
+        - calls
+        - calls
+        name: name
+        extras: "{}"
+        reverseCalls:
+        - reverseCalls
+        - reverseCalls
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        lang: lang
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        calls:
+          items:
+            type: string
+          type: array
+        extras:
+          description: which contains language-specific contents
+          type: object
+        lang:
+          description: language
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        reverseCalls:
+          items:
+            type: string
           type: array
         span:
           $ref: '#/components/schemas/core.Span'

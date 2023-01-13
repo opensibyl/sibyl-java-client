@@ -46,64 +46,91 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ObjectValueUnit
+ * ObjectRevInfo
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-14T00:15:55.222+08:00[Asia/Shanghai]")
-public class ObjectValueUnit {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class ObjectRevInfo {
+  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
+  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  private Integer createTime;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
+  public static final String SERIALIZED_NAME_EXTRAS = "extras";
+  @SerializedName(SERIALIZED_NAME_EXTRAS)
+  private Object extras;
 
-  public ObjectValueUnit() {
+  public static final String SERIALIZED_NAME_HASH = "hash";
+  @SerializedName(SERIALIZED_NAME_HASH)
+  private String hash;
+
+  public ObjectRevInfo() {
   }
 
-  public ObjectValueUnit name(String name) {
+  public ObjectRevInfo createTime(Integer createTime) {
     
-    this.name = name;
+    this.createTime = createTime;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get createTime
+   * @return createTime
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getName() {
-    return name;
+  public Integer getCreateTime() {
+    return createTime;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCreateTime(Integer createTime) {
+    this.createTime = createTime;
   }
 
 
-  public ObjectValueUnit type(String type) {
+  public ObjectRevInfo extras(Object extras) {
     
-    this.type = type;
+    this.extras = extras;
     return this;
   }
 
    /**
-   * Get type
-   * @return type
+   * Get extras
+   * @return extras
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getType() {
-    return type;
+  public Object getExtras() {
+    return extras;
   }
 
 
-  public void setType(String type) {
-    this.type = type;
+  public void setExtras(Object extras) {
+    this.extras = extras;
+  }
+
+
+  public ObjectRevInfo hash(String hash) {
+    
+    this.hash = hash;
+    return this;
+  }
+
+   /**
+   * Get hash
+   * @return hash
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getHash() {
+    return hash;
+  }
+
+
+  public void setHash(String hash) {
+    this.hash = hash;
   }
 
 
@@ -116,22 +143,24 @@ public class ObjectValueUnit {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ObjectValueUnit objectValueUnit = (ObjectValueUnit) o;
-    return Objects.equals(this.name, objectValueUnit.name) &&
-        Objects.equals(this.type, objectValueUnit.type);
+    ObjectRevInfo objectRevInfo = (ObjectRevInfo) o;
+    return Objects.equals(this.createTime, objectRevInfo.createTime) &&
+        Objects.equals(this.extras, objectRevInfo.extras) &&
+        Objects.equals(this.hash, objectRevInfo.hash);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type);
+    return Objects.hash(createTime, extras, hash);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ObjectValueUnit {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("class ObjectRevInfo {\n");
+    sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+    sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
+    sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,8 +183,9 @@ public class ObjectValueUnit {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("type");
+    openapiFields.add("createTime");
+    openapiFields.add("extras");
+    openapiFields.add("hash");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -165,27 +195,24 @@ public class ObjectValueUnit {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ObjectValueUnit
+  * @throws IOException if the JSON Object is invalid with respect to ObjectRevInfo
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ObjectValueUnit.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectValueUnit is not found in the empty JSON string", ObjectValueUnit.openapiRequiredFields.toString()));
+        if (!ObjectRevInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectRevInfo is not found in the empty JSON string", ObjectRevInfo.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ObjectValueUnit.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectValueUnit` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ObjectRevInfo.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectRevInfo` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if ((jsonObj.get("hash") != null && !jsonObj.get("hash").isJsonNull()) && !jsonObj.get("hash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hash").toString()));
       }
   }
 
@@ -193,22 +220,22 @@ public class ObjectValueUnit {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ObjectValueUnit.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ObjectValueUnit' and its subtypes
+       if (!ObjectRevInfo.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ObjectRevInfo' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ObjectValueUnit> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectValueUnit.class));
+       final TypeAdapter<ObjectRevInfo> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectRevInfo.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ObjectValueUnit>() {
+       return (TypeAdapter<T>) new TypeAdapter<ObjectRevInfo>() {
            @Override
-           public void write(JsonWriter out, ObjectValueUnit value) throws IOException {
+           public void write(JsonWriter out, ObjectRevInfo value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ObjectValueUnit read(JsonReader in) throws IOException {
+           public ObjectRevInfo read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -219,18 +246,18 @@ public class ObjectValueUnit {
   }
 
  /**
-  * Create an instance of ObjectValueUnit given an JSON string
+  * Create an instance of ObjectRevInfo given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ObjectValueUnit
-  * @throws IOException if the JSON string is invalid with respect to ObjectValueUnit
+  * @return An instance of ObjectRevInfo
+  * @throws IOException if the JSON string is invalid with respect to ObjectRevInfo
   */
-  public static ObjectValueUnit fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ObjectValueUnit.class);
+  public static ObjectRevInfo fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ObjectRevInfo.class);
   }
 
  /**
-  * Convert an instance of ObjectValueUnit to an JSON string
+  * Convert an instance of ObjectRevInfo to an JSON string
   *
   * @return JSON string
   */
