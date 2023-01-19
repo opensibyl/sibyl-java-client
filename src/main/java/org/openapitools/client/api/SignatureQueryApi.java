@@ -27,6 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ServiceFunctionContextReverseChain;
+import org.openapitools.client.model.Sibyl2FunctionContextSlim;
 import org.openapitools.client.model.Sibyl2FunctionWithPath;
 
 import java.lang.reflect.Type;
@@ -74,159 +76,7 @@ public class SignatureQueryApi {
     }
 
     /**
-     * Build call for apiV1FuncSignatureGet
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param regex regex (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call apiV1FuncSignatureGetCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/func/signature";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (repo != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
-        }
-
-        if (rev != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
-        }
-
-        if (regex != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("regex", regex));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncSignatureGetValidateBeforeCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'repo' is set
-        if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncSignatureGet(Async)");
-        }
-
-        // verify the required parameter 'rev' is set
-        if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncSignatureGet(Async)");
-        }
-
-        // verify the required parameter 'regex' is set
-        if (regex == null) {
-            throw new ApiException("Missing the required parameter 'regex' when calling apiV1FuncSignatureGet(Async)");
-        }
-
-        return apiV1FuncSignatureGetCall(repo, rev, regex, _callback);
-
-    }
-
-    /**
-     * func query
-     * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param regex regex (required)
-     * @return List&lt;String&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public List<String> apiV1FuncSignatureGet(String repo, String rev, String regex) throws ApiException {
-        ApiResponse<List<String>> localVarResp = apiV1FuncSignatureGetWithHttpInfo(repo, rev, regex);
-        return localVarResp.getData();
-    }
-
-    /**
-     * func query
-     * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param regex regex (required)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<String>> apiV1FuncSignatureGetWithHttpInfo(String repo, String rev, String regex) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncSignatureGetValidateBeforeCall(repo, rev, regex, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * func query (asynchronously)
-     * 
-     * @param repo repo (required)
-     * @param rev rev (required)
-     * @param regex regex (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call apiV1FuncSignatureGetAsync(String repo, String rev, String regex, final ApiCallback<List<String>> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = apiV1FuncSignatureGetValidateBeforeCall(repo, rev, regex, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for apiV1FuncWithSignatureGet
+     * Build call for apiV1SignatureFuncGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param signature signature (required)
@@ -239,7 +89,7 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncWithSignatureGetCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1SignatureFuncGetCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -256,7 +106,7 @@ public class SignatureQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/func/with/signature";
+        String localVarPath = "/api/v1/signature/func";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -296,23 +146,23 @@ public class SignatureQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncWithSignatureGetValidateBeforeCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1SignatureFuncGetValidateBeforeCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncWithSignatureGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1SignatureFuncGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncWithSignatureGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1SignatureFuncGet(Async)");
         }
 
         // verify the required parameter 'signature' is set
         if (signature == null) {
-            throw new ApiException("Missing the required parameter 'signature' when calling apiV1FuncWithSignatureGet(Async)");
+            throw new ApiException("Missing the required parameter 'signature' when calling apiV1SignatureFuncGet(Async)");
         }
 
-        return apiV1FuncWithSignatureGetCall(repo, rev, signature, _callback);
+        return apiV1SignatureFuncGetCall(repo, rev, signature, _callback);
 
     }
 
@@ -330,8 +180,8 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public Sibyl2FunctionWithPath apiV1FuncWithSignatureGet(String repo, String rev, String signature) throws ApiException {
-        ApiResponse<Sibyl2FunctionWithPath> localVarResp = apiV1FuncWithSignatureGetWithHttpInfo(repo, rev, signature);
+    public Sibyl2FunctionWithPath apiV1SignatureFuncGet(String repo, String rev, String signature) throws ApiException {
+        ApiResponse<Sibyl2FunctionWithPath> localVarResp = apiV1SignatureFuncGetWithHttpInfo(repo, rev, signature);
         return localVarResp.getData();
     }
 
@@ -349,8 +199,8 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Sibyl2FunctionWithPath> apiV1FuncWithSignatureGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncWithSignatureGetValidateBeforeCall(repo, rev, signature, null);
+    public ApiResponse<Sibyl2FunctionWithPath> apiV1SignatureFuncGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
+        okhttp3.Call localVarCall = apiV1SignatureFuncGetValidateBeforeCall(repo, rev, signature, null);
         Type localVarReturnType = new TypeToken<Sibyl2FunctionWithPath>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -370,10 +220,479 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncWithSignatureGetAsync(String repo, String rev, String signature, final ApiCallback<Sibyl2FunctionWithPath> _callback) throws ApiException {
+    public okhttp3.Call apiV1SignatureFuncGetAsync(String repo, String rev, String signature, final ApiCallback<Sibyl2FunctionWithPath> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncWithSignatureGetValidateBeforeCall(repo, rev, signature, _callback);
+        okhttp3.Call localVarCall = apiV1SignatureFuncGetValidateBeforeCall(repo, rev, signature, _callback);
         Type localVarReturnType = new TypeToken<Sibyl2FunctionWithPath>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for apiV1SignatureFuncctxGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureFuncctxGetCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/signature/funcctx";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call apiV1SignatureFuncctxGetValidateBeforeCall(String repo, String rev, String signature, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1SignatureFuncctxGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1SignatureFuncctxGet(Async)");
+        }
+
+        // verify the required parameter 'signature' is set
+        if (signature == null) {
+            throw new ApiException("Missing the required parameter 'signature' when calling apiV1SignatureFuncctxGet(Async)");
+        }
+
+        return apiV1SignatureFuncctxGetCall(repo, rev, signature, _callback);
+
+    }
+
+    /**
+     * funcctx query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @return Sibyl2FunctionContextSlim
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public Sibyl2FunctionContextSlim apiV1SignatureFuncctxGet(String repo, String rev, String signature) throws ApiException {
+        ApiResponse<Sibyl2FunctionContextSlim> localVarResp = apiV1SignatureFuncctxGetWithHttpInfo(repo, rev, signature);
+        return localVarResp.getData();
+    }
+
+    /**
+     * funcctx query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @return ApiResponse&lt;Sibyl2FunctionContextSlim&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Sibyl2FunctionContextSlim> apiV1SignatureFuncctxGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
+        okhttp3.Call localVarCall = apiV1SignatureFuncctxGetValidateBeforeCall(repo, rev, signature, null);
+        Type localVarReturnType = new TypeToken<Sibyl2FunctionContextSlim>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * funcctx query (asynchronously)
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureFuncctxGetAsync(String repo, String rev, String signature, final ApiCallback<Sibyl2FunctionContextSlim> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = apiV1SignatureFuncctxGetValidateBeforeCall(repo, rev, signature, _callback);
+        Type localVarReturnType = new TypeToken<Sibyl2FunctionContextSlim>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for apiV1SignatureFuncctxRchainGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param depth depth (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureFuncctxRchainGetCall(String repo, String rev, String signature, String depth, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/signature/funcctx/rchain";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (signature != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("signature", signature));
+        }
+
+        if (depth != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("depth", depth));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call apiV1SignatureFuncctxRchainGetValidateBeforeCall(String repo, String rev, String signature, String depth, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1SignatureFuncctxRchainGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1SignatureFuncctxRchainGet(Async)");
+        }
+
+        // verify the required parameter 'signature' is set
+        if (signature == null) {
+            throw new ApiException("Missing the required parameter 'signature' when calling apiV1SignatureFuncctxRchainGet(Async)");
+        }
+
+        // verify the required parameter 'depth' is set
+        if (depth == null) {
+            throw new ApiException("Missing the required parameter 'depth' when calling apiV1SignatureFuncctxRchainGet(Async)");
+        }
+
+        return apiV1SignatureFuncctxRchainGetCall(repo, rev, signature, depth, _callback);
+
+    }
+
+    /**
+     * funcctx reverse chain query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param depth depth (required)
+     * @return ServiceFunctionContextReverseChain
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ServiceFunctionContextReverseChain apiV1SignatureFuncctxRchainGet(String repo, String rev, String signature, String depth) throws ApiException {
+        ApiResponse<ServiceFunctionContextReverseChain> localVarResp = apiV1SignatureFuncctxRchainGetWithHttpInfo(repo, rev, signature, depth);
+        return localVarResp.getData();
+    }
+
+    /**
+     * funcctx reverse chain query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param depth depth (required)
+     * @return ApiResponse&lt;ServiceFunctionContextReverseChain&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ServiceFunctionContextReverseChain> apiV1SignatureFuncctxRchainGetWithHttpInfo(String repo, String rev, String signature, String depth) throws ApiException {
+        okhttp3.Call localVarCall = apiV1SignatureFuncctxRchainGetValidateBeforeCall(repo, rev, signature, depth, null);
+        Type localVarReturnType = new TypeToken<ServiceFunctionContextReverseChain>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * funcctx reverse chain query (asynchronously)
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param signature signature (required)
+     * @param depth depth (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureFuncctxRchainGetAsync(String repo, String rev, String signature, String depth, final ApiCallback<ServiceFunctionContextReverseChain> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = apiV1SignatureFuncctxRchainGetValidateBeforeCall(repo, rev, signature, depth, _callback);
+        Type localVarReturnType = new TypeToken<ServiceFunctionContextReverseChain>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for apiV1SignatureRegexFuncGet
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureRegexFuncGetCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/signature/regex/func";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (repo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("repo", repo));
+        }
+
+        if (rev != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("rev", rev));
+        }
+
+        if (regex != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("regex", regex));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call apiV1SignatureRegexFuncGetValidateBeforeCall(String repo, String rev, String regex, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'repo' is set
+        if (repo == null) {
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1SignatureRegexFuncGet(Async)");
+        }
+
+        // verify the required parameter 'rev' is set
+        if (rev == null) {
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1SignatureRegexFuncGet(Async)");
+        }
+
+        // verify the required parameter 'regex' is set
+        if (regex == null) {
+            throw new ApiException("Missing the required parameter 'regex' when calling apiV1SignatureRegexFuncGet(Async)");
+        }
+
+        return apiV1SignatureRegexFuncGetCall(repo, rev, regex, _callback);
+
+    }
+
+    /**
+     * func query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @return List&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<String> apiV1SignatureRegexFuncGet(String repo, String rev, String regex) throws ApiException {
+        ApiResponse<List<String>> localVarResp = apiV1SignatureRegexFuncGetWithHttpInfo(repo, rev, regex);
+        return localVarResp.getData();
+    }
+
+    /**
+     * func query
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<String>> apiV1SignatureRegexFuncGetWithHttpInfo(String repo, String rev, String regex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1SignatureRegexFuncGetValidateBeforeCall(repo, rev, regex, null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * func query (asynchronously)
+     * 
+     * @param repo repo (required)
+     * @param rev rev (required)
+     * @param regex regex (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call apiV1SignatureRegexFuncGetAsync(String repo, String rev, String regex, final ApiCallback<List<String>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = apiV1SignatureRegexFuncGetValidateBeforeCall(repo, rev, regex, _callback);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

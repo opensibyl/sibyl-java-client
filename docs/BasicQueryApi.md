@@ -141,7 +141,7 @@ No authorization required
 
 <a name="apiV1FuncctxGet"></a>
 # **apiV1FuncctxGet**
-> List&lt;Sibyl2FunctionContextSlim&gt; apiV1FuncctxGet(repo, rev, _file, lines)
+> List&lt;ObjectFunctionContextSlimWithSignature&gt; apiV1FuncctxGet(repo, rev, _file, lines)
 
 func ctx query
 
@@ -165,7 +165,7 @@ public class Example {
     String _file = "_file_example"; // String | file
     String lines = "lines_example"; // String | specific lines
     try {
-      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1FuncctxGet(repo, rev, _file, lines);
+      List<ObjectFunctionContextSlimWithSignature> result = apiInstance.apiV1FuncctxGet(repo, rev, _file, lines);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BasicQueryApi#apiV1FuncctxGet");
@@ -189,7 +189,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;Sibyl2FunctionContextSlim&gt;**](Sibyl2FunctionContextSlim.md)
+[**List&lt;ObjectFunctionContextSlimWithSignature&gt;**](ObjectFunctionContextSlimWithSignature.md)
 
 ### Authorization
 

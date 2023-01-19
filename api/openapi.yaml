@@ -46,46 +46,6 @@ paths:
       tags:
       - BasicQuery
       x-accepts: application/json
-  /api/v1/clazz/with/regex:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: field
-        in: query
-        name: field
-        required: true
-        schema:
-          type: string
-      - description: regex
-        in: query
-        name: regex
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/sibyl2.ClazzWithPath'
-                type: array
-          description: OK
-      summary: clazz query
-      tags:
-      - RegexQuery
-      x-accepts: application/json
   /api/v1/file:
     get:
       parameters:
@@ -158,112 +118,6 @@ paths:
       tags:
       - BasicQuery
       x-accepts: application/json
-  /api/v1/func/signature:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: regex
-        in: query
-        name: regex
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  type: string
-                type: array
-          description: OK
-      summary: func query
-      tags:
-      - SignatureQuery
-      x-accepts: application/json
-  /api/v1/func/with/regex:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: field
-        in: query
-        name: field
-        required: true
-        schema:
-          type: string
-      - description: regex
-        in: query
-        name: regex
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/sibyl2.FunctionWithPath'
-                type: array
-          description: OK
-      summary: func query
-      tags:
-      - RegexQuery
-      x-accepts: application/json
-  /api/v1/func/with/signature:
-    get:
-      parameters:
-      - description: repo
-        in: query
-        name: repo
-        required: true
-        schema:
-          type: string
-      - description: rev
-        in: query
-        name: rev
-        required: true
-        schema:
-          type: string
-      - description: signature
-        in: query
-        name: signature
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/sibyl2.FunctionWithPath'
-          description: OK
-      summary: func query
-      tags:
-      - SignatureQuery
-      x-accepts: application/json
   /api/v1/funcctx:
     get:
       parameters:
@@ -296,14 +150,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/sibyl2.FunctionContextSlim'
+                  $ref: '#/components/schemas/object.FunctionContextSlimWithSignature'
                 type: array
           description: OK
       summary: func ctx query
       tags:
       - BasicQuery
       x-accepts: application/json
-  /api/v1/funcctx/with/reference/count:
+  /api/v1/reference/count/funcctx:
     get:
       parameters:
       - description: repo
@@ -343,7 +197,7 @@ paths:
       tags:
       - ReferenceQuery
       x-accepts: application/json
-  /api/v1/funcctx/with/referenced/count:
+  /api/v1/reference/count/funcctx/reverse:
     get:
       parameters:
       - description: repo
@@ -383,7 +237,87 @@ paths:
       tags:
       - ReferenceQuery
       x-accepts: application/json
-  /api/v1/funcctx/with/regex:
+  /api/v1/regex/clazz:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: field
+        in: query
+        name: field
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.ClazzWithPath'
+                type: array
+          description: OK
+      summary: clazz query
+      tags:
+      - RegexQuery
+      x-accepts: application/json
+  /api/v1/regex/func:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: field
+        in: query
+        name: field
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+                type: array
+          description: OK
+      summary: func query
+      tags:
+      - RegexQuery
+      x-accepts: application/json
+  /api/v1/regex/funcctx:
     get:
       parameters:
       - description: repo
@@ -524,6 +458,142 @@ paths:
       tags:
       - StatQuery
       x-accepts: application/json
+  /api/v1/signature/func:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sibyl2.FunctionWithPath'
+          description: OK
+      summary: func query
+      tags:
+      - SignatureQuery
+      x-accepts: application/json
+  /api/v1/signature/funcctx:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sibyl2.FunctionContextSlim'
+          description: OK
+      summary: funcctx query
+      tags:
+      - SignatureQuery
+      x-accepts: application/json
+  /api/v1/signature/funcctx/rchain:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        schema:
+          type: string
+      - description: depth
+        in: query
+        name: depth
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service.FunctionContextReverseChain'
+          description: OK
+      summary: funcctx reverse chain query
+      tags:
+      - SignatureQuery
+      x-accepts: application/json
+  /api/v1/signature/regex/func:
+    get:
+      parameters:
+      - description: repo
+        in: query
+        name: repo
+        required: true
+        schema:
+          type: string
+      - description: rev
+        in: query
+        name: rev
+        required: true
+        schema:
+          type: string
+      - description: regex
+        in: query
+        name: regex
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+      summary: func query
+      tags:
+      - SignatureQuery
+      x-accepts: application/json
   /ops/monitor/upload:
     get:
       responses:
@@ -580,6 +650,80 @@ components:
           $ref: '#/components/schemas/core.Point'
         start:
           $ref: '#/components/schemas/core.Point'
+      type: object
+    object.FunctionContextSlimWithSignature:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        calls:
+        - calls
+        - calls
+        signature: signature
+        name: name
+        extras: "{}"
+        reverseCalls:
+        - reverseCalls
+        - reverseCalls
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        lang: lang
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        calls:
+          items:
+            type: string
+          type: array
+        extras:
+          description: which contains language-specific contents
+          type: object
+        lang:
+          description: language
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        reverseCalls:
+          items:
+            type: string
+          type: array
+        signature:
+          type: string
+        span:
+          $ref: '#/components/schemas/core.Span'
       type: object
     object.FunctionWithSignature:
       example:
@@ -664,6 +808,98 @@ components:
           type: string
         type:
           type: string
+      type: object
+    service.ContextTree:
+      example:
+        children:
+        - null
+        - null
+        content: content
+      properties:
+        children:
+          items:
+            $ref: '#/components/schemas/service.ContextTree'
+          type: array
+        content:
+          type: string
+      type: object
+    service.FunctionContextReverseChain:
+      example:
+        bodySpan:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+        path: path
+        receiver: receiver
+        calls:
+        - calls
+        - calls
+        name: name
+        extras: "{}"
+        reverseCalls:
+        - reverseCalls
+        - reverseCalls
+        returns:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        reverseCallChains:
+          children:
+          - null
+          - null
+          content: content
+        lang: lang
+        parameters:
+        - name: name
+          type: type
+        - name: name
+          type: type
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        bodySpan:
+          $ref: '#/components/schemas/core.Span'
+        calls:
+          items:
+            type: string
+          type: array
+        extras:
+          description: which contains language-specific contents
+          type: object
+        lang:
+          description: language
+          type: string
+        name:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        path:
+          type: string
+        receiver:
+          type: string
+        returns:
+          items:
+            $ref: '#/components/schemas/object.ValueUnit'
+          type: array
+        reverseCallChains:
+          $ref: '#/components/schemas/service.ContextTree'
+        reverseCalls:
+          items:
+            type: string
+          type: array
+        span:
+          $ref: '#/components/schemas/core.Span'
       type: object
     service.RevStat:
       example:

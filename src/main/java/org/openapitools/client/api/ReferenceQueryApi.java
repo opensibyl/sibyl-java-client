@@ -74,7 +74,7 @@ public class ReferenceQueryApi {
     }
 
     /**
-     * Build call for apiV1FuncctxWithReferenceCountGet
+     * Build call for apiV1ReferenceCountFuncctxGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param moreThan moreThan (required)
@@ -88,7 +88,7 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithReferenceCountGetCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxGetCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -105,7 +105,7 @@ public class ReferenceQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/funcctx/with/reference/count";
+        String localVarPath = "/api/v1/reference/count/funcctx";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -149,28 +149,28 @@ public class ReferenceQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncctxWithReferenceCountGetValidateBeforeCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1ReferenceCountFuncctxGetValidateBeforeCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncctxWithReferenceCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1ReferenceCountFuncctxGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncctxWithReferenceCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1ReferenceCountFuncctxGet(Async)");
         }
 
         // verify the required parameter 'moreThan' is set
         if (moreThan == null) {
-            throw new ApiException("Missing the required parameter 'moreThan' when calling apiV1FuncctxWithReferenceCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'moreThan' when calling apiV1ReferenceCountFuncctxGet(Async)");
         }
 
         // verify the required parameter 'lessThan' is set
         if (lessThan == null) {
-            throw new ApiException("Missing the required parameter 'lessThan' when calling apiV1FuncctxWithReferenceCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'lessThan' when calling apiV1ReferenceCountFuncctxGet(Async)");
         }
 
-        return apiV1FuncctxWithReferenceCountGetCall(repo, rev, moreThan, lessThan, _callback);
+        return apiV1ReferenceCountFuncctxGetCall(repo, rev, moreThan, lessThan, _callback);
 
     }
 
@@ -189,8 +189,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1FuncctxWithReferenceCountGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1FuncctxWithReferenceCountGetWithHttpInfo(repo, rev, moreThan, lessThan);
+    public List<Sibyl2FunctionContextSlim> apiV1ReferenceCountFuncctxGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxGetWithHttpInfo(repo, rev, moreThan, lessThan);
         return localVarResp.getData();
     }
 
@@ -209,8 +209,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1FuncctxWithReferenceCountGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncctxWithReferenceCountGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
+    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1ReferenceCountFuncctxGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -231,15 +231,15 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithReferenceCountGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncctxWithReferenceCountGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
+        okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for apiV1FuncctxWithReferencedCountGet
+     * Build call for apiV1ReferenceCountFuncctxReverseGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param moreThan moreThan (required)
@@ -253,7 +253,7 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithReferencedCountGetCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxReverseGetCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -270,7 +270,7 @@ public class ReferenceQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/funcctx/with/referenced/count";
+        String localVarPath = "/api/v1/reference/count/funcctx/reverse";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -314,28 +314,28 @@ public class ReferenceQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncctxWithReferencedCountGetValidateBeforeCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1ReferenceCountFuncctxReverseGetValidateBeforeCall(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncctxWithReferencedCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1ReferenceCountFuncctxReverseGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncctxWithReferencedCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1ReferenceCountFuncctxReverseGet(Async)");
         }
 
         // verify the required parameter 'moreThan' is set
         if (moreThan == null) {
-            throw new ApiException("Missing the required parameter 'moreThan' when calling apiV1FuncctxWithReferencedCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'moreThan' when calling apiV1ReferenceCountFuncctxReverseGet(Async)");
         }
 
         // verify the required parameter 'lessThan' is set
         if (lessThan == null) {
-            throw new ApiException("Missing the required parameter 'lessThan' when calling apiV1FuncctxWithReferencedCountGet(Async)");
+            throw new ApiException("Missing the required parameter 'lessThan' when calling apiV1ReferenceCountFuncctxReverseGet(Async)");
         }
 
-        return apiV1FuncctxWithReferencedCountGetCall(repo, rev, moreThan, lessThan, _callback);
+        return apiV1ReferenceCountFuncctxReverseGetCall(repo, rev, moreThan, lessThan, _callback);
 
     }
 
@@ -354,8 +354,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1FuncctxWithReferencedCountGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1FuncctxWithReferencedCountGetWithHttpInfo(repo, rev, moreThan, lessThan);
+    public List<Sibyl2FunctionContextSlim> apiV1ReferenceCountFuncctxReverseGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(repo, rev, moreThan, lessThan);
         return localVarResp.getData();
     }
 
@@ -374,8 +374,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1FuncctxWithReferencedCountGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncctxWithReferencedCountGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
+    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxReverseGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -396,9 +396,9 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithReferencedCountGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxReverseGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncctxWithReferencedCountGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
+        okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxReverseGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

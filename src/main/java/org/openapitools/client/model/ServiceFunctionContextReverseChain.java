@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.CoreSpan;
 import org.openapitools.client.model.ObjectValueUnit;
-import org.openapitools.client.model.Sibyl2FunctionWithPath;
+import org.openapitools.client.model.ServiceContextTree;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,17 +51,17 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Sibyl2FunctionContext
+ * ServiceFunctionContextReverseChain
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-19T20:15:45.689+08:00[Asia/Shanghai]")
-public class Sibyl2FunctionContext {
+public class ServiceFunctionContextReverseChain {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
   private CoreSpan bodySpan;
 
   public static final String SERIALIZED_NAME_CALLS = "calls";
   @SerializedName(SERIALIZED_NAME_CALLS)
-  private List<Sibyl2FunctionWithPath> calls = null;
+  private List<String> calls = null;
 
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
@@ -91,18 +91,22 @@ public class Sibyl2FunctionContext {
   @SerializedName(SERIALIZED_NAME_RETURNS)
   private List<ObjectValueUnit> returns = null;
 
+  public static final String SERIALIZED_NAME_REVERSE_CALL_CHAINS = "reverseCallChains";
+  @SerializedName(SERIALIZED_NAME_REVERSE_CALL_CHAINS)
+  private ServiceContextTree reverseCallChains;
+
   public static final String SERIALIZED_NAME_REVERSE_CALLS = "reverseCalls";
   @SerializedName(SERIALIZED_NAME_REVERSE_CALLS)
-  private List<Sibyl2FunctionWithPath> reverseCalls = null;
+  private List<String> reverseCalls = null;
 
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
 
-  public Sibyl2FunctionContext() {
+  public ServiceFunctionContextReverseChain() {
   }
 
-  public Sibyl2FunctionContext bodySpan(CoreSpan bodySpan) {
+  public ServiceFunctionContextReverseChain bodySpan(CoreSpan bodySpan) {
     
     this.bodySpan = bodySpan;
     return this;
@@ -125,13 +129,13 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext calls(List<Sibyl2FunctionWithPath> calls) {
+  public ServiceFunctionContextReverseChain calls(List<String> calls) {
     
     this.calls = calls;
     return this;
   }
 
-  public Sibyl2FunctionContext addCallsItem(Sibyl2FunctionWithPath callsItem) {
+  public ServiceFunctionContextReverseChain addCallsItem(String callsItem) {
     if (this.calls == null) {
       this.calls = new ArrayList<>();
     }
@@ -146,17 +150,17 @@ public class Sibyl2FunctionContext {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Sibyl2FunctionWithPath> getCalls() {
+  public List<String> getCalls() {
     return calls;
   }
 
 
-  public void setCalls(List<Sibyl2FunctionWithPath> calls) {
+  public void setCalls(List<String> calls) {
     this.calls = calls;
   }
 
 
-  public Sibyl2FunctionContext extras(Object extras) {
+  public ServiceFunctionContextReverseChain extras(Object extras) {
     
     this.extras = extras;
     return this;
@@ -179,7 +183,7 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext lang(String lang) {
+  public ServiceFunctionContextReverseChain lang(String lang) {
     
     this.lang = lang;
     return this;
@@ -202,7 +206,7 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext name(String name) {
+  public ServiceFunctionContextReverseChain name(String name) {
     
     this.name = name;
     return this;
@@ -225,13 +229,13 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext parameters(List<ObjectValueUnit> parameters) {
+  public ServiceFunctionContextReverseChain parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public Sibyl2FunctionContext addParametersItem(ObjectValueUnit parametersItem) {
+  public ServiceFunctionContextReverseChain addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -256,7 +260,7 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext path(String path) {
+  public ServiceFunctionContextReverseChain path(String path) {
     
     this.path = path;
     return this;
@@ -279,7 +283,7 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext receiver(String receiver) {
+  public ServiceFunctionContextReverseChain receiver(String receiver) {
     
     this.receiver = receiver;
     return this;
@@ -302,13 +306,13 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext returns(List<ObjectValueUnit> returns) {
+  public ServiceFunctionContextReverseChain returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public Sibyl2FunctionContext addReturnsItem(ObjectValueUnit returnsItem) {
+  public ServiceFunctionContextReverseChain addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -333,13 +337,36 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext reverseCalls(List<Sibyl2FunctionWithPath> reverseCalls) {
+  public ServiceFunctionContextReverseChain reverseCallChains(ServiceContextTree reverseCallChains) {
+    
+    this.reverseCallChains = reverseCallChains;
+    return this;
+  }
+
+   /**
+   * Get reverseCallChains
+   * @return reverseCallChains
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ServiceContextTree getReverseCallChains() {
+    return reverseCallChains;
+  }
+
+
+  public void setReverseCallChains(ServiceContextTree reverseCallChains) {
+    this.reverseCallChains = reverseCallChains;
+  }
+
+
+  public ServiceFunctionContextReverseChain reverseCalls(List<String> reverseCalls) {
     
     this.reverseCalls = reverseCalls;
     return this;
   }
 
-  public Sibyl2FunctionContext addReverseCallsItem(Sibyl2FunctionWithPath reverseCallsItem) {
+  public ServiceFunctionContextReverseChain addReverseCallsItem(String reverseCallsItem) {
     if (this.reverseCalls == null) {
       this.reverseCalls = new ArrayList<>();
     }
@@ -354,17 +381,17 @@ public class Sibyl2FunctionContext {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Sibyl2FunctionWithPath> getReverseCalls() {
+  public List<String> getReverseCalls() {
     return reverseCalls;
   }
 
 
-  public void setReverseCalls(List<Sibyl2FunctionWithPath> reverseCalls) {
+  public void setReverseCalls(List<String> reverseCalls) {
     this.reverseCalls = reverseCalls;
   }
 
 
-  public Sibyl2FunctionContext span(CoreSpan span) {
+  public ServiceFunctionContextReverseChain span(CoreSpan span) {
     
     this.span = span;
     return this;
@@ -396,29 +423,30 @@ public class Sibyl2FunctionContext {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Sibyl2FunctionContext sibyl2FunctionContext = (Sibyl2FunctionContext) o;
-    return Objects.equals(this.bodySpan, sibyl2FunctionContext.bodySpan) &&
-        Objects.equals(this.calls, sibyl2FunctionContext.calls) &&
-        Objects.equals(this.extras, sibyl2FunctionContext.extras) &&
-        Objects.equals(this.lang, sibyl2FunctionContext.lang) &&
-        Objects.equals(this.name, sibyl2FunctionContext.name) &&
-        Objects.equals(this.parameters, sibyl2FunctionContext.parameters) &&
-        Objects.equals(this.path, sibyl2FunctionContext.path) &&
-        Objects.equals(this.receiver, sibyl2FunctionContext.receiver) &&
-        Objects.equals(this.returns, sibyl2FunctionContext.returns) &&
-        Objects.equals(this.reverseCalls, sibyl2FunctionContext.reverseCalls) &&
-        Objects.equals(this.span, sibyl2FunctionContext.span);
+    ServiceFunctionContextReverseChain serviceFunctionContextReverseChain = (ServiceFunctionContextReverseChain) o;
+    return Objects.equals(this.bodySpan, serviceFunctionContextReverseChain.bodySpan) &&
+        Objects.equals(this.calls, serviceFunctionContextReverseChain.calls) &&
+        Objects.equals(this.extras, serviceFunctionContextReverseChain.extras) &&
+        Objects.equals(this.lang, serviceFunctionContextReverseChain.lang) &&
+        Objects.equals(this.name, serviceFunctionContextReverseChain.name) &&
+        Objects.equals(this.parameters, serviceFunctionContextReverseChain.parameters) &&
+        Objects.equals(this.path, serviceFunctionContextReverseChain.path) &&
+        Objects.equals(this.receiver, serviceFunctionContextReverseChain.receiver) &&
+        Objects.equals(this.returns, serviceFunctionContextReverseChain.returns) &&
+        Objects.equals(this.reverseCallChains, serviceFunctionContextReverseChain.reverseCallChains) &&
+        Objects.equals(this.reverseCalls, serviceFunctionContextReverseChain.reverseCalls) &&
+        Objects.equals(this.span, serviceFunctionContextReverseChain.span);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, calls, extras, lang, name, parameters, path, receiver, returns, reverseCalls, span);
+    return Objects.hash(bodySpan, calls, extras, lang, name, parameters, path, receiver, returns, reverseCallChains, reverseCalls, span);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Sibyl2FunctionContext {\n");
+    sb.append("class ServiceFunctionContextReverseChain {\n");
     sb.append("    bodySpan: ").append(toIndentedString(bodySpan)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
@@ -428,6 +456,7 @@ public class Sibyl2FunctionContext {
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
+    sb.append("    reverseCallChains: ").append(toIndentedString(reverseCallChains)).append("\n");
     sb.append("    reverseCalls: ").append(toIndentedString(reverseCalls)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
     sb.append("}");
@@ -461,6 +490,7 @@ public class Sibyl2FunctionContext {
     openapiFields.add("path");
     openapiFields.add("receiver");
     openapiFields.add("returns");
+    openapiFields.add("reverseCallChains");
     openapiFields.add("reverseCalls");
     openapiFields.add("span");
 
@@ -472,39 +502,29 @@ public class Sibyl2FunctionContext {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Sibyl2FunctionContext
+  * @throws IOException if the JSON Object is invalid with respect to ServiceFunctionContextReverseChain
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!Sibyl2FunctionContext.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Sibyl2FunctionContext is not found in the empty JSON string", Sibyl2FunctionContext.openapiRequiredFields.toString()));
+        if (!ServiceFunctionContextReverseChain.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceFunctionContextReverseChain is not found in the empty JSON string", ServiceFunctionContextReverseChain.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!Sibyl2FunctionContext.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Sibyl2FunctionContext` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ServiceFunctionContextReverseChain.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ServiceFunctionContextReverseChain` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       // validate the optional field `bodySpan`
       if (jsonObj.get("bodySpan") != null && !jsonObj.get("bodySpan").isJsonNull()) {
         CoreSpan.validateJsonObject(jsonObj.getAsJsonObject("bodySpan"));
       }
-      if (jsonObj.get("calls") != null && !jsonObj.get("calls").isJsonNull()) {
-        JsonArray jsonArraycalls = jsonObj.getAsJsonArray("calls");
-        if (jsonArraycalls != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("calls").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `calls` to be an array in the JSON string but got `%s`", jsonObj.get("calls").toString()));
-          }
-
-          // validate the optional field `calls` (array)
-          for (int i = 0; i < jsonArraycalls.size(); i++) {
-            Sibyl2FunctionWithPath.validateJsonObject(jsonArraycalls.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("calls") != null && !jsonObj.get("calls").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `calls` to be an array in the JSON string but got `%s`", jsonObj.get("calls").toString()));
       }
       if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
@@ -546,19 +566,13 @@ public class Sibyl2FunctionContext {
           };
         }
       }
-      if (jsonObj.get("reverseCalls") != null && !jsonObj.get("reverseCalls").isJsonNull()) {
-        JsonArray jsonArrayreverseCalls = jsonObj.getAsJsonArray("reverseCalls");
-        if (jsonArrayreverseCalls != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("reverseCalls").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `reverseCalls` to be an array in the JSON string but got `%s`", jsonObj.get("reverseCalls").toString()));
-          }
-
-          // validate the optional field `reverseCalls` (array)
-          for (int i = 0; i < jsonArrayreverseCalls.size(); i++) {
-            Sibyl2FunctionWithPath.validateJsonObject(jsonArrayreverseCalls.get(i).getAsJsonObject());
-          };
-        }
+      // validate the optional field `reverseCallChains`
+      if (jsonObj.get("reverseCallChains") != null && !jsonObj.get("reverseCallChains").isJsonNull()) {
+        ServiceContextTree.validateJsonObject(jsonObj.getAsJsonObject("reverseCallChains"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("reverseCalls") != null && !jsonObj.get("reverseCalls").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reverseCalls` to be an array in the JSON string but got `%s`", jsonObj.get("reverseCalls").toString()));
       }
       // validate the optional field `span`
       if (jsonObj.get("span") != null && !jsonObj.get("span").isJsonNull()) {
@@ -570,22 +584,22 @@ public class Sibyl2FunctionContext {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Sibyl2FunctionContext.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Sibyl2FunctionContext' and its subtypes
+       if (!ServiceFunctionContextReverseChain.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ServiceFunctionContextReverseChain' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Sibyl2FunctionContext> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Sibyl2FunctionContext.class));
+       final TypeAdapter<ServiceFunctionContextReverseChain> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ServiceFunctionContextReverseChain.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Sibyl2FunctionContext>() {
+       return (TypeAdapter<T>) new TypeAdapter<ServiceFunctionContextReverseChain>() {
            @Override
-           public void write(JsonWriter out, Sibyl2FunctionContext value) throws IOException {
+           public void write(JsonWriter out, ServiceFunctionContextReverseChain value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Sibyl2FunctionContext read(JsonReader in) throws IOException {
+           public ServiceFunctionContextReverseChain read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -596,18 +610,18 @@ public class Sibyl2FunctionContext {
   }
 
  /**
-  * Create an instance of Sibyl2FunctionContext given an JSON string
+  * Create an instance of ServiceFunctionContextReverseChain given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Sibyl2FunctionContext
-  * @throws IOException if the JSON string is invalid with respect to Sibyl2FunctionContext
+  * @return An instance of ServiceFunctionContextReverseChain
+  * @throws IOException if the JSON string is invalid with respect to ServiceFunctionContextReverseChain
   */
-  public static Sibyl2FunctionContext fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Sibyl2FunctionContext.class);
+  public static ServiceFunctionContextReverseChain fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ServiceFunctionContextReverseChain.class);
   }
 
  /**
-  * Convert an instance of Sibyl2FunctionContext to an JSON string
+  * Convert an instance of ServiceFunctionContextReverseChain to an JSON string
   *
   * @return JSON string
   */

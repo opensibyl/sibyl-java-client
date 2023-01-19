@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ObjectFunctionContextSlimWithSignature;
 import org.openapitools.client.model.ObjectFunctionWithSignature;
 import org.openapitools.client.model.Sibyl2ClazzWithPath;
-import org.openapitools.client.model.Sibyl2FunctionContextSlim;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -490,7 +490,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return List&lt;Sibyl2FunctionContextSlim&gt;
+     * @return List&lt;ObjectFunctionContextSlimWithSignature&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -498,8 +498,8 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1FuncctxGet(String repo, String rev, String _file, String lines) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1FuncctxGetWithHttpInfo(repo, rev, _file, lines);
+    public List<ObjectFunctionContextSlimWithSignature> apiV1FuncctxGet(String repo, String rev, String _file, String lines) throws ApiException {
+        ApiResponse<List<ObjectFunctionContextSlimWithSignature>> localVarResp = apiV1FuncctxGetWithHttpInfo(repo, rev, _file, lines);
         return localVarResp.getData();
     }
 
@@ -510,7 +510,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return ApiResponse&lt;List&lt;Sibyl2FunctionContextSlim&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionContextSlimWithSignature&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -518,9 +518,9 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1FuncctxGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
+    public ApiResponse<List<ObjectFunctionContextSlimWithSignature>> apiV1FuncctxGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
         okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlimWithSignature>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -540,10 +540,10 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncctxGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFunctionContextSlimWithSignature>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlimWithSignature>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

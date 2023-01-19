@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiV1ClazzWithRegexGet**](RegexQueryApi.md#apiV1ClazzWithRegexGet) | **GET** /api/v1/clazz/with/regex | clazz query |
-| [**apiV1FuncWithRegexGet**](RegexQueryApi.md#apiV1FuncWithRegexGet) | **GET** /api/v1/func/with/regex | func query |
-| [**apiV1FuncctxWithRegexGet**](RegexQueryApi.md#apiV1FuncctxWithRegexGet) | **GET** /api/v1/funcctx/with/regex | func ctx query |
+| [**apiV1RegexClazzGet**](RegexQueryApi.md#apiV1RegexClazzGet) | **GET** /api/v1/regex/clazz | clazz query |
+| [**apiV1RegexFuncGet**](RegexQueryApi.md#apiV1RegexFuncGet) | **GET** /api/v1/regex/func | func query |
+| [**apiV1RegexFuncctxGet**](RegexQueryApi.md#apiV1RegexFuncctxGet) | **GET** /api/v1/regex/funcctx | func ctx query |
 
 
-<a name="apiV1ClazzWithRegexGet"></a>
-# **apiV1ClazzWithRegexGet**
-> List&lt;Sibyl2ClazzWithPath&gt; apiV1ClazzWithRegexGet(repo, rev, field, regex)
+<a name="apiV1RegexClazzGet"></a>
+# **apiV1RegexClazzGet**
+> List&lt;Sibyl2ClazzWithPath&gt; apiV1RegexClazzGet(repo, rev, field, regex)
 
 clazz query
 
@@ -35,10 +35,10 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<Sibyl2ClazzWithPath> result = apiInstance.apiV1ClazzWithRegexGet(repo, rev, field, regex);
+      List<Sibyl2ClazzWithPath> result = apiInstance.apiV1RegexClazzGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RegexQueryApi#apiV1ClazzWithRegexGet");
+      System.err.println("Exception when calling RegexQueryApi#apiV1RegexClazzGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -75,9 +75,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="apiV1FuncWithRegexGet"></a>
-# **apiV1FuncWithRegexGet**
-> List&lt;Sibyl2FunctionWithPath&gt; apiV1FuncWithRegexGet(repo, rev, field, regex)
+<a name="apiV1RegexFuncGet"></a>
+# **apiV1RegexFuncGet**
+> List&lt;Sibyl2FunctionWithPath&gt; apiV1RegexFuncGet(repo, rev, field, regex)
 
 func query
 
@@ -101,10 +101,10 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<Sibyl2FunctionWithPath> result = apiInstance.apiV1FuncWithRegexGet(repo, rev, field, regex);
+      List<Sibyl2FunctionWithPath> result = apiInstance.apiV1RegexFuncGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RegexQueryApi#apiV1FuncWithRegexGet");
+      System.err.println("Exception when calling RegexQueryApi#apiV1RegexFuncGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -141,9 +141,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="apiV1FuncctxWithRegexGet"></a>
-# **apiV1FuncctxWithRegexGet**
-> List&lt;Sibyl2FunctionContext&gt; apiV1FuncctxWithRegexGet(repo, rev, field, regex)
+<a name="apiV1RegexFuncctxGet"></a>
+# **apiV1RegexFuncctxGet**
+> List&lt;Sibyl2FunctionContext&gt; apiV1RegexFuncctxGet(repo, rev, field, regex)
 
 func ctx query
 
@@ -167,10 +167,10 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<Sibyl2FunctionContext> result = apiInstance.apiV1FuncctxWithRegexGet(repo, rev, field, regex);
+      List<Sibyl2FunctionContext> result = apiInstance.apiV1RegexFuncctxGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RegexQueryApi#apiV1FuncctxWithRegexGet");
+      System.err.println("Exception when calling RegexQueryApi#apiV1RegexFuncctxGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

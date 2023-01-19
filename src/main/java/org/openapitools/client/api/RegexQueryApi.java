@@ -76,7 +76,7 @@ public class RegexQueryApi {
     }
 
     /**
-     * Build call for apiV1ClazzWithRegexGet
+     * Build call for apiV1RegexClazzGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param field field (required)
@@ -90,7 +90,7 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzWithRegexGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexClazzGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -107,7 +107,7 @@ public class RegexQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/clazz/with/regex";
+        String localVarPath = "/api/v1/regex/clazz";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -151,28 +151,28 @@ public class RegexQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1ClazzWithRegexGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1RegexClazzGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1ClazzWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1RegexClazzGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1ClazzWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1RegexClazzGet(Async)");
         }
 
         // verify the required parameter 'field' is set
         if (field == null) {
-            throw new ApiException("Missing the required parameter 'field' when calling apiV1ClazzWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'field' when calling apiV1RegexClazzGet(Async)");
         }
 
         // verify the required parameter 'regex' is set
         if (regex == null) {
-            throw new ApiException("Missing the required parameter 'regex' when calling apiV1ClazzWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'regex' when calling apiV1RegexClazzGet(Async)");
         }
 
-        return apiV1ClazzWithRegexGetCall(repo, rev, field, regex, _callback);
+        return apiV1RegexClazzGetCall(repo, rev, field, regex, _callback);
 
     }
 
@@ -191,8 +191,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2ClazzWithPath> apiV1ClazzWithRegexGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<Sibyl2ClazzWithPath>> localVarResp = apiV1ClazzWithRegexGetWithHttpInfo(repo, rev, field, regex);
+    public List<Sibyl2ClazzWithPath> apiV1RegexClazzGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<Sibyl2ClazzWithPath>> localVarResp = apiV1RegexClazzGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -211,8 +211,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2ClazzWithPath>> apiV1ClazzWithRegexGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
-        okhttp3.Call localVarCall = apiV1ClazzWithRegexGetValidateBeforeCall(repo, rev, field, regex, null);
+    public ApiResponse<List<Sibyl2ClazzWithPath>> apiV1RegexClazzGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1RegexClazzGetValidateBeforeCall(repo, rev, field, regex, null);
         Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -233,15 +233,15 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzWithRegexGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2ClazzWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexClazzGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2ClazzWithPath>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1ClazzWithRegexGetValidateBeforeCall(repo, rev, field, regex, _callback);
+        okhttp3.Call localVarCall = apiV1RegexClazzGetValidateBeforeCall(repo, rev, field, regex, _callback);
         Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for apiV1FuncWithRegexGet
+     * Build call for apiV1RegexFuncGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param field field (required)
@@ -255,7 +255,7 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncWithRegexGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class RegexQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/func/with/regex";
+        String localVarPath = "/api/v1/regex/func";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -316,28 +316,28 @@ public class RegexQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncWithRegexGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1RegexFuncGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1RegexFuncGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1RegexFuncGet(Async)");
         }
 
         // verify the required parameter 'field' is set
         if (field == null) {
-            throw new ApiException("Missing the required parameter 'field' when calling apiV1FuncWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'field' when calling apiV1RegexFuncGet(Async)");
         }
 
         // verify the required parameter 'regex' is set
         if (regex == null) {
-            throw new ApiException("Missing the required parameter 'regex' when calling apiV1FuncWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'regex' when calling apiV1RegexFuncGet(Async)");
         }
 
-        return apiV1FuncWithRegexGetCall(repo, rev, field, regex, _callback);
+        return apiV1RegexFuncGetCall(repo, rev, field, regex, _callback);
 
     }
 
@@ -356,8 +356,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionWithPath> apiV1FuncWithRegexGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionWithPath>> localVarResp = apiV1FuncWithRegexGetWithHttpInfo(repo, rev, field, regex);
+    public List<Sibyl2FunctionWithPath> apiV1RegexFuncGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionWithPath>> localVarResp = apiV1RegexFuncGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -376,8 +376,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionWithPath>> apiV1FuncWithRegexGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncWithRegexGetValidateBeforeCall(repo, rev, field, regex, null);
+    public ApiResponse<List<Sibyl2FunctionWithPath>> apiV1RegexFuncGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1RegexFuncGetValidateBeforeCall(repo, rev, field, regex, null);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -398,15 +398,15 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncWithRegexGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2FunctionWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2FunctionWithPath>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncWithRegexGetValidateBeforeCall(repo, rev, field, regex, _callback);
+        okhttp3.Call localVarCall = apiV1RegexFuncGetValidateBeforeCall(repo, rev, field, regex, _callback);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionWithPath>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for apiV1FuncctxWithRegexGet
+     * Build call for apiV1RegexFuncctxGet
      * @param repo repo (required)
      * @param rev rev (required)
      * @param field field (required)
@@ -420,7 +420,7 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithRegexGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncctxGetCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -437,7 +437,7 @@ public class RegexQueryApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/funcctx/with/regex";
+        String localVarPath = "/api/v1/regex/funcctx";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -481,28 +481,28 @@ public class RegexQueryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call apiV1FuncctxWithRegexGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call apiV1RegexFuncctxGetValidateBeforeCall(String repo, String rev, String field, String regex, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
-            throw new ApiException("Missing the required parameter 'repo' when calling apiV1FuncctxWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'repo' when calling apiV1RegexFuncctxGet(Async)");
         }
 
         // verify the required parameter 'rev' is set
         if (rev == null) {
-            throw new ApiException("Missing the required parameter 'rev' when calling apiV1FuncctxWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'rev' when calling apiV1RegexFuncctxGet(Async)");
         }
 
         // verify the required parameter 'field' is set
         if (field == null) {
-            throw new ApiException("Missing the required parameter 'field' when calling apiV1FuncctxWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'field' when calling apiV1RegexFuncctxGet(Async)");
         }
 
         // verify the required parameter 'regex' is set
         if (regex == null) {
-            throw new ApiException("Missing the required parameter 'regex' when calling apiV1FuncctxWithRegexGet(Async)");
+            throw new ApiException("Missing the required parameter 'regex' when calling apiV1RegexFuncctxGet(Async)");
         }
 
-        return apiV1FuncctxWithRegexGetCall(repo, rev, field, regex, _callback);
+        return apiV1RegexFuncctxGetCall(repo, rev, field, regex, _callback);
 
     }
 
@@ -521,8 +521,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContext> apiV1FuncctxWithRegexGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContext>> localVarResp = apiV1FuncctxWithRegexGetWithHttpInfo(repo, rev, field, regex);
+    public List<Sibyl2FunctionContext> apiV1RegexFuncctxGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<Sibyl2FunctionContext>> localVarResp = apiV1RegexFuncctxGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -541,8 +541,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContext>> apiV1FuncctxWithRegexGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
-        okhttp3.Call localVarCall = apiV1FuncctxWithRegexGetValidateBeforeCall(repo, rev, field, regex, null);
+    public ApiResponse<List<Sibyl2FunctionContext>> apiV1RegexFuncctxGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+        okhttp3.Call localVarCall = apiV1RegexFuncctxGetValidateBeforeCall(repo, rev, field, regex, null);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContext>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -563,9 +563,9 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxWithRegexGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2FunctionContext>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncctxGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2FunctionContext>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = apiV1FuncctxWithRegexGetValidateBeforeCall(repo, rev, field, regex, _callback);
+        okhttp3.Call localVarCall = apiV1RegexFuncctxGetValidateBeforeCall(repo, rev, field, regex, _callback);
         Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContext>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

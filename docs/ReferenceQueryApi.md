@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiV1FuncctxWithReferenceCountGet**](ReferenceQueryApi.md#apiV1FuncctxWithReferenceCountGet) | **GET** /api/v1/funcctx/with/reference/count | funcctx query by ref |
-| [**apiV1FuncctxWithReferencedCountGet**](ReferenceQueryApi.md#apiV1FuncctxWithReferencedCountGet) | **GET** /api/v1/funcctx/with/referenced/count | funcctx query by referenced |
+| [**apiV1ReferenceCountFuncctxGet**](ReferenceQueryApi.md#apiV1ReferenceCountFuncctxGet) | **GET** /api/v1/reference/count/funcctx | funcctx query by ref |
+| [**apiV1ReferenceCountFuncctxReverseGet**](ReferenceQueryApi.md#apiV1ReferenceCountFuncctxReverseGet) | **GET** /api/v1/reference/count/funcctx/reverse | funcctx query by referenced |
 
 
-<a name="apiV1FuncctxWithReferenceCountGet"></a>
-# **apiV1FuncctxWithReferenceCountGet**
-> List&lt;Sibyl2FunctionContextSlim&gt; apiV1FuncctxWithReferenceCountGet(repo, rev, moreThan, lessThan)
+<a name="apiV1ReferenceCountFuncctxGet"></a>
+# **apiV1ReferenceCountFuncctxGet**
+> List&lt;Sibyl2FunctionContextSlim&gt; apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan)
 
 funcctx query by ref
 
@@ -34,10 +34,10 @@ public class Example {
     Integer moreThan = 56; // Integer | moreThan
     Integer lessThan = 56; // Integer | lessThan
     try {
-      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1FuncctxWithReferenceCountGet(repo, rev, moreThan, lessThan);
+      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceQueryApi#apiV1FuncctxWithReferenceCountGet");
+      System.err.println("Exception when calling ReferenceQueryApi#apiV1ReferenceCountFuncctxGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -74,9 +74,9 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-<a name="apiV1FuncctxWithReferencedCountGet"></a>
-# **apiV1FuncctxWithReferencedCountGet**
-> List&lt;Sibyl2FunctionContextSlim&gt; apiV1FuncctxWithReferencedCountGet(repo, rev, moreThan, lessThan)
+<a name="apiV1ReferenceCountFuncctxReverseGet"></a>
+# **apiV1ReferenceCountFuncctxReverseGet**
+> List&lt;Sibyl2FunctionContextSlim&gt; apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan)
 
 funcctx query by referenced
 
@@ -100,10 +100,10 @@ public class Example {
     Integer moreThan = 56; // Integer | moreThan
     Integer lessThan = 56; // Integer | lessThan
     try {
-      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1FuncctxWithReferencedCountGet(repo, rev, moreThan, lessThan);
+      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ReferenceQueryApi#apiV1FuncctxWithReferencedCountGet");
+      System.err.println("Exception when calling ReferenceQueryApi#apiV1ReferenceCountFuncctxReverseGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
