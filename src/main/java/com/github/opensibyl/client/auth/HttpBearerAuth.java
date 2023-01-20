@@ -17,8 +17,8 @@ import com.github.opensibyl.client.ApiException;
 import com.github.opensibyl.client.Pair;
 
 import java.net.URI;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-19T20:15:45.689+08:00[Asia/Shanghai]")
 public class HttpBearerAuth implements Authentication {

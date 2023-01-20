@@ -42,7 +42,6 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -52,11 +51,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.github.opensibyl.client.auth.Authentication;
-import com.github.opensibyl.client.auth.HttpBasicAuth;
-import com.github.opensibyl.client.auth.HttpBearerAuth;
-import com.github.opensibyl.client.auth.ApiKeyAuth;
 
 /**
  * <p>ApiClient class.</p>

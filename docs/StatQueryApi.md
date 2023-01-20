@@ -16,11 +16,11 @@ rev stat
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.StatQueryApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.StatQueryApi;
 
 public class Example {
   public static void main(String[] args) {

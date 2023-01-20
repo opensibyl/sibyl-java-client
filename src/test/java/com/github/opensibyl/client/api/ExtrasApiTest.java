@@ -20,8 +20,6 @@ import com.github.opensibyl.client.model.Sibyl2FunctionWithPath;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

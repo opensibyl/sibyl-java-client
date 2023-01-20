@@ -13,16 +13,13 @@
 
 package com.github.opensibyl.client.auth;
 
-import com.github.opensibyl.client.Pair;
 import com.github.opensibyl.client.ApiException;
-
+import com.github.opensibyl.client.Pair;
 import okhttp3.Credentials;
 
 import java.net.URI;
-import java.util.Map;
 import java.util.List;
-
-import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 public class HttpBasicAuth implements Authentication {
     private String username;

@@ -13,30 +13,17 @@
 
 package com.github.opensibyl.client.api;
 
-import com.github.opensibyl.client.ApiCallback;
-import com.github.opensibyl.client.ApiClient;
-import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.ApiResponse;
-import com.github.opensibyl.client.Configuration;
-import com.github.opensibyl.client.Pair;
-import com.github.opensibyl.client.ProgressRequestBody;
-import com.github.opensibyl.client.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
+import com.github.opensibyl.client.*;
 import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
 import com.github.opensibyl.client.model.Sibyl2FunctionContext;
 import com.github.opensibyl.client.model.Sibyl2FunctionWithPath;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class ExperimentalApi {
     private ApiClient localVarApiClient;

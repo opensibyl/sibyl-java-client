@@ -17,18 +17,13 @@ import com.github.opensibyl.client.ApiException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * API tests for OpsApi
  */
 @Disabled
 public class OpsApiTest {
 
-    private final OpsApi api = new OpsApi();
+    private final com.github.opensibyl.client.api.OpsApi api = new OpsApi();
 
     /**
      * upload status query
@@ -49,6 +44,17 @@ public class OpsApiTest {
     @Test
     public void opsPingGetTest() throws ApiException {
         api.opsPingGet();
+        // TODO: test validations
+    }
+
+    /**
+     * sibyl version
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void opsVersionGetTest() throws ApiException {
+        api.opsVersionGet();
         // TODO: test validations
     }
 

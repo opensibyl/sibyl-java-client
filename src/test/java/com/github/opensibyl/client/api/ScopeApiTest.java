@@ -17,10 +17,7 @@ import com.github.opensibyl.client.ApiException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ScopeApi
@@ -28,7 +25,7 @@ import java.util.Map;
 @Disabled
 public class ScopeApiTest {
 
-    private final ScopeApi api = new ScopeApi();
+    private final com.github.opensibyl.client.api.ScopeApi api = new ScopeApi();
 
     /**
      * file query
@@ -45,6 +42,18 @@ public class ScopeApiTest {
     }
 
     /**
+     * repo delete
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void apiV1RepoDeleteTest() throws ApiException {
+        String repo = null;
+        api.apiV1RepoDelete(repo);
+        // TODO: test validations
+    }
+
+    /**
      * repo query
      *
      * @throws ApiException if the Api call fails
@@ -52,6 +61,19 @@ public class ScopeApiTest {
     @Test
     public void apiV1RepoGetTest() throws ApiException {
         List<String> response = api.apiV1RepoGet();
+        // TODO: test validations
+    }
+
+    /**
+     * rev delte
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void apiV1RevDeleteTest() throws ApiException {
+        String repo = null;
+        String rev = null;
+        api.apiV1RevDelete(repo, rev);
         // TODO: test validations
     }
 

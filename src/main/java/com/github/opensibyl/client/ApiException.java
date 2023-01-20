@@ -13,10 +13,8 @@
 
 package com.github.opensibyl.client;
 
-import java.util.Map;
 import java.util.List;
-
-import javax.ws.rs.core.GenericType;
+import java.util.Map;
 
 /**
  * <p>ApiException class.</p>

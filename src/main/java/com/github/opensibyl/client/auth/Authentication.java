@@ -13,12 +13,12 @@
 
 package com.github.opensibyl.client.auth;
 
-import com.github.opensibyl.client.Pair;
 import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Pair;
 
 import java.net.URI;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public interface Authentication {
     /**

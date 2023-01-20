@@ -13,18 +13,14 @@
 
 package com.github.opensibyl.client.api;
 
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
 import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.model.ObjectFunctionContextSlimWithSignature;
 import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
 import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for BasicQueryApi
@@ -32,7 +28,7 @@ import java.util.Map;
 @Disabled
 public class BasicQueryApiTest {
 
-    private final BasicQueryApi api = new BasicQueryApi();
+    private final com.github.opensibyl.client.api.BasicQueryApi api = new BasicQueryApi();
 
     /**
      * class query
@@ -74,7 +70,7 @@ public class BasicQueryApiTest {
         String rev = null;
         String _file = null;
         String lines = null;
-        List<Sibyl2FunctionContextSlim> response = api.apiV1FuncctxGet(repo, rev, _file, lines);
+        List<ObjectFunctionContextSlimWithSignature> response = api.apiV1FuncctxGet(repo, rev, _file, lines);
         // TODO: test validations
     }
 

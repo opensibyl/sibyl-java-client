@@ -18,10 +18,7 @@ import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ReferenceQueryApi
@@ -29,7 +26,7 @@ import java.util.Map;
 @Disabled
 public class ReferenceQueryApiTest {
 
-    private final ReferenceQueryApi api = new ReferenceQueryApi();
+    private final com.github.opensibyl.client.api.ReferenceQueryApi api = new ReferenceQueryApi();
 
     /**
      * funcctx query by ref
@@ -37,12 +34,12 @@ public class ReferenceQueryApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void apiV1FuncctxWithReferenceCountGetTest() throws ApiException {
+    public void apiV1ReferenceCountFuncctxGetTest() throws ApiException {
         String repo = null;
         String rev = null;
         Integer moreThan = null;
         Integer lessThan = null;
-        List<Sibyl2FunctionContextSlim> response = api.apiV1FuncctxWithReferenceCountGet(repo, rev, moreThan, lessThan);
+        List<Sibyl2FunctionContextSlim> response = api.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
         // TODO: test validations
     }
 
@@ -52,12 +49,12 @@ public class ReferenceQueryApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void apiV1FuncctxWithReferencedCountGetTest() throws ApiException {
+    public void apiV1ReferenceCountFuncctxReverseGetTest() throws ApiException {
         String repo = null;
         String rev = null;
         Integer moreThan = null;
         Integer lessThan = null;
-        List<Sibyl2FunctionContextSlim> response = api.apiV1FuncctxWithReferencedCountGet(repo, rev, moreThan, lessThan);
+        List<Sibyl2FunctionContextSlim> response = api.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
         // TODO: test validations
     }
 

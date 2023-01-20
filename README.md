@@ -15,11 +15,11 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```java
 
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.DefaultApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {

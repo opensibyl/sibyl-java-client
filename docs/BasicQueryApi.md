@@ -18,11 +18,11 @@ class query
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.BasicQueryApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.BasicQueryApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -82,11 +82,11 @@ func query
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.BasicQueryApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.BasicQueryApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -148,11 +148,11 @@ func ctx query
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.BasicQueryApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.BasicQueryApi;
 
 public class Example {
   public static void main(String[] args) {

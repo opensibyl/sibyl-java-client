@@ -4,27 +4,27 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiV1FileGet**](ScopeApi.md#apiV1FileGet) | **GET** /api/v1/file | file query |
+| [**apiV1FileGet**](ScopeApi.md#apiV1FileGet) | **GET** /api/v1/file | file query by repo and rev |
 | [**apiV1RepoDelete**](ScopeApi.md#apiV1RepoDelete) | **DELETE** /api/v1/repo | repo delete |
-| [**apiV1RepoGet**](ScopeApi.md#apiV1RepoGet) | **GET** /api/v1/repo | repo query |
-| [**apiV1RevDelete**](ScopeApi.md#apiV1RevDelete) | **DELETE** /api/v1/rev | rev delte |
-| [**apiV1RevGet**](ScopeApi.md#apiV1RevGet) | **GET** /api/v1/rev | rev query |
+| [**apiV1RepoGet**](ScopeApi.md#apiV1RepoGet) | **GET** /api/v1/repo | query all the repos |
+| [**apiV1RevDelete**](ScopeApi.md#apiV1RevDelete) | **DELETE** /api/v1/rev | rev delete |
+| [**apiV1RevGet**](ScopeApi.md#apiV1RevGet) | **GET** /api/v1/rev | rev query by repo name |
 
 
 <a name="apiV1FileGet"></a>
 # **apiV1FileGet**
 > List&lt;String&gt; apiV1FileGet(repo, rev, includeRegex)
 
-file query
+file query by repo and rev
 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ScopeApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.ScopeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -84,11 +84,11 @@ repo delete
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ScopeApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.ScopeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -138,16 +138,16 @@ No authorization required
 # **apiV1RepoGet**
 > List&lt;String&gt; apiV1RepoGet()
 
-repo query
+query all the repos
 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ScopeApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.ScopeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -194,16 +194,16 @@ No authorization required
 # **apiV1RevDelete**
 > apiV1RevDelete(repo, rev)
 
-rev delte
+rev delete
 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ScopeApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.ScopeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -255,16 +255,16 @@ No authorization required
 # **apiV1RevGet**
 > List&lt;String&gt; apiV1RevGet(repo)
 
-rev query
+rev query by repo name
 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ScopeApi;
+import com.github.opensibyl.client.ApiClient;
+import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.Configuration;
+import com.github.opensibyl.client.models.*;
+import com.github.opensibyl.client.api.ScopeApi;
 
 public class Example {
   public static void main(String[] args) {

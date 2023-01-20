@@ -18,18 +18,13 @@ import com.github.opensibyl.client.model.ServiceRevStat;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * API tests for StatQueryApi
  */
 @Disabled
 public class StatQueryApiTest {
 
-    private final StatQueryApi api = new StatQueryApi();
+    private final com.github.opensibyl.client.api.StatQueryApi api = new StatQueryApi();
 
     /**
      * rev stat

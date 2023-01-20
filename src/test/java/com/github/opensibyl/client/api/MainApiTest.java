@@ -13,8 +13,6 @@
 
 package com.github.opensibyl.client.api;
 
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
-import com.github.opensibyl.client.model.Sibyl2FunctionContext;
 import com.github.opensibyl.client.ApiException;
 import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
 import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
@@ -22,10 +20,7 @@ import com.github.opensibyl.client.model.Sibyl2FunctionContext;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for MainApi
