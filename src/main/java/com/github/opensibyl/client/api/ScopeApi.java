@@ -146,7 +146,7 @@ public class ScopeApi {
     }
 
     /**
-     * file query
+     * file query by repo and rev
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -165,7 +165,7 @@ public class ScopeApi {
     }
 
     /**
-     * file query
+     * file query by repo and rev
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -185,7 +185,7 @@ public class ScopeApi {
     }
 
     /**
-     * file query (asynchronously)
+     * file query by repo and rev (asynchronously)
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -389,7 +389,7 @@ public class ScopeApi {
     }
 
     /**
-     * repo query
+     * query all the repos
      * 
      * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -405,7 +405,7 @@ public class ScopeApi {
     }
 
     /**
-     * repo query
+     * query all the repos
      * 
      * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,7 +422,7 @@ public class ScopeApi {
     }
 
     /**
-     * repo query (asynchronously)
+     * query all the repos (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -521,7 +521,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev delte
+     * rev delete
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -537,7 +537,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev delte
+     * rev delete
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -555,7 +555,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev delte (asynchronously)
+     * rev delete (asynchronously)
      * 
      * @param repo repo (required)
      * @param rev rev (required)
@@ -646,7 +646,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev query
+     * rev query by repo name
      * 
      * @param repo rev search by repo (required)
      * @return List&lt;String&gt;
@@ -663,7 +663,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev query
+     * rev query by repo name
      * 
      * @param repo rev search by repo (required)
      * @return ApiResponse&lt;List&lt;String&gt;&gt;
@@ -681,7 +681,7 @@ public class ScopeApi {
     }
 
     /**
-     * rev query (asynchronously)
+     * rev query by repo name (asynchronously)
      * 
      * @param repo rev search by repo (required)
      * @param _callback The callback to be executed when the API call finishes

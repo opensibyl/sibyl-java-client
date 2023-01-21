@@ -30,7 +30,7 @@ import java.util.Set;
 /**
  * ServiceRevStat
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-19T20:15:45.689+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-21T14:26:37.858+08:00[Asia/Shanghai]")
 public class ServiceRevStat {
   public static final String SERIALIZED_NAME_FILE_COUNT = "fileCount";
   @SerializedName(SERIALIZED_NAME_FILE_COUNT)

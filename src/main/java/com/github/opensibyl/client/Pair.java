@@ -13,7 +13,7 @@
 
 package com.github.opensibyl.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-19T20:15:45.689+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-21T14:27:12.615+08:00[Asia/Shanghai]")
 public class Pair {
     private String name = "";
     private String value = "";

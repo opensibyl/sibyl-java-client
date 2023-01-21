@@ -1,0 +1,6 @@
+{
+  "groupId": "com.github.opensibyl.client",
+  "artifactId": "SibylJavaClient",
+  "apiPackage": "com.github.opensibyl.client.api",
+  "modelPackage": "com.github.opensibyl.client.model"
+}

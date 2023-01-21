@@ -13,7 +13,6 @@
 
 package com.github.opensibyl.client;
 
-import com.github.opensibyl.client.model.*;
 import com.google.gson.*;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
@@ -86,19 +85,19 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
-        gsonBuilder.registerTypeAdapterFactory(new CorePoint.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new CoreSpan.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.CorePoint.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.CoreSpan.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ObjectFunctionContextSlimWithSignature.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ObjectFunctionWithSignature.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ObjectRevInfo.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ObjectValueUnit.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ObjectFunctionWithSignature.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ObjectRevInfo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ObjectValueUnit.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ServiceContextTree.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ServiceFunctionContextReverseChain.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ServiceRevStat.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new Sibyl2ClazzWithPath.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new Sibyl2FunctionContext.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new Sibyl2FunctionContextSlim.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new Sibyl2FunctionWithPath.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ServiceFunctionContextChain.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.ServiceRevStat.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2ClazzWithPath.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionContext.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionContextSlim.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionWithPath.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 
