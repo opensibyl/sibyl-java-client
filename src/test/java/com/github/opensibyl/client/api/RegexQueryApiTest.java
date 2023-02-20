@@ -14,9 +14,7 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
-import com.github.opensibyl.client.model.Sibyl2FunctionContext;
-import com.github.opensibyl.client.model.Sibyl2FunctionWithPath;
+import com.github.opensibyl.client.model.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -56,7 +54,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<Sibyl2FunctionWithPath> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
+        List<Sibyl2FunctionWithTag> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
@@ -71,7 +69,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<Sibyl2FunctionContext> response = api.apiV1RegexFuncctxGet(repo, rev, field, regex);
+        List<Sibyl2FunctionContextSlim> response = api.apiV1RegexFuncctxGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
