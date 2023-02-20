@@ -17,6 +17,7 @@
 |**returns** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
 |**signature** | **String** |  |  [optional] |
 |**span** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * ObjectFunctionContextSlimWithSignature
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-21T14:26:37.858+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T00:23:35.240+08:00[Asia/Shanghai]")
 public class ObjectFunctionContextSlimWithSignature {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)

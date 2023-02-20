@@ -30,7 +30,7 @@ import java.util.Set;
 /**
  * Sibyl2ClazzWithPath
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-21T14:26:37.858+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T00:23:35.240+08:00[Asia/Shanghai]")
 public class Sibyl2ClazzWithPath {
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)

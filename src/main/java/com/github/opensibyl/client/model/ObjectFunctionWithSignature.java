@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * ObjectFunctionWithSignature
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-21T14:26:37.858+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T00:23:35.240+08:00[Asia/Shanghai]")
 public class ObjectFunctionWithSignature {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -69,6 +69,10 @@ public class ObjectFunctionWithSignature {
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = null;
 
   public ObjectFunctionWithSignature() {
   }
@@ -319,6 +323,37 @@ public class ObjectFunctionWithSignature {
   }
 
 
+  public ObjectFunctionWithSignature tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public ObjectFunctionWithSignature addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -338,12 +373,13 @@ public class ObjectFunctionWithSignature {
         Objects.equals(this.receiver, objectFunctionWithSignature.receiver) &&
         Objects.equals(this.returns, objectFunctionWithSignature.returns) &&
         Objects.equals(this.signature, objectFunctionWithSignature.signature) &&
-        Objects.equals(this.span, objectFunctionWithSignature.span);
+        Objects.equals(this.span, objectFunctionWithSignature.span) &&
+        Objects.equals(this.tags, objectFunctionWithSignature.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, extras, lang, name, parameters, path, receiver, returns, signature, span);
+    return Objects.hash(bodySpan, extras, lang, name, parameters, path, receiver, returns, signature, span, tags);
   }
 
   @Override
@@ -360,6 +396,7 @@ public class ObjectFunctionWithSignature {
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -392,6 +429,7 @@ public class ObjectFunctionWithSignature {
     openapiFields.add("returns");
     openapiFields.add("signature");
     openapiFields.add("span");
+    openapiFields.add("tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -467,6 +505,10 @@ public class ObjectFunctionWithSignature {
       // validate the optional field `span`
       if (jsonObj.get("span") != null && !jsonObj.get("span").isJsonNull()) {
         CoreSpan.validateJsonObject(jsonObj.getAsJsonObject("span"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 

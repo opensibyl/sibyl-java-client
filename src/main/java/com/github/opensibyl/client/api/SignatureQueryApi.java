@@ -16,7 +16,7 @@ package com.github.opensibyl.client.api;
 import com.github.opensibyl.client.*;
 import com.github.opensibyl.client.model.ServiceFunctionContextChain;
 import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
-import com.github.opensibyl.client.model.Sibyl2FunctionWithPath;
+import com.github.opensibyl.client.model.Sibyl2FunctionWithTag;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -159,7 +159,7 @@ public class SignatureQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param signature signature (required)
-     * @return Sibyl2FunctionWithPath
+     * @return Sibyl2FunctionWithTag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -167,8 +167,8 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public Sibyl2FunctionWithPath apiV1SignatureFuncGet(String repo, String rev, String signature) throws ApiException {
-        ApiResponse<Sibyl2FunctionWithPath> localVarResp = apiV1SignatureFuncGetWithHttpInfo(repo, rev, signature);
+    public Sibyl2FunctionWithTag apiV1SignatureFuncGet(String repo, String rev, String signature) throws ApiException {
+        ApiResponse<Sibyl2FunctionWithTag> localVarResp = apiV1SignatureFuncGetWithHttpInfo(repo, rev, signature);
         return localVarResp.getData();
     }
 
@@ -178,7 +178,7 @@ public class SignatureQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param signature signature (required)
-     * @return ApiResponse&lt;Sibyl2FunctionWithPath&gt;
+     * @return ApiResponse&lt;Sibyl2FunctionWithTag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -186,9 +186,9 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Sibyl2FunctionWithPath> apiV1SignatureFuncGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
+    public ApiResponse<Sibyl2FunctionWithTag> apiV1SignatureFuncGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
         okhttp3.Call localVarCall = apiV1SignatureFuncGetValidateBeforeCall(repo, rev, signature, null);
-        Type localVarReturnType = new TypeToken<Sibyl2FunctionWithPath>(){}.getType();
+        Type localVarReturnType = new TypeToken<Sibyl2FunctionWithTag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -207,10 +207,10 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1SignatureFuncGetAsync(String repo, String rev, String signature, final ApiCallback<Sibyl2FunctionWithPath> _callback) throws ApiException {
+    public okhttp3.Call apiV1SignatureFuncGetAsync(String repo, String rev, String signature, final ApiCallback<Sibyl2FunctionWithTag> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1SignatureFuncGetValidateBeforeCall(repo, rev, signature, _callback);
-        Type localVarReturnType = new TypeToken<Sibyl2FunctionWithPath>(){}.getType();
+        Type localVarReturnType = new TypeToken<Sibyl2FunctionWithTag>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
