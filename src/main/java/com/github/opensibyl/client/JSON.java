@@ -107,7 +107,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionContext.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionContextSlim.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionWithPath.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.github.opensibyl.client.model.Sibyl2FunctionWithTag.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

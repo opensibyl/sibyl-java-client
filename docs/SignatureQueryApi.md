@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1SignatureFuncGet"></a>
 # **apiV1SignatureFuncGet**
-> Sibyl2FunctionWithTag apiV1SignatureFuncGet(repo, rev, signature)
+> ObjectFunctionWithSignature apiV1SignatureFuncGet(repo, rev, signature)
 
 func query
 
@@ -36,7 +36,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String signature = "signature_example"; // String | signature
     try {
-      Sibyl2FunctionWithTag result = apiInstance.apiV1SignatureFuncGet(repo, rev, signature);
+      ObjectFunctionWithSignature result = apiInstance.apiV1SignatureFuncGet(repo, rev, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignatureQueryApi#apiV1SignatureFuncGet");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**Sibyl2FunctionWithTag**](Sibyl2FunctionWithTag.md)
+[**ObjectFunctionWithSignature**](ObjectFunctionWithSignature.md)
 
 ### Authorization
 

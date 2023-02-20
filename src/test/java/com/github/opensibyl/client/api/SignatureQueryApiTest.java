@@ -14,9 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
+import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
 import com.github.opensibyl.client.model.ServiceFunctionContextChain;
 import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
-import com.github.opensibyl.client.model.Sibyl2FunctionWithPath;
 import com.github.opensibyl.client.model.Sibyl2FunctionWithTag;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -41,7 +41,7 @@ public class SignatureQueryApiTest {
         String repo = null;
         String rev = null;
         String signature = null;
-        Sibyl2FunctionWithTag response = api.apiV1SignatureFuncGet(repo, rev, signature);
+        ObjectFunctionWithSignature response = api.apiV1SignatureFuncGet(repo, rev, signature);
         // TODO: test validations
     }
 

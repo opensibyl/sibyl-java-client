@@ -364,7 +364,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/sibyl2.FunctionWithTag'
+                  $ref: '#/components/schemas/object.FunctionWithSignature'
                 type: array
           description: OK
       summary: func query
@@ -538,7 +538,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sibyl2.FunctionWithTag'
+                $ref: '#/components/schemas/object.FunctionWithSignature'
           description: OK
       summary: func query
       tags:
@@ -1346,70 +1346,6 @@ components:
           type: array
         span:
           $ref: '#/components/schemas/core.Span'
-      type: object
-    sibyl2.FunctionWithTag:
-      example:
-        bodySpan:
-          start:
-            column: 0
-            row: 6
-          end:
-            column: 0
-            row: 6
-        path: path
-        receiver: receiver
-        name: name
-        extras: "{}"
-        returns:
-        - name: name
-          type: type
-        - name: name
-          type: type
-        lang: lang
-        parameters:
-        - name: name
-          type: type
-        - name: name
-          type: type
-        span:
-          start:
-            column: 0
-            row: 6
-          end:
-            column: 0
-            row: 6
-        tags:
-        - tags
-        - tags
-      properties:
-        bodySpan:
-          $ref: '#/components/schemas/core.Span'
-        extras:
-          description: which contains language-specific contents
-          type: object
-        lang:
-          description: language
-          type: string
-        name:
-          type: string
-        parameters:
-          items:
-            $ref: '#/components/schemas/object.ValueUnit'
-          type: array
-        path:
-          type: string
-        receiver:
-          type: string
-        returns:
-          items:
-            $ref: '#/components/schemas/object.ValueUnit'
-          type: array
-        span:
-          $ref: '#/components/schemas/core.Span'
-        tags:
-          items:
-            type: string
-          type: array
       type: object
 x-original-swagger-version: "2.0"
 

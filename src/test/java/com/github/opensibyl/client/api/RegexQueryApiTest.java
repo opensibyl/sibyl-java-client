@@ -14,7 +14,10 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.*;
+import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
+import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
+import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
+import com.github.opensibyl.client.model.Sibyl2FunctionWithTag;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -54,7 +57,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<Sibyl2FunctionWithTag> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
+        List<ObjectFunctionWithSignature> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
