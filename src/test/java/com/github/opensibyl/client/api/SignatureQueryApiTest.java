@@ -14,7 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.*;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
+import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
+import com.github.opensibyl.client.model.ServiceFunctionContextChain;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -52,7 +54,7 @@ public class SignatureQueryApiTest {
         String repo = null;
         String rev = null;
         String signature = null;
-        ObjectFunctionContextSlim response = api.apiV1SignatureFuncctxGet(repo, rev, signature);
+        ObjectFuncCtxServiceDTO response = api.apiV1SignatureFuncctxGet(repo, rev, signature);
         // TODO: test validations
     }
 

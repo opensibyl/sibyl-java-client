@@ -14,7 +14,7 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.*;
-import com.github.opensibyl.client.model.ObjectFunctionContextSlim;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
 import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import com.github.opensibyl.client.model.ServiceFunctionContextChain;
 import com.google.gson.reflect.TypeToken;
@@ -476,7 +476,7 @@ public class SignatureQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param signature signature (required)
-     * @return ObjectFunctionContextSlim
+     * @return ObjectFuncCtxServiceDTO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -484,8 +484,8 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ObjectFunctionContextSlim apiV1SignatureFuncctxGet(String repo, String rev, String signature) throws ApiException {
-        ApiResponse<ObjectFunctionContextSlim> localVarResp = apiV1SignatureFuncctxGetWithHttpInfo(repo, rev, signature);
+    public ObjectFuncCtxServiceDTO apiV1SignatureFuncctxGet(String repo, String rev, String signature) throws ApiException {
+        ApiResponse<ObjectFuncCtxServiceDTO> localVarResp = apiV1SignatureFuncctxGetWithHttpInfo(repo, rev, signature);
         return localVarResp.getData();
     }
 
@@ -495,7 +495,7 @@ public class SignatureQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param signature signature (required)
-     * @return ApiResponse&lt;ObjectFunctionContextSlim&gt;
+     * @return ApiResponse&lt;ObjectFuncCtxServiceDTO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -503,9 +503,9 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ObjectFunctionContextSlim> apiV1SignatureFuncctxGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
+    public ApiResponse<ObjectFuncCtxServiceDTO> apiV1SignatureFuncctxGetWithHttpInfo(String repo, String rev, String signature) throws ApiException {
         okhttp3.Call localVarCall = apiV1SignatureFuncctxGetValidateBeforeCall(repo, rev, signature, null);
-        Type localVarReturnType = new TypeToken<ObjectFunctionContextSlim>(){}.getType();
+        Type localVarReturnType = new TypeToken<ObjectFuncCtxServiceDTO>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -524,10 +524,10 @@ public class SignatureQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1SignatureFuncctxGetAsync(String repo, String rev, String signature, final ApiCallback<ObjectFunctionContextSlim> _callback) throws ApiException {
+    public okhttp3.Call apiV1SignatureFuncctxGetAsync(String repo, String rev, String signature, final ApiCallback<ObjectFuncCtxServiceDTO> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1SignatureFuncctxGetValidateBeforeCall(repo, rev, signature, _callback);
-        Type localVarReturnType = new TypeToken<ObjectFunctionContextSlim>(){}.getType();
+        Type localVarReturnType = new TypeToken<ObjectFuncCtxServiceDTO>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

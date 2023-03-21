@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1RegexClazzGet"></a>
 # **apiV1RegexClazzGet**
-> List&lt;ExtractorClazzWithPath&gt; apiV1RegexClazzGet(repo, rev, field, regex)
+> List&lt;ObjectClazzServiceDTO&gt; apiV1RegexClazzGet(repo, rev, field, regex)
 
 clazz query
 
@@ -35,7 +35,7 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<ExtractorClazzWithPath> result = apiInstance.apiV1RegexClazzGet(repo, rev, field, regex);
+      List<ObjectClazzServiceDTO> result = apiInstance.apiV1RegexClazzGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RegexQueryApi#apiV1RegexClazzGet");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ExtractorClazzWithPath&gt;**](ExtractorClazzWithPath.md)
+[**List&lt;ObjectClazzServiceDTO&gt;**](ObjectClazzServiceDTO.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ No authorization required
 
 <a name="apiV1RegexFuncctxGet"></a>
 # **apiV1RegexFuncctxGet**
-> List&lt;ObjectFunctionContextSlim&gt; apiV1RegexFuncctxGet(repo, rev, field, regex)
+> List&lt;ObjectFuncCtxServiceDTO&gt; apiV1RegexFuncctxGet(repo, rev, field, regex)
 
 func ctx query
 
@@ -167,7 +167,7 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<ObjectFunctionContextSlim> result = apiInstance.apiV1RegexFuncctxGet(repo, rev, field, regex);
+      List<ObjectFuncCtxServiceDTO> result = apiInstance.apiV1RegexFuncctxGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RegexQueryApi#apiV1RegexFuncctxGet");
@@ -191,7 +191,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionContextSlim&gt;**](ObjectFunctionContextSlim.md)
+[**List&lt;ObjectFuncCtxServiceDTO&gt;**](ObjectFuncCtxServiceDTO.md)
 
 ### Authorization
 

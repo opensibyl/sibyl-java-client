@@ -14,7 +14,7 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.*;
-import com.github.opensibyl.client.model.ExtractorClazzWithPath;
+import com.github.opensibyl.client.model.ObjectClazzServiceDTO;
 import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
 import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import com.google.gson.reflect.TypeToken;
@@ -159,7 +159,7 @@ public class BasicQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param _file file (required)
-     * @return List&lt;ExtractorClazzWithPath&gt;
+     * @return List&lt;ObjectClazzServiceDTO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -167,8 +167,8 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<ExtractorClazzWithPath> apiV1ClazzGet(String repo, String rev, String _file) throws ApiException {
-        ApiResponse<List<ExtractorClazzWithPath>> localVarResp = apiV1ClazzGetWithHttpInfo(repo, rev, _file);
+    public List<ObjectClazzServiceDTO> apiV1ClazzGet(String repo, String rev, String _file) throws ApiException {
+        ApiResponse<List<ObjectClazzServiceDTO>> localVarResp = apiV1ClazzGetWithHttpInfo(repo, rev, _file);
         return localVarResp.getData();
     }
 
@@ -178,7 +178,7 @@ public class BasicQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param _file file (required)
-     * @return ApiResponse&lt;List&lt;ExtractorClazzWithPath&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectClazzServiceDTO&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -186,9 +186,9 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ExtractorClazzWithPath>> apiV1ClazzGetWithHttpInfo(String repo, String rev, String _file) throws ApiException {
+    public ApiResponse<List<ObjectClazzServiceDTO>> apiV1ClazzGetWithHttpInfo(String repo, String rev, String _file) throws ApiException {
         okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, null);
-        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectClazzServiceDTO>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -207,10 +207,10 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzGetAsync(String repo, String rev, String _file, final ApiCallback<List<ExtractorClazzWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ClazzGetAsync(String repo, String rev, String _file, final ApiCallback<List<ObjectClazzServiceDTO>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, _callback);
-        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectClazzServiceDTO>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

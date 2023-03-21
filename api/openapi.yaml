@@ -39,7 +39,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/extractor.ClazzWithPath'
+                  $ref: '#/components/schemas/object.ClazzServiceDTO'
                 type: array
           description: OK
       summary: class query
@@ -244,7 +244,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/object.FunctionContextSlim'
+                  $ref: '#/components/schemas/object.FuncCtxServiceDTO'
                 type: array
           description: OK
       summary: funcctx query by ref
@@ -284,7 +284,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/object.FunctionContextSlim'
+                  $ref: '#/components/schemas/object.FuncCtxServiceDTO'
                 type: array
           description: OK
       summary: funcctx query by referenced
@@ -324,7 +324,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/extractor.ClazzWithPath'
+                  $ref: '#/components/schemas/object.ClazzServiceDTO'
                 type: array
           description: OK
       summary: clazz query
@@ -404,7 +404,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/object.FunctionContextSlim'
+                  $ref: '#/components/schemas/object.FuncCtxServiceDTO'
                 type: array
           description: OK
       summary: func ctx query
@@ -570,7 +570,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/object.FunctionContextSlim'
+                $ref: '#/components/schemas/object.FuncCtxServiceDTO'
           description: OK
       summary: funcctx query
       tags:
@@ -824,36 +824,6 @@ components:
             $ref: '#/components/schemas/extractor.Clazz'
           type: array
       type: object
-    extractor.ClazzWithPath:
-      example:
-        path: path
-        module: module
-        name: name
-        extras: "{}"
-        lang: lang
-        span:
-          start:
-            column: 0
-            row: 6
-          end:
-            column: 0
-            row: 6
-      properties:
-        extras:
-          description: which contains language-specific contents
-          type: object
-        lang:
-          description: language
-          type: string
-        module:
-          type: string
-        name:
-          type: string
-        path:
-          type: string
-        span:
-          $ref: '#/components/schemas/core.Span'
-      type: object
     extractor.Function:
       properties:
         bodySpan:
@@ -921,6 +891,39 @@ components:
           items:
             $ref: '#/components/schemas/object.ValueUnit'
           type: array
+        span:
+          $ref: '#/components/schemas/core.Span'
+      type: object
+    object.ClazzServiceDTO:
+      example:
+        path: path
+        signature: signature
+        module: module
+        name: name
+        extras: "{}"
+        lang: lang
+        span:
+          start:
+            column: 0
+            row: 6
+          end:
+            column: 0
+            row: 6
+      properties:
+        extras:
+          description: which contains language-specific contents
+          type: object
+        lang:
+          description: language
+          type: string
+        module:
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        signature:
+          type: string
         span:
           $ref: '#/components/schemas/core.Span'
       type: object
@@ -1005,80 +1008,6 @@ components:
           type: array
         signature:
           type: string
-        span:
-          $ref: '#/components/schemas/core.Span'
-      type: object
-    object.FunctionContextSlim:
-      example:
-        bodySpan:
-          start:
-            column: 0
-            row: 6
-          end:
-            column: 0
-            row: 6
-        path: path
-        receiver: receiver
-        calls:
-        - calls
-        - calls
-        name: name
-        namespace: namespace
-        extras: "{}"
-        reverseCalls:
-        - reverseCalls
-        - reverseCalls
-        returns:
-        - name: name
-          type: type
-        - name: name
-          type: type
-        lang: lang
-        parameters:
-        - name: name
-          type: type
-        - name: name
-          type: type
-        span:
-          start:
-            column: 0
-            row: 6
-          end:
-            column: 0
-            row: 6
-      properties:
-        bodySpan:
-          $ref: '#/components/schemas/core.Span'
-        calls:
-          items:
-            type: string
-          type: array
-        extras:
-          description: which contains language-specific contents
-          type: object
-        lang:
-          description: language
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        parameters:
-          items:
-            $ref: '#/components/schemas/object.ValueUnit'
-          type: array
-        path:
-          type: string
-        receiver:
-          type: string
-        returns:
-          items:
-            $ref: '#/components/schemas/object.ValueUnit'
-          type: array
-        reverseCalls:
-          items:
-            type: string
-          type: array
         span:
           $ref: '#/components/schemas/core.Span'
       type: object

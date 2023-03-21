@@ -14,8 +14,7 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.ObjectFunctionContextSlim;
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +39,7 @@ public class ReferenceQueryApiTest {
         String rev = null;
         Integer moreThan = null;
         Integer lessThan = null;
-        List<ObjectFunctionContextSlim> response = api.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
+        List<ObjectFuncCtxServiceDTO> response = api.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
         // TODO: test validations
     }
 
@@ -55,7 +54,7 @@ public class ReferenceQueryApiTest {
         String rev = null;
         Integer moreThan = null;
         Integer lessThan = null;
-        List<ObjectFunctionContextSlim> response = api.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
+        List<ObjectFuncCtxServiceDTO> response = api.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
         // TODO: test validations
     }
 

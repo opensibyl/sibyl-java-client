@@ -30,7 +30,7 @@ import java.util.Set;
 /**
  * ObjectValueUnit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-22T00:23:19.552+08:00[Asia/Shanghai]")
 public class ObjectValueUnit {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

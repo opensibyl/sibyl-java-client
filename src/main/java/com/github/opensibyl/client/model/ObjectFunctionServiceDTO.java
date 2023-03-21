@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * ObjectFunctionServiceDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-22T00:23:19.552+08:00[Asia/Shanghai]")
 public class ObjectFunctionServiceDTO {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)

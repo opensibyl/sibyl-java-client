@@ -14,9 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.ObjectFunctionContextSlimWithSignature;
-import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
+import com.github.opensibyl.client.model.ObjectClazzServiceDTO;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
+import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +40,7 @@ public class BasicQueryApiTest {
         String repo = null;
         String rev = null;
         String _file = null;
-        List<Sibyl2ClazzWithPath> response = api.apiV1ClazzGet(repo, rev, _file);
+        List<ObjectClazzServiceDTO> response = api.apiV1ClazzGet(repo, rev, _file);
         // TODO: test validations
     }
 
@@ -55,7 +55,7 @@ public class BasicQueryApiTest {
         String rev = null;
         String _file = null;
         String lines = null;
-        List<ObjectFunctionWithSignature> response = api.apiV1FuncGet(repo, rev, _file, lines);
+        List<ObjectFunctionServiceDTO> response = api.apiV1FuncGet(repo, rev, _file, lines);
         // TODO: test validations
     }
 
@@ -70,7 +70,7 @@ public class BasicQueryApiTest {
         String rev = null;
         String _file = null;
         String lines = null;
-        List<ObjectFunctionContextSlimWithSignature> response = api.apiV1FuncctxGet(repo, rev, _file, lines);
+        List<ObjectFuncCtxServiceDTO> response = api.apiV1FuncctxGet(repo, rev, _file, lines);
         // TODO: test validations
     }
 

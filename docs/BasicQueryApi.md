@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1ClazzGet"></a>
 # **apiV1ClazzGet**
-> List&lt;ExtractorClazzWithPath&gt; apiV1ClazzGet(repo, rev, _file)
+> List&lt;ObjectClazzServiceDTO&gt; apiV1ClazzGet(repo, rev, _file)
 
 class query
 
@@ -34,7 +34,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String _file = "_file_example"; // String | file
     try {
-      List<ExtractorClazzWithPath> result = apiInstance.apiV1ClazzGet(repo, rev, _file);
+      List<ObjectClazzServiceDTO> result = apiInstance.apiV1ClazzGet(repo, rev, _file);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BasicQueryApi#apiV1ClazzGet");
@@ -57,7 +57,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ExtractorClazzWithPath&gt;**](ExtractorClazzWithPath.md)
+[**List&lt;ObjectClazzServiceDTO&gt;**](ObjectClazzServiceDTO.md)
 
 ### Authorization
 

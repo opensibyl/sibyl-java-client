@@ -143,7 +143,7 @@ No authorization required
 
 <a name="apiV1SignatureFuncctxGet"></a>
 # **apiV1SignatureFuncctxGet**
-> ObjectFunctionContextSlim apiV1SignatureFuncctxGet(repo, rev, signature)
+> ObjectFuncCtxServiceDTO apiV1SignatureFuncctxGet(repo, rev, signature)
 
 funcctx query
 
@@ -166,7 +166,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String signature = "signature_example"; // String | signature
     try {
-      ObjectFunctionContextSlim result = apiInstance.apiV1SignatureFuncctxGet(repo, rev, signature);
+      ObjectFuncCtxServiceDTO result = apiInstance.apiV1SignatureFuncctxGet(repo, rev, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignatureQueryApi#apiV1SignatureFuncctxGet");
@@ -189,7 +189,7 @@ public class Example {
 
 ### Return type
 
-[**ObjectFunctionContextSlim**](ObjectFunctionContextSlim.md)
+[**ObjectFuncCtxServiceDTO**](ObjectFuncCtxServiceDTO.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1ReferenceCountFuncctxGet"></a>
 # **apiV1ReferenceCountFuncctxGet**
-> List&lt;ObjectFunctionContextSlim&gt; apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan)
+> List&lt;ObjectFuncCtxServiceDTO&gt; apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan)
 
 funcctx query by ref
 
@@ -34,7 +34,7 @@ public class Example {
     Integer moreThan = 56; // Integer | moreThan
     Integer lessThan = 56; // Integer | lessThan
     try {
-      List<ObjectFunctionContextSlim> result = apiInstance.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
+      List<ObjectFuncCtxServiceDTO> result = apiInstance.apiV1ReferenceCountFuncctxGet(repo, rev, moreThan, lessThan);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceQueryApi#apiV1ReferenceCountFuncctxGet");
@@ -58,7 +58,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionContextSlim&gt;**](ObjectFunctionContextSlim.md)
+[**List&lt;ObjectFuncCtxServiceDTO&gt;**](ObjectFuncCtxServiceDTO.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ No authorization required
 
 <a name="apiV1ReferenceCountFuncctxReverseGet"></a>
 # **apiV1ReferenceCountFuncctxReverseGet**
-> List&lt;ObjectFunctionContextSlim&gt; apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan)
+> List&lt;ObjectFuncCtxServiceDTO&gt; apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan)
 
 funcctx query by referenced
 
@@ -100,7 +100,7 @@ public class Example {
     Integer moreThan = 56; // Integer | moreThan
     Integer lessThan = 56; // Integer | lessThan
     try {
-      List<ObjectFunctionContextSlim> result = apiInstance.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
+      List<ObjectFuncCtxServiceDTO> result = apiInstance.apiV1ReferenceCountFuncctxReverseGet(repo, rev, moreThan, lessThan);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReferenceQueryApi#apiV1ReferenceCountFuncctxReverseGet");
@@ -124,7 +124,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionContextSlim&gt;**](ObjectFunctionContextSlim.md)
+[**List&lt;ObjectFuncCtxServiceDTO&gt;**](ObjectFuncCtxServiceDTO.md)
 
 ### Authorization
 

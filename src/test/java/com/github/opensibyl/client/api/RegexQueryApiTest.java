@@ -14,9 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.ApiException;
-import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
+import com.github.opensibyl.client.model.ObjectClazzServiceDTO;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
+import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +41,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<Sibyl2ClazzWithPath> response = api.apiV1RegexClazzGet(repo, rev, field, regex);
+        List<ObjectClazzServiceDTO> response = api.apiV1RegexClazzGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
@@ -56,7 +56,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<ObjectFunctionWithSignature> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
+        List<ObjectFunctionServiceDTO> response = api.apiV1RegexFuncGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
@@ -71,7 +71,7 @@ public class RegexQueryApiTest {
         String rev = null;
         String field = null;
         String regex = null;
-        List<Sibyl2FunctionContextSlim> response = api.apiV1RegexFuncctxGet(repo, rev, field, regex);
+        List<ObjectFuncCtxServiceDTO> response = api.apiV1RegexFuncctxGet(repo, rev, field, regex);
         // TODO: test validations
     }
 
