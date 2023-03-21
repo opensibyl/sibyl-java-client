@@ -14,7 +14,7 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.*;
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
+import com.github.opensibyl.client.model.ObjectFunctionContextSlim;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -168,7 +168,7 @@ public class ReferenceQueryApi {
      * @param rev rev (required)
      * @param moreThan moreThan (required)
      * @param lessThan lessThan (required)
-     * @return List&lt;Sibyl2FunctionContextSlim&gt;
+     * @return List&lt;ObjectFunctionContextSlim&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -176,8 +176,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1ReferenceCountFuncctxGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxGetWithHttpInfo(repo, rev, moreThan, lessThan);
+    public List<ObjectFunctionContextSlim> apiV1ReferenceCountFuncctxGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        ApiResponse<List<ObjectFunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxGetWithHttpInfo(repo, rev, moreThan, lessThan);
         return localVarResp.getData();
     }
 
@@ -188,7 +188,7 @@ public class ReferenceQueryApi {
      * @param rev rev (required)
      * @param moreThan moreThan (required)
      * @param lessThan lessThan (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2FunctionContextSlim&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionContextSlim&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -196,9 +196,9 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1ReferenceCountFuncctxGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+    public ApiResponse<List<ObjectFunctionContextSlim>> apiV1ReferenceCountFuncctxGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
         okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -218,10 +218,10 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ReferenceCountFuncctxGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<ObjectFunctionContextSlim>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -333,7 +333,7 @@ public class ReferenceQueryApi {
      * @param rev rev (required)
      * @param moreThan moreThan (required)
      * @param lessThan lessThan (required)
-     * @return List&lt;Sibyl2FunctionContextSlim&gt;
+     * @return List&lt;ObjectFunctionContextSlim&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -341,8 +341,8 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1ReferenceCountFuncctxReverseGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(repo, rev, moreThan, lessThan);
+    public List<ObjectFunctionContextSlim> apiV1ReferenceCountFuncctxReverseGet(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+        ApiResponse<List<ObjectFunctionContextSlim>> localVarResp = apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(repo, rev, moreThan, lessThan);
         return localVarResp.getData();
     }
 
@@ -353,7 +353,7 @@ public class ReferenceQueryApi {
      * @param rev rev (required)
      * @param moreThan moreThan (required)
      * @param lessThan lessThan (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2FunctionContextSlim&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionContextSlim&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -361,9 +361,9 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
+    public ApiResponse<List<ObjectFunctionContextSlim>> apiV1ReferenceCountFuncctxReverseGetWithHttpInfo(String repo, String rev, Integer moreThan, Integer lessThan) throws ApiException {
         okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxReverseGetValidateBeforeCall(repo, rev, moreThan, lessThan, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -383,10 +383,10 @@ public class ReferenceQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ReferenceCountFuncctxReverseGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ReferenceCountFuncctxReverseGetAsync(String repo, String rev, Integer moreThan, Integer lessThan, final ApiCallback<List<ObjectFunctionContextSlim>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1ReferenceCountFuncctxReverseGetValidateBeforeCall(repo, rev, moreThan, lessThan, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -14,9 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.*;
-import com.github.opensibyl.client.model.ObjectFunctionContextSlimWithSignature;
-import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
+import com.github.opensibyl.client.model.ExtractorClazzWithPath;
+import com.github.opensibyl.client.model.ObjectFuncCtxServiceDTO;
+import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -159,7 +159,7 @@ public class BasicQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param _file file (required)
-     * @return List&lt;Sibyl2ClazzWithPath&gt;
+     * @return List&lt;ExtractorClazzWithPath&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -167,8 +167,8 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2ClazzWithPath> apiV1ClazzGet(String repo, String rev, String _file) throws ApiException {
-        ApiResponse<List<Sibyl2ClazzWithPath>> localVarResp = apiV1ClazzGetWithHttpInfo(repo, rev, _file);
+    public List<ExtractorClazzWithPath> apiV1ClazzGet(String repo, String rev, String _file) throws ApiException {
+        ApiResponse<List<ExtractorClazzWithPath>> localVarResp = apiV1ClazzGetWithHttpInfo(repo, rev, _file);
         return localVarResp.getData();
     }
 
@@ -178,7 +178,7 @@ public class BasicQueryApi {
      * @param repo repo (required)
      * @param rev rev (required)
      * @param _file file (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2ClazzWithPath&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ExtractorClazzWithPath&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -186,9 +186,9 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2ClazzWithPath>> apiV1ClazzGetWithHttpInfo(String repo, String rev, String _file) throws ApiException {
+    public ApiResponse<List<ExtractorClazzWithPath>> apiV1ClazzGetWithHttpInfo(String repo, String rev, String _file) throws ApiException {
         okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -207,10 +207,10 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1ClazzGetAsync(String repo, String rev, String _file, final ApiCallback<List<Sibyl2ClazzWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1ClazzGetAsync(String repo, String rev, String _file, final ApiCallback<List<ExtractorClazzWithPath>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1ClazzGetValidateBeforeCall(repo, rev, _file, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -317,7 +317,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return List&lt;ObjectFunctionWithSignature&gt;
+     * @return List&lt;ObjectFunctionServiceDTO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -325,8 +325,8 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<ObjectFunctionWithSignature> apiV1FuncGet(String repo, String rev, String _file, String lines) throws ApiException {
-        ApiResponse<List<ObjectFunctionWithSignature>> localVarResp = apiV1FuncGetWithHttpInfo(repo, rev, _file, lines);
+    public List<ObjectFunctionServiceDTO> apiV1FuncGet(String repo, String rev, String _file, String lines) throws ApiException {
+        ApiResponse<List<ObjectFunctionServiceDTO>> localVarResp = apiV1FuncGetWithHttpInfo(repo, rev, _file, lines);
         return localVarResp.getData();
     }
 
@@ -337,7 +337,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return ApiResponse&lt;List&lt;ObjectFunctionWithSignature&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionServiceDTO&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -345,9 +345,9 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ObjectFunctionWithSignature>> apiV1FuncGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
+    public ApiResponse<List<ObjectFunctionServiceDTO>> apiV1FuncGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
         okhttp3.Call localVarCall = apiV1FuncGetValidateBeforeCall(repo, rev, _file, lines, null);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionServiceDTO>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -367,10 +367,10 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFunctionWithSignature>> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFunctionServiceDTO>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1FuncGetValidateBeforeCall(repo, rev, _file, lines, _callback);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionServiceDTO>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -477,7 +477,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return List&lt;ObjectFunctionContextSlimWithSignature&gt;
+     * @return List&lt;ObjectFuncCtxServiceDTO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -485,8 +485,8 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<ObjectFunctionContextSlimWithSignature> apiV1FuncctxGet(String repo, String rev, String _file, String lines) throws ApiException {
-        ApiResponse<List<ObjectFunctionContextSlimWithSignature>> localVarResp = apiV1FuncctxGetWithHttpInfo(repo, rev, _file, lines);
+    public List<ObjectFuncCtxServiceDTO> apiV1FuncctxGet(String repo, String rev, String _file, String lines) throws ApiException {
+        ApiResponse<List<ObjectFuncCtxServiceDTO>> localVarResp = apiV1FuncctxGetWithHttpInfo(repo, rev, _file, lines);
         return localVarResp.getData();
     }
 
@@ -497,7 +497,7 @@ public class BasicQueryApi {
      * @param rev rev (required)
      * @param _file file (required)
      * @param lines specific lines (optional)
-     * @return ApiResponse&lt;List&lt;ObjectFunctionContextSlimWithSignature&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFuncCtxServiceDTO&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -505,9 +505,9 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ObjectFunctionContextSlimWithSignature>> apiV1FuncctxGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
+    public ApiResponse<List<ObjectFuncCtxServiceDTO>> apiV1FuncctxGetWithHttpInfo(String repo, String rev, String _file, String lines) throws ApiException {
         okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, null);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlimWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFuncCtxServiceDTO>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -527,10 +527,10 @@ public class BasicQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1FuncctxGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFunctionContextSlimWithSignature>> _callback) throws ApiException {
+    public okhttp3.Call apiV1FuncctxGetAsync(String repo, String rev, String _file, String lines, final ApiCallback<List<ObjectFuncCtxServiceDTO>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1FuncctxGetValidateBeforeCall(repo, rev, _file, lines, _callback);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlimWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFuncCtxServiceDTO>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

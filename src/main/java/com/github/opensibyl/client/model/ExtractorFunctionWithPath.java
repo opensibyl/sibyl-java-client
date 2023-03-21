@@ -26,10 +26,10 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * ExtractorFunction
+ * ExtractorFunctionWithPath
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
-public class ExtractorFunction {
+public class ExtractorFunctionWithPath {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
   private CoreSpan bodySpan;
@@ -54,6 +54,10 @@ public class ExtractorFunction {
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
   private List<ObjectValueUnit> parameters = null;
 
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  private String path;
+
   public static final String SERIALIZED_NAME_RECEIVER = "receiver";
   @SerializedName(SERIALIZED_NAME_RECEIVER)
   private String receiver;
@@ -66,10 +70,10 @@ public class ExtractorFunction {
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
 
-  public ExtractorFunction() {
+  public ExtractorFunctionWithPath() {
   }
 
-  public ExtractorFunction bodySpan(CoreSpan bodySpan) {
+  public ExtractorFunctionWithPath bodySpan(CoreSpan bodySpan) {
     
     this.bodySpan = bodySpan;
     return this;
@@ -92,7 +96,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction extras(Object extras) {
+  public ExtractorFunctionWithPath extras(Object extras) {
     
     this.extras = extras;
     return this;
@@ -115,7 +119,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction lang(String lang) {
+  public ExtractorFunctionWithPath lang(String lang) {
     
     this.lang = lang;
     return this;
@@ -138,7 +142,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction name(String name) {
+  public ExtractorFunctionWithPath name(String name) {
     
     this.name = name;
     return this;
@@ -161,7 +165,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction namespace(String namespace) {
+  public ExtractorFunctionWithPath namespace(String namespace) {
     
     this.namespace = namespace;
     return this;
@@ -184,13 +188,13 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction parameters(List<ObjectValueUnit> parameters) {
+  public ExtractorFunctionWithPath parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public ExtractorFunction addParametersItem(ObjectValueUnit parametersItem) {
+  public ExtractorFunctionWithPath addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -215,7 +219,30 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction receiver(String receiver) {
+  public ExtractorFunctionWithPath path(String path) {
+    
+    this.path = path;
+    return this;
+  }
+
+   /**
+   * Get path
+   * @return path
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getPath() {
+    return path;
+  }
+
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+
+  public ExtractorFunctionWithPath receiver(String receiver) {
     
     this.receiver = receiver;
     return this;
@@ -238,13 +265,13 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction returns(List<ObjectValueUnit> returns) {
+  public ExtractorFunctionWithPath returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public ExtractorFunction addReturnsItem(ObjectValueUnit returnsItem) {
+  public ExtractorFunctionWithPath addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -269,7 +296,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction span(CoreSpan span) {
+  public ExtractorFunctionWithPath span(CoreSpan span) {
     
     this.span = span;
     return this;
@@ -301,33 +328,35 @@ public class ExtractorFunction {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractorFunction extractorFunction = (ExtractorFunction) o;
-    return Objects.equals(this.bodySpan, extractorFunction.bodySpan) &&
-        Objects.equals(this.extras, extractorFunction.extras) &&
-        Objects.equals(this.lang, extractorFunction.lang) &&
-        Objects.equals(this.name, extractorFunction.name) &&
-        Objects.equals(this.namespace, extractorFunction.namespace) &&
-        Objects.equals(this.parameters, extractorFunction.parameters) &&
-        Objects.equals(this.receiver, extractorFunction.receiver) &&
-        Objects.equals(this.returns, extractorFunction.returns) &&
-        Objects.equals(this.span, extractorFunction.span);
+    ExtractorFunctionWithPath extractorFunctionWithPath = (ExtractorFunctionWithPath) o;
+    return Objects.equals(this.bodySpan, extractorFunctionWithPath.bodySpan) &&
+        Objects.equals(this.extras, extractorFunctionWithPath.extras) &&
+        Objects.equals(this.lang, extractorFunctionWithPath.lang) &&
+        Objects.equals(this.name, extractorFunctionWithPath.name) &&
+        Objects.equals(this.namespace, extractorFunctionWithPath.namespace) &&
+        Objects.equals(this.parameters, extractorFunctionWithPath.parameters) &&
+        Objects.equals(this.path, extractorFunctionWithPath.path) &&
+        Objects.equals(this.receiver, extractorFunctionWithPath.receiver) &&
+        Objects.equals(this.returns, extractorFunctionWithPath.returns) &&
+        Objects.equals(this.span, extractorFunctionWithPath.span);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, extras, lang, name, namespace, parameters, receiver, returns, span);
+    return Objects.hash(bodySpan, extras, lang, name, namespace, parameters, path, receiver, returns, span);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractorFunction {\n");
+    sb.append("class ExtractorFunctionWithPath {\n");
     sb.append("    bodySpan: ").append(toIndentedString(bodySpan)).append("\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
@@ -359,6 +388,7 @@ public class ExtractorFunction {
     openapiFields.add("name");
     openapiFields.add("namespace");
     openapiFields.add("parameters");
+    openapiFields.add("path");
     openapiFields.add("receiver");
     openapiFields.add("returns");
     openapiFields.add("span");
@@ -371,20 +401,20 @@ public class ExtractorFunction {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ExtractorFunction
+  * @throws IOException if the JSON Object is invalid with respect to ExtractorFunctionWithPath
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ExtractorFunction.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractorFunction is not found in the empty JSON string", ExtractorFunction.openapiRequiredFields.toString()));
+        if (!ExtractorFunctionWithPath.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractorFunctionWithPath is not found in the empty JSON string", ExtractorFunctionWithPath.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ExtractorFunction.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExtractorFunction` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ExtractorFunctionWithPath.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExtractorFunctionWithPath` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       // validate the optional field `bodySpan`
@@ -414,6 +444,9 @@ public class ExtractorFunction {
           };
         }
       }
+      if ((jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) && !jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+      }
       if ((jsonObj.get("receiver") != null && !jsonObj.get("receiver").isJsonNull()) && !jsonObj.get("receiver").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `receiver` to be a primitive type in the JSON string but got `%s`", jsonObj.get("receiver").toString()));
       }
@@ -441,22 +474,22 @@ public class ExtractorFunction {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ExtractorFunction.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ExtractorFunction' and its subtypes
+       if (!ExtractorFunctionWithPath.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ExtractorFunctionWithPath' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ExtractorFunction> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractorFunction.class));
+       final TypeAdapter<ExtractorFunctionWithPath> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractorFunctionWithPath.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ExtractorFunction>() {
+       return (TypeAdapter<T>) new TypeAdapter<ExtractorFunctionWithPath>() {
            @Override
-           public void write(JsonWriter out, ExtractorFunction value) throws IOException {
+           public void write(JsonWriter out, ExtractorFunctionWithPath value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ExtractorFunction read(JsonReader in) throws IOException {
+           public ExtractorFunctionWithPath read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -467,18 +500,18 @@ public class ExtractorFunction {
   }
 
  /**
-  * Create an instance of ExtractorFunction given an JSON string
+  * Create an instance of ExtractorFunctionWithPath given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ExtractorFunction
-  * @throws IOException if the JSON string is invalid with respect to ExtractorFunction
+  * @return An instance of ExtractorFunctionWithPath
+  * @throws IOException if the JSON string is invalid with respect to ExtractorFunctionWithPath
   */
-  public static ExtractorFunction fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ExtractorFunction.class);
+  public static ExtractorFunctionWithPath fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ExtractorFunctionWithPath.class);
   }
 
  /**
-  * Convert an instance of ExtractorFunction to an JSON string
+  * Convert an instance of ExtractorFunctionWithPath to an JSON string
   *
   * @return JSON string
   */

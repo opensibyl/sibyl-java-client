@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * ObjectFunctionContextUploadUnit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T01:15:48.730+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
 public class ObjectFunctionContextUploadUnit {
   public static final String SERIALIZED_NAME_FUNCTION_CONTEXT = "functionContext";
   @SerializedName(SERIALIZED_NAME_FUNCTION_CONTEXT)

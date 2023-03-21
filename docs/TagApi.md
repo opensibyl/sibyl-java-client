@@ -93,7 +93,7 @@ public class Example {
     defaultClient.setBasePath("http://localhost");
 
     TagApi apiInstance = new TagApi(defaultClient);
-    ServiceTagUpload payload = new ServiceTagUpload(); // ServiceTagUpload | Payload description
+    ServiceTagUpload payload = new ServiceTagUpload(); // ServiceTagUpload | tag upload payload
     try {
       apiInstance.apiV1TagFuncPost(payload);
     } catch (ApiException e) {
@@ -111,7 +111,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **payload** | [**ServiceTagUpload**](ServiceTagUpload.md)| Payload description | |
+| **payload** | [**ServiceTagUpload**](ServiceTagUpload.md)| tag upload payload | |
 
 ### Return type
 

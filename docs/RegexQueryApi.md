@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1RegexClazzGet"></a>
 # **apiV1RegexClazzGet**
-> List&lt;Sibyl2ClazzWithPath&gt; apiV1RegexClazzGet(repo, rev, field, regex)
+> List&lt;ExtractorClazzWithPath&gt; apiV1RegexClazzGet(repo, rev, field, regex)
 
 clazz query
 
@@ -35,7 +35,7 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<Sibyl2ClazzWithPath> result = apiInstance.apiV1RegexClazzGet(repo, rev, field, regex);
+      List<ExtractorClazzWithPath> result = apiInstance.apiV1RegexClazzGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RegexQueryApi#apiV1RegexClazzGet");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;Sibyl2ClazzWithPath&gt;**](Sibyl2ClazzWithPath.md)
+[**List&lt;ExtractorClazzWithPath&gt;**](ExtractorClazzWithPath.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 
 <a name="apiV1RegexFuncGet"></a>
 # **apiV1RegexFuncGet**
-> List&lt;ObjectFunctionWithSignature&gt; apiV1RegexFuncGet(repo, rev, field, regex)
+> List&lt;ObjectFunctionServiceDTO&gt; apiV1RegexFuncGet(repo, rev, field, regex)
 
 func query
 
@@ -101,7 +101,7 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<ObjectFunctionWithSignature> result = apiInstance.apiV1RegexFuncGet(repo, rev, field, regex);
+      List<ObjectFunctionServiceDTO> result = apiInstance.apiV1RegexFuncGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RegexQueryApi#apiV1RegexFuncGet");
@@ -125,7 +125,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionWithSignature&gt;**](ObjectFunctionWithSignature.md)
+[**List&lt;ObjectFunctionServiceDTO&gt;**](ObjectFunctionServiceDTO.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ No authorization required
 
 <a name="apiV1RegexFuncctxGet"></a>
 # **apiV1RegexFuncctxGet**
-> List&lt;Sibyl2FunctionContextSlim&gt; apiV1RegexFuncctxGet(repo, rev, field, regex)
+> List&lt;ObjectFunctionContextSlim&gt; apiV1RegexFuncctxGet(repo, rev, field, regex)
 
 func ctx query
 
@@ -167,7 +167,7 @@ public class Example {
     String field = "field_example"; // String | field
     String regex = "regex_example"; // String | regex
     try {
-      List<Sibyl2FunctionContextSlim> result = apiInstance.apiV1RegexFuncctxGet(repo, rev, field, regex);
+      List<ObjectFunctionContextSlim> result = apiInstance.apiV1RegexFuncctxGet(repo, rev, field, regex);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RegexQueryApi#apiV1RegexFuncctxGet");
@@ -191,7 +191,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;Sibyl2FunctionContextSlim&gt;**](Sibyl2FunctionContextSlim.md)
+[**List&lt;ObjectFunctionContextSlim&gt;**](ObjectFunctionContextSlim.md)
 
 ### Authorization
 

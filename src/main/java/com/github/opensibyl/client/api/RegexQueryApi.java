@@ -14,9 +14,9 @@
 package com.github.opensibyl.client.api;
 
 import com.github.opensibyl.client.*;
-import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
-import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
-import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
+import com.github.opensibyl.client.model.ExtractorClazzWithPath;
+import com.github.opensibyl.client.model.ObjectFunctionContextSlim;
+import com.github.opensibyl.client.model.ObjectFunctionServiceDTO;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -170,7 +170,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return List&lt;Sibyl2ClazzWithPath&gt;
+     * @return List&lt;ExtractorClazzWithPath&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -178,8 +178,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2ClazzWithPath> apiV1RegexClazzGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<Sibyl2ClazzWithPath>> localVarResp = apiV1RegexClazzGetWithHttpInfo(repo, rev, field, regex);
+    public List<ExtractorClazzWithPath> apiV1RegexClazzGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<ExtractorClazzWithPath>> localVarResp = apiV1RegexClazzGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -190,7 +190,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2ClazzWithPath&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ExtractorClazzWithPath&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -198,9 +198,9 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2ClazzWithPath>> apiV1RegexClazzGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+    public ApiResponse<List<ExtractorClazzWithPath>> apiV1RegexClazzGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
         okhttp3.Call localVarCall = apiV1RegexClazzGetValidateBeforeCall(repo, rev, field, regex, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -220,10 +220,10 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1RegexClazzGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2ClazzWithPath>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexClazzGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<ExtractorClazzWithPath>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1RegexClazzGetValidateBeforeCall(repo, rev, field, regex, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2ClazzWithPath>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ExtractorClazzWithPath>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -335,7 +335,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return List&lt;ObjectFunctionWithSignature&gt;
+     * @return List&lt;ObjectFunctionServiceDTO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -343,8 +343,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<ObjectFunctionWithSignature> apiV1RegexFuncGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<ObjectFunctionWithSignature>> localVarResp = apiV1RegexFuncGetWithHttpInfo(repo, rev, field, regex);
+    public List<ObjectFunctionServiceDTO> apiV1RegexFuncGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<ObjectFunctionServiceDTO>> localVarResp = apiV1RegexFuncGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -355,7 +355,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return ApiResponse&lt;List&lt;ObjectFunctionWithSignature&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionServiceDTO&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -363,9 +363,9 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ObjectFunctionWithSignature>> apiV1RegexFuncGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+    public ApiResponse<List<ObjectFunctionServiceDTO>> apiV1RegexFuncGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
         okhttp3.Call localVarCall = apiV1RegexFuncGetValidateBeforeCall(repo, rev, field, regex, null);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionServiceDTO>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -385,10 +385,10 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1RegexFuncGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<ObjectFunctionWithSignature>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<ObjectFunctionServiceDTO>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1RegexFuncGetValidateBeforeCall(repo, rev, field, regex, _callback);
-        Type localVarReturnType = new TypeToken<List<ObjectFunctionWithSignature>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionServiceDTO>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -500,7 +500,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return List&lt;Sibyl2FunctionContextSlim&gt;
+     * @return List&lt;ObjectFunctionContextSlim&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -508,8 +508,8 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Sibyl2FunctionContextSlim> apiV1RegexFuncctxGet(String repo, String rev, String field, String regex) throws ApiException {
-        ApiResponse<List<Sibyl2FunctionContextSlim>> localVarResp = apiV1RegexFuncctxGetWithHttpInfo(repo, rev, field, regex);
+    public List<ObjectFunctionContextSlim> apiV1RegexFuncctxGet(String repo, String rev, String field, String regex) throws ApiException {
+        ApiResponse<List<ObjectFunctionContextSlim>> localVarResp = apiV1RegexFuncctxGetWithHttpInfo(repo, rev, field, regex);
         return localVarResp.getData();
     }
 
@@ -520,7 +520,7 @@ public class RegexQueryApi {
      * @param rev rev (required)
      * @param field field (required)
      * @param regex regex (required)
-     * @return ApiResponse&lt;List&lt;Sibyl2FunctionContextSlim&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ObjectFunctionContextSlim&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -528,9 +528,9 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Sibyl2FunctionContextSlim>> apiV1RegexFuncctxGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
+    public ApiResponse<List<ObjectFunctionContextSlim>> apiV1RegexFuncctxGetWithHttpInfo(String repo, String rev, String field, String regex) throws ApiException {
         okhttp3.Call localVarCall = apiV1RegexFuncctxGetValidateBeforeCall(repo, rev, field, regex, null);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -550,10 +550,10 @@ public class RegexQueryApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call apiV1RegexFuncctxGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<Sibyl2FunctionContextSlim>> _callback) throws ApiException {
+    public okhttp3.Call apiV1RegexFuncctxGetAsync(String repo, String rev, String field, String regex, final ApiCallback<List<ObjectFunctionContextSlim>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = apiV1RegexFuncctxGetValidateBeforeCall(repo, rev, field, regex, _callback);
-        Type localVarReturnType = new TypeToken<List<Sibyl2FunctionContextSlim>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ObjectFunctionContextSlim>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

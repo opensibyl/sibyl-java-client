@@ -13,6 +13,7 @@
 |**extras** | **Object** | which contains language-specific contents |  [optional] |
 |**lang** | **String** | language |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**namespace** | **String** |  |  [optional] |
 |**parameters** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
 |**path** | **String** |  |  [optional] |
 |**receiver** | **String** |  |  [optional] |

@@ -1,20 +1,17 @@
 
 
-# ExtractorFunction
+# ExtractorClazzWithPath
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bodySpan** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
 |**extras** | **Object** | which contains language-specific contents |  [optional] |
 |**lang** | **String** | language |  [optional] |
+|**module** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**namespace** | **String** |  |  [optional] |
-|**parameters** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
-|**receiver** | **String** |  |  [optional] |
-|**returns** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
+|**path** | **String** |  |  [optional] |
 |**span** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
 
 

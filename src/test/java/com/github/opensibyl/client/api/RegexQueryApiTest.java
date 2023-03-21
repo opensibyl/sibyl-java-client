@@ -17,7 +17,6 @@ import com.github.opensibyl.client.ApiException;
 import com.github.opensibyl.client.model.ObjectFunctionWithSignature;
 import com.github.opensibyl.client.model.Sibyl2ClazzWithPath;
 import com.github.opensibyl.client.model.Sibyl2FunctionContextSlim;
-import com.github.opensibyl.client.model.Sibyl2FunctionWithTag;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

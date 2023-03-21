@@ -28,10 +28,10 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * ExtractorClazz
+ * ExtractorClazzWithPath
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
-public class ExtractorClazz {
+public class ExtractorClazzWithPath {
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
   private Object extras;
@@ -48,14 +48,18 @@ public class ExtractorClazz {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  private String path;
+
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
 
-  public ExtractorClazz() {
+  public ExtractorClazzWithPath() {
   }
 
-  public ExtractorClazz extras(Object extras) {
+  public ExtractorClazzWithPath extras(Object extras) {
     
     this.extras = extras;
     return this;
@@ -78,7 +82,7 @@ public class ExtractorClazz {
   }
 
 
-  public ExtractorClazz lang(String lang) {
+  public ExtractorClazzWithPath lang(String lang) {
     
     this.lang = lang;
     return this;
@@ -101,7 +105,7 @@ public class ExtractorClazz {
   }
 
 
-  public ExtractorClazz module(String module) {
+  public ExtractorClazzWithPath module(String module) {
     
     this.module = module;
     return this;
@@ -124,7 +128,7 @@ public class ExtractorClazz {
   }
 
 
-  public ExtractorClazz name(String name) {
+  public ExtractorClazzWithPath name(String name) {
     
     this.name = name;
     return this;
@@ -147,7 +151,30 @@ public class ExtractorClazz {
   }
 
 
-  public ExtractorClazz span(CoreSpan span) {
+  public ExtractorClazzWithPath path(String path) {
+    
+    this.path = path;
+    return this;
+  }
+
+   /**
+   * Get path
+   * @return path
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getPath() {
+    return path;
+  }
+
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+
+  public ExtractorClazzWithPath span(CoreSpan span) {
     
     this.span = span;
     return this;
@@ -179,27 +206,29 @@ public class ExtractorClazz {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractorClazz extractorClazz = (ExtractorClazz) o;
-    return Objects.equals(this.extras, extractorClazz.extras) &&
-        Objects.equals(this.lang, extractorClazz.lang) &&
-        Objects.equals(this.module, extractorClazz.module) &&
-        Objects.equals(this.name, extractorClazz.name) &&
-        Objects.equals(this.span, extractorClazz.span);
+    ExtractorClazzWithPath extractorClazzWithPath = (ExtractorClazzWithPath) o;
+    return Objects.equals(this.extras, extractorClazzWithPath.extras) &&
+        Objects.equals(this.lang, extractorClazzWithPath.lang) &&
+        Objects.equals(this.module, extractorClazzWithPath.module) &&
+        Objects.equals(this.name, extractorClazzWithPath.name) &&
+        Objects.equals(this.path, extractorClazzWithPath.path) &&
+        Objects.equals(this.span, extractorClazzWithPath.span);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(extras, lang, module, name, span);
+    return Objects.hash(extras, lang, module, name, path, span);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractorClazz {\n");
+    sb.append("class ExtractorClazzWithPath {\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -227,6 +256,7 @@ public class ExtractorClazz {
     openapiFields.add("lang");
     openapiFields.add("module");
     openapiFields.add("name");
+    openapiFields.add("path");
     openapiFields.add("span");
 
     // a set of required properties/fields (JSON key names)
@@ -237,20 +267,20 @@ public class ExtractorClazz {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ExtractorClazz
+  * @throws IOException if the JSON Object is invalid with respect to ExtractorClazzWithPath
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ExtractorClazz.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractorClazz is not found in the empty JSON string", ExtractorClazz.openapiRequiredFields.toString()));
+        if (!ExtractorClazzWithPath.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractorClazzWithPath is not found in the empty JSON string", ExtractorClazzWithPath.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ExtractorClazz.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExtractorClazz` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ExtractorClazzWithPath.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExtractorClazzWithPath` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
@@ -262,6 +292,9 @@ public class ExtractorClazz {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      if ((jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) && !jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+      }
       // validate the optional field `span`
       if (jsonObj.get("span") != null && !jsonObj.get("span").isJsonNull()) {
         CoreSpan.validateJsonObject(jsonObj.getAsJsonObject("span"));
@@ -272,22 +305,22 @@ public class ExtractorClazz {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ExtractorClazz.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ExtractorClazz' and its subtypes
+       if (!ExtractorClazzWithPath.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ExtractorClazzWithPath' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ExtractorClazz> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractorClazz.class));
+       final TypeAdapter<ExtractorClazzWithPath> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractorClazzWithPath.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ExtractorClazz>() {
+       return (TypeAdapter<T>) new TypeAdapter<ExtractorClazzWithPath>() {
            @Override
-           public void write(JsonWriter out, ExtractorClazz value) throws IOException {
+           public void write(JsonWriter out, ExtractorClazzWithPath value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ExtractorClazz read(JsonReader in) throws IOException {
+           public ExtractorClazzWithPath read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -298,18 +331,18 @@ public class ExtractorClazz {
   }
 
  /**
-  * Create an instance of ExtractorClazz given an JSON string
+  * Create an instance of ExtractorClazzWithPath given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ExtractorClazz
-  * @throws IOException if the JSON string is invalid with respect to ExtractorClazz
+  * @return An instance of ExtractorClazzWithPath
+  * @throws IOException if the JSON string is invalid with respect to ExtractorClazzWithPath
   */
-  public static ExtractorClazz fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ExtractorClazz.class);
+  public static ExtractorClazzWithPath fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ExtractorClazzWithPath.class);
   }
 
  /**
-  * Convert an instance of ExtractorClazz to an JSON string
+  * Convert an instance of ExtractorClazzWithPath to an JSON string
   *
   * @return JSON string
   */

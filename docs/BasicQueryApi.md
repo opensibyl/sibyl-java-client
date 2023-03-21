@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1ClazzGet"></a>
 # **apiV1ClazzGet**
-> List&lt;Sibyl2ClazzWithPath&gt; apiV1ClazzGet(repo, rev, _file)
+> List&lt;ExtractorClazzWithPath&gt; apiV1ClazzGet(repo, rev, _file)
 
 class query
 
@@ -34,7 +34,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String _file = "_file_example"; // String | file
     try {
-      List<Sibyl2ClazzWithPath> result = apiInstance.apiV1ClazzGet(repo, rev, _file);
+      List<ExtractorClazzWithPath> result = apiInstance.apiV1ClazzGet(repo, rev, _file);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BasicQueryApi#apiV1ClazzGet");
@@ -57,7 +57,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;Sibyl2ClazzWithPath&gt;**](Sibyl2ClazzWithPath.md)
+[**List&lt;ExtractorClazzWithPath&gt;**](ExtractorClazzWithPath.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 <a name="apiV1FuncGet"></a>
 # **apiV1FuncGet**
-> List&lt;ObjectFunctionWithSignature&gt; apiV1FuncGet(repo, rev, _file, lines)
+> List&lt;ObjectFunctionServiceDTO&gt; apiV1FuncGet(repo, rev, _file, lines)
 
 func query
 
@@ -99,7 +99,7 @@ public class Example {
     String _file = "_file_example"; // String | file
     String lines = "lines_example"; // String | specific lines
     try {
-      List<ObjectFunctionWithSignature> result = apiInstance.apiV1FuncGet(repo, rev, _file, lines);
+      List<ObjectFunctionServiceDTO> result = apiInstance.apiV1FuncGet(repo, rev, _file, lines);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BasicQueryApi#apiV1FuncGet");
@@ -123,7 +123,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionWithSignature&gt;**](ObjectFunctionWithSignature.md)
+[**List&lt;ObjectFunctionServiceDTO&gt;**](ObjectFunctionServiceDTO.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ No authorization required
 
 <a name="apiV1FuncctxGet"></a>
 # **apiV1FuncctxGet**
-> List&lt;ObjectFunctionContextSlimWithSignature&gt; apiV1FuncctxGet(repo, rev, _file, lines)
+> List&lt;ObjectFuncCtxServiceDTO&gt; apiV1FuncctxGet(repo, rev, _file, lines)
 
 func ctx query
 
@@ -165,7 +165,7 @@ public class Example {
     String _file = "_file_example"; // String | file
     String lines = "lines_example"; // String | specific lines
     try {
-      List<ObjectFunctionContextSlimWithSignature> result = apiInstance.apiV1FuncctxGet(repo, rev, _file, lines);
+      List<ObjectFuncCtxServiceDTO> result = apiInstance.apiV1FuncctxGet(repo, rev, _file, lines);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BasicQueryApi#apiV1FuncctxGet");
@@ -189,7 +189,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ObjectFunctionContextSlimWithSignature&gt;**](ObjectFunctionContextSlimWithSignature.md)
+[**List&lt;ObjectFuncCtxServiceDTO&gt;**](ObjectFuncCtxServiceDTO.md)
 
 ### Authorization
 

@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * Sibyl2FunctionContext
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T01:15:48.730+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
 public class Sibyl2FunctionContext {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -36,7 +36,7 @@ public class Sibyl2FunctionContext {
 
   public static final String SERIALIZED_NAME_CALLS = "calls";
   @SerializedName(SERIALIZED_NAME_CALLS)
-  private List<Sibyl2FunctionWithPath> calls = null;
+  private List<ExtractorFunctionWithPath> calls = null;
 
   public static final String SERIALIZED_NAME_EXTRAS = "extras";
   @SerializedName(SERIALIZED_NAME_EXTRAS)
@@ -49,6 +49,10 @@ public class Sibyl2FunctionContext {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
+  @SerializedName(SERIALIZED_NAME_NAMESPACE)
+  private String namespace;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
@@ -68,7 +72,7 @@ public class Sibyl2FunctionContext {
 
   public static final String SERIALIZED_NAME_REVERSE_CALLS = "reverseCalls";
   @SerializedName(SERIALIZED_NAME_REVERSE_CALLS)
-  private List<Sibyl2FunctionWithPath> reverseCalls = null;
+  private List<ExtractorFunctionWithPath> reverseCalls = null;
 
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
@@ -100,13 +104,13 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext calls(List<Sibyl2FunctionWithPath> calls) {
+  public Sibyl2FunctionContext calls(List<ExtractorFunctionWithPath> calls) {
     
     this.calls = calls;
     return this;
   }
 
-  public Sibyl2FunctionContext addCallsItem(Sibyl2FunctionWithPath callsItem) {
+  public Sibyl2FunctionContext addCallsItem(ExtractorFunctionWithPath callsItem) {
     if (this.calls == null) {
       this.calls = new ArrayList<>();
     }
@@ -121,12 +125,12 @@ public class Sibyl2FunctionContext {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Sibyl2FunctionWithPath> getCalls() {
+  public List<ExtractorFunctionWithPath> getCalls() {
     return calls;
   }
 
 
-  public void setCalls(List<Sibyl2FunctionWithPath> calls) {
+  public void setCalls(List<ExtractorFunctionWithPath> calls) {
     this.calls = calls;
   }
 
@@ -197,6 +201,29 @@ public class Sibyl2FunctionContext {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public Sibyl2FunctionContext namespace(String namespace) {
+    
+    this.namespace = namespace;
+    return this;
+  }
+
+   /**
+   * Get namespace
+   * @return namespace
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNamespace() {
+    return namespace;
+  }
+
+
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
   }
 
 
@@ -308,13 +335,13 @@ public class Sibyl2FunctionContext {
   }
 
 
-  public Sibyl2FunctionContext reverseCalls(List<Sibyl2FunctionWithPath> reverseCalls) {
+  public Sibyl2FunctionContext reverseCalls(List<ExtractorFunctionWithPath> reverseCalls) {
     
     this.reverseCalls = reverseCalls;
     return this;
   }
 
-  public Sibyl2FunctionContext addReverseCallsItem(Sibyl2FunctionWithPath reverseCallsItem) {
+  public Sibyl2FunctionContext addReverseCallsItem(ExtractorFunctionWithPath reverseCallsItem) {
     if (this.reverseCalls == null) {
       this.reverseCalls = new ArrayList<>();
     }
@@ -329,12 +356,12 @@ public class Sibyl2FunctionContext {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Sibyl2FunctionWithPath> getReverseCalls() {
+  public List<ExtractorFunctionWithPath> getReverseCalls() {
     return reverseCalls;
   }
 
 
-  public void setReverseCalls(List<Sibyl2FunctionWithPath> reverseCalls) {
+  public void setReverseCalls(List<ExtractorFunctionWithPath> reverseCalls) {
     this.reverseCalls = reverseCalls;
   }
 
@@ -377,6 +404,7 @@ public class Sibyl2FunctionContext {
         Objects.equals(this.extras, sibyl2FunctionContext.extras) &&
         Objects.equals(this.lang, sibyl2FunctionContext.lang) &&
         Objects.equals(this.name, sibyl2FunctionContext.name) &&
+        Objects.equals(this.namespace, sibyl2FunctionContext.namespace) &&
         Objects.equals(this.parameters, sibyl2FunctionContext.parameters) &&
         Objects.equals(this.path, sibyl2FunctionContext.path) &&
         Objects.equals(this.receiver, sibyl2FunctionContext.receiver) &&
@@ -387,7 +415,7 @@ public class Sibyl2FunctionContext {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, calls, extras, lang, name, parameters, path, receiver, returns, reverseCalls, span);
+    return Objects.hash(bodySpan, calls, extras, lang, name, namespace, parameters, path, receiver, returns, reverseCalls, span);
   }
 
   @Override
@@ -399,6 +427,7 @@ public class Sibyl2FunctionContext {
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
@@ -432,6 +461,7 @@ public class Sibyl2FunctionContext {
     openapiFields.add("extras");
     openapiFields.add("lang");
     openapiFields.add("name");
+    openapiFields.add("namespace");
     openapiFields.add("parameters");
     openapiFields.add("path");
     openapiFields.add("receiver");
@@ -477,7 +507,7 @@ public class Sibyl2FunctionContext {
 
           // validate the optional field `calls` (array)
           for (int i = 0; i < jsonArraycalls.size(); i++) {
-            Sibyl2FunctionWithPath.validateJsonObject(jsonArraycalls.get(i).getAsJsonObject());
+            ExtractorFunctionWithPath.validateJsonObject(jsonArraycalls.get(i).getAsJsonObject());
           };
         }
       }
@@ -486,6 +516,9 @@ public class Sibyl2FunctionContext {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("namespace") != null && !jsonObj.get("namespace").isJsonNull()) && !jsonObj.get("namespace").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `namespace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("namespace").toString()));
       }
       if (jsonObj.get("parameters") != null && !jsonObj.get("parameters").isJsonNull()) {
         JsonArray jsonArrayparameters = jsonObj.getAsJsonArray("parameters");
@@ -531,7 +564,7 @@ public class Sibyl2FunctionContext {
 
           // validate the optional field `reverseCalls` (array)
           for (int i = 0; i < jsonArrayreverseCalls.size(); i++) {
-            Sibyl2FunctionWithPath.validateJsonObject(jsonArrayreverseCalls.get(i).getAsJsonObject());
+            ExtractorFunctionWithPath.validateJsonObject(jsonArrayreverseCalls.get(i).getAsJsonObject());
           };
         }
       }

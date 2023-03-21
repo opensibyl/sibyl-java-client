@@ -26,10 +26,10 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * ExtractorFunction
+ * ObjectFunctionServiceDTO
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
-public class ExtractorFunction {
+public class ObjectFunctionServiceDTO {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
   private CoreSpan bodySpan;
@@ -54,6 +54,10 @@ public class ExtractorFunction {
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
   private List<ObjectValueUnit> parameters = null;
 
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  private String path;
+
   public static final String SERIALIZED_NAME_RECEIVER = "receiver";
   @SerializedName(SERIALIZED_NAME_RECEIVER)
   private String receiver;
@@ -62,14 +66,22 @@ public class ExtractorFunction {
   @SerializedName(SERIALIZED_NAME_RETURNS)
   private List<ObjectValueUnit> returns = null;
 
+  public static final String SERIALIZED_NAME_SIGNATURE = "signature";
+  @SerializedName(SERIALIZED_NAME_SIGNATURE)
+  private String signature;
+
   public static final String SERIALIZED_NAME_SPAN = "span";
   @SerializedName(SERIALIZED_NAME_SPAN)
   private CoreSpan span;
 
-  public ExtractorFunction() {
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = null;
+
+  public ObjectFunctionServiceDTO() {
   }
 
-  public ExtractorFunction bodySpan(CoreSpan bodySpan) {
+  public ObjectFunctionServiceDTO bodySpan(CoreSpan bodySpan) {
     
     this.bodySpan = bodySpan;
     return this;
@@ -92,7 +104,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction extras(Object extras) {
+  public ObjectFunctionServiceDTO extras(Object extras) {
     
     this.extras = extras;
     return this;
@@ -115,7 +127,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction lang(String lang) {
+  public ObjectFunctionServiceDTO lang(String lang) {
     
     this.lang = lang;
     return this;
@@ -138,7 +150,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction name(String name) {
+  public ObjectFunctionServiceDTO name(String name) {
     
     this.name = name;
     return this;
@@ -161,7 +173,7 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction namespace(String namespace) {
+  public ObjectFunctionServiceDTO namespace(String namespace) {
     
     this.namespace = namespace;
     return this;
@@ -184,13 +196,13 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction parameters(List<ObjectValueUnit> parameters) {
+  public ObjectFunctionServiceDTO parameters(List<ObjectValueUnit> parameters) {
     
     this.parameters = parameters;
     return this;
   }
 
-  public ExtractorFunction addParametersItem(ObjectValueUnit parametersItem) {
+  public ObjectFunctionServiceDTO addParametersItem(ObjectValueUnit parametersItem) {
     if (this.parameters == null) {
       this.parameters = new ArrayList<>();
     }
@@ -215,7 +227,30 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction receiver(String receiver) {
+  public ObjectFunctionServiceDTO path(String path) {
+    
+    this.path = path;
+    return this;
+  }
+
+   /**
+   * Get path
+   * @return path
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getPath() {
+    return path;
+  }
+
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+
+  public ObjectFunctionServiceDTO receiver(String receiver) {
     
     this.receiver = receiver;
     return this;
@@ -238,13 +273,13 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction returns(List<ObjectValueUnit> returns) {
+  public ObjectFunctionServiceDTO returns(List<ObjectValueUnit> returns) {
     
     this.returns = returns;
     return this;
   }
 
-  public ExtractorFunction addReturnsItem(ObjectValueUnit returnsItem) {
+  public ObjectFunctionServiceDTO addReturnsItem(ObjectValueUnit returnsItem) {
     if (this.returns == null) {
       this.returns = new ArrayList<>();
     }
@@ -269,7 +304,30 @@ public class ExtractorFunction {
   }
 
 
-  public ExtractorFunction span(CoreSpan span) {
+  public ObjectFunctionServiceDTO signature(String signature) {
+    
+    this.signature = signature;
+    return this;
+  }
+
+   /**
+   * Get signature
+   * @return signature
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSignature() {
+    return signature;
+  }
+
+
+  public void setSignature(String signature) {
+    this.signature = signature;
+  }
+
+
+  public ObjectFunctionServiceDTO span(CoreSpan span) {
     
     this.span = span;
     return this;
@@ -292,6 +350,37 @@ public class ExtractorFunction {
   }
 
 
+  public ObjectFunctionServiceDTO tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public ObjectFunctionServiceDTO addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -301,36 +390,42 @@ public class ExtractorFunction {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractorFunction extractorFunction = (ExtractorFunction) o;
-    return Objects.equals(this.bodySpan, extractorFunction.bodySpan) &&
-        Objects.equals(this.extras, extractorFunction.extras) &&
-        Objects.equals(this.lang, extractorFunction.lang) &&
-        Objects.equals(this.name, extractorFunction.name) &&
-        Objects.equals(this.namespace, extractorFunction.namespace) &&
-        Objects.equals(this.parameters, extractorFunction.parameters) &&
-        Objects.equals(this.receiver, extractorFunction.receiver) &&
-        Objects.equals(this.returns, extractorFunction.returns) &&
-        Objects.equals(this.span, extractorFunction.span);
+    ObjectFunctionServiceDTO objectFunctionServiceDTO = (ObjectFunctionServiceDTO) o;
+    return Objects.equals(this.bodySpan, objectFunctionServiceDTO.bodySpan) &&
+        Objects.equals(this.extras, objectFunctionServiceDTO.extras) &&
+        Objects.equals(this.lang, objectFunctionServiceDTO.lang) &&
+        Objects.equals(this.name, objectFunctionServiceDTO.name) &&
+        Objects.equals(this.namespace, objectFunctionServiceDTO.namespace) &&
+        Objects.equals(this.parameters, objectFunctionServiceDTO.parameters) &&
+        Objects.equals(this.path, objectFunctionServiceDTO.path) &&
+        Objects.equals(this.receiver, objectFunctionServiceDTO.receiver) &&
+        Objects.equals(this.returns, objectFunctionServiceDTO.returns) &&
+        Objects.equals(this.signature, objectFunctionServiceDTO.signature) &&
+        Objects.equals(this.span, objectFunctionServiceDTO.span) &&
+        Objects.equals(this.tags, objectFunctionServiceDTO.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, extras, lang, name, namespace, parameters, receiver, returns, span);
+    return Objects.hash(bodySpan, extras, lang, name, namespace, parameters, path, receiver, returns, signature, span, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractorFunction {\n");
+    sb.append("class ObjectFunctionServiceDTO {\n");
     sb.append("    bodySpan: ").append(toIndentedString(bodySpan)).append("\n");
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
+    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    span: ").append(toIndentedString(span)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -359,9 +454,12 @@ public class ExtractorFunction {
     openapiFields.add("name");
     openapiFields.add("namespace");
     openapiFields.add("parameters");
+    openapiFields.add("path");
     openapiFields.add("receiver");
     openapiFields.add("returns");
+    openapiFields.add("signature");
     openapiFields.add("span");
+    openapiFields.add("tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -371,20 +469,20 @@ public class ExtractorFunction {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ExtractorFunction
+  * @throws IOException if the JSON Object is invalid with respect to ObjectFunctionServiceDTO
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!ExtractorFunction.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractorFunction is not found in the empty JSON string", ExtractorFunction.openapiRequiredFields.toString()));
+        if (!ObjectFunctionServiceDTO.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectFunctionServiceDTO is not found in the empty JSON string", ObjectFunctionServiceDTO.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!ExtractorFunction.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExtractorFunction` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!ObjectFunctionServiceDTO.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectFunctionServiceDTO` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       // validate the optional field `bodySpan`
@@ -414,6 +512,9 @@ public class ExtractorFunction {
           };
         }
       }
+      if ((jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) && !jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+      }
       if ((jsonObj.get("receiver") != null && !jsonObj.get("receiver").isJsonNull()) && !jsonObj.get("receiver").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `receiver` to be a primitive type in the JSON string but got `%s`", jsonObj.get("receiver").toString()));
       }
@@ -431,9 +532,16 @@ public class ExtractorFunction {
           };
         }
       }
+      if ((jsonObj.get("signature") != null && !jsonObj.get("signature").isJsonNull()) && !jsonObj.get("signature").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `signature` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signature").toString()));
+      }
       // validate the optional field `span`
       if (jsonObj.get("span") != null && !jsonObj.get("span").isJsonNull()) {
         CoreSpan.validateJsonObject(jsonObj.getAsJsonObject("span"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 
@@ -441,22 +549,22 @@ public class ExtractorFunction {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ExtractorFunction.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ExtractorFunction' and its subtypes
+       if (!ObjectFunctionServiceDTO.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ObjectFunctionServiceDTO' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ExtractorFunction> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractorFunction.class));
+       final TypeAdapter<ObjectFunctionServiceDTO> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectFunctionServiceDTO.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ExtractorFunction>() {
+       return (TypeAdapter<T>) new TypeAdapter<ObjectFunctionServiceDTO>() {
            @Override
-           public void write(JsonWriter out, ExtractorFunction value) throws IOException {
+           public void write(JsonWriter out, ObjectFunctionServiceDTO value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ExtractorFunction read(JsonReader in) throws IOException {
+           public ObjectFunctionServiceDTO read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -467,18 +575,18 @@ public class ExtractorFunction {
   }
 
  /**
-  * Create an instance of ExtractorFunction given an JSON string
+  * Create an instance of ObjectFunctionServiceDTO given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ExtractorFunction
-  * @throws IOException if the JSON string is invalid with respect to ExtractorFunction
+  * @return An instance of ObjectFunctionServiceDTO
+  * @throws IOException if the JSON string is invalid with respect to ObjectFunctionServiceDTO
   */
-  public static ExtractorFunction fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ExtractorFunction.class);
+  public static ObjectFunctionServiceDTO fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ObjectFunctionServiceDTO.class);
   }
 
  /**
-  * Convert an instance of ExtractorFunction to an JSON string
+  * Convert an instance of ObjectFunctionServiceDTO to an JSON string
   *
   * @return JSON string
   */

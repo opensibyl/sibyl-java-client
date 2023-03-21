@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 <a name="apiV1SignatureFuncGet"></a>
 # **apiV1SignatureFuncGet**
-> ObjectFunctionWithSignature apiV1SignatureFuncGet(repo, rev, signature)
+> ObjectFunctionServiceDTO apiV1SignatureFuncGet(repo, rev, signature)
 
 func query
 
@@ -36,7 +36,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String signature = "signature_example"; // String | signature
     try {
-      ObjectFunctionWithSignature result = apiInstance.apiV1SignatureFuncGet(repo, rev, signature);
+      ObjectFunctionServiceDTO result = apiInstance.apiV1SignatureFuncGet(repo, rev, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignatureQueryApi#apiV1SignatureFuncGet");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**ObjectFunctionWithSignature**](ObjectFunctionWithSignature.md)
+[**ObjectFunctionServiceDTO**](ObjectFunctionServiceDTO.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ No authorization required
 
 <a name="apiV1SignatureFuncctxGet"></a>
 # **apiV1SignatureFuncctxGet**
-> Sibyl2FunctionContextSlim apiV1SignatureFuncctxGet(repo, rev, signature)
+> ObjectFunctionContextSlim apiV1SignatureFuncctxGet(repo, rev, signature)
 
 funcctx query
 
@@ -166,7 +166,7 @@ public class Example {
     String rev = "rev_example"; // String | rev
     String signature = "signature_example"; // String | signature
     try {
-      Sibyl2FunctionContextSlim result = apiInstance.apiV1SignatureFuncctxGet(repo, rev, signature);
+      ObjectFunctionContextSlim result = apiInstance.apiV1SignatureFuncctxGet(repo, rev, signature);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignatureQueryApi#apiV1SignatureFuncctxGet");
@@ -189,7 +189,7 @@ public class Example {
 
 ### Return type
 
-[**Sibyl2FunctionContextSlim**](Sibyl2FunctionContextSlim.md)
+[**ObjectFunctionContextSlim**](ObjectFunctionContextSlim.md)
 
 ### Authorization
 

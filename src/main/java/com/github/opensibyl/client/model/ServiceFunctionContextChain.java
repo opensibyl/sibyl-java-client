@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * ServiceFunctionContextChain
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T01:15:48.730+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-21T22:55:15.478+08:00[Asia/Shanghai]")
 public class ServiceFunctionContextChain {
   public static final String SERIALIZED_NAME_BODY_SPAN = "bodySpan";
   @SerializedName(SERIALIZED_NAME_BODY_SPAN)
@@ -53,6 +53,10 @@ public class ServiceFunctionContextChain {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
+  @SerializedName(SERIALIZED_NAME_NAMESPACE)
+  private String namespace;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
@@ -228,6 +232,29 @@ public class ServiceFunctionContextChain {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public ServiceFunctionContextChain namespace(String namespace) {
+    
+    this.namespace = namespace;
+    return this;
+  }
+
+   /**
+   * Get namespace
+   * @return namespace
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNamespace() {
+    return namespace;
+  }
+
+
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
   }
 
 
@@ -432,6 +459,7 @@ public class ServiceFunctionContextChain {
         Objects.equals(this.extras, serviceFunctionContextChain.extras) &&
         Objects.equals(this.lang, serviceFunctionContextChain.lang) &&
         Objects.equals(this.name, serviceFunctionContextChain.name) &&
+        Objects.equals(this.namespace, serviceFunctionContextChain.namespace) &&
         Objects.equals(this.parameters, serviceFunctionContextChain.parameters) &&
         Objects.equals(this.path, serviceFunctionContextChain.path) &&
         Objects.equals(this.receiver, serviceFunctionContextChain.receiver) &&
@@ -443,7 +471,7 @@ public class ServiceFunctionContextChain {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bodySpan, callChains, calls, extras, lang, name, parameters, path, receiver, returns, reverseCallChains, reverseCalls, span);
+    return Objects.hash(bodySpan, callChains, calls, extras, lang, name, namespace, parameters, path, receiver, returns, reverseCallChains, reverseCalls, span);
   }
 
   @Override
@@ -456,6 +484,7 @@ public class ServiceFunctionContextChain {
     sb.append("    extras: ").append(toIndentedString(extras)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
@@ -491,6 +520,7 @@ public class ServiceFunctionContextChain {
     openapiFields.add("extras");
     openapiFields.add("lang");
     openapiFields.add("name");
+    openapiFields.add("namespace");
     openapiFields.add("parameters");
     openapiFields.add("path");
     openapiFields.add("receiver");
@@ -540,6 +570,9 @@ public class ServiceFunctionContextChain {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("namespace") != null && !jsonObj.get("namespace").isJsonNull()) && !jsonObj.get("namespace").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `namespace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("namespace").toString()));
       }
       if (jsonObj.get("parameters") != null && !jsonObj.get("parameters").isJsonNull()) {
         JsonArray jsonArrayparameters = jsonObj.getAsJsonArray("parameters");

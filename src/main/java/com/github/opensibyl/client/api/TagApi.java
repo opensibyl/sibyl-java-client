@@ -214,7 +214,7 @@ public class TagApi {
     }
     /**
      * Build call for apiV1TagFuncPost
-     * @param payload Payload description (required)
+     * @param payload tag upload payload (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -282,7 +282,7 @@ public class TagApi {
     /**
      * create func tag
      * 
-     * @param payload Payload description (required)
+     * @param payload tag upload payload (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -297,7 +297,7 @@ public class TagApi {
     /**
      * create func tag
      * 
-     * @param payload Payload description (required)
+     * @param payload tag upload payload (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -314,7 +314,7 @@ public class TagApi {
     /**
      * create func tag (asynchronously)
      * 
-     * @param payload Payload description (required)
+     * @param payload tag upload payload (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

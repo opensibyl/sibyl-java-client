@@ -1,6 +1,6 @@
 
 
-# ExtractorFunction
+# ObjectFunctionServiceDTO
 
 
 ## Properties
@@ -13,9 +13,12 @@
 |**name** | **String** |  |  [optional] |
 |**namespace** | **String** |  |  [optional] |
 |**parameters** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
+|**path** | **String** |  |  [optional] |
 |**receiver** | **String** |  |  [optional] |
 |**returns** | [**List&lt;ObjectValueUnit&gt;**](ObjectValueUnit.md) |  |  [optional] |
+|**signature** | **String** |  |  [optional] |
 |**span** | [**CoreSpan**](CoreSpan.md) |  |  [optional] |
+|**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
